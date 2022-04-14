@@ -1,0 +1,97 @@
+header:nth-child(1) {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}
+
+.img-nav {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.25rem;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  text-shadow: 0 0 0.5rem black;
+  color: white;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.5rem;
+  padding: 2rem;
+  text-shadow: 0 0 0.15rem black;
+  color: black;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  text-shadow: 0 0 0.5rem black;
+  color: white;
+}
+
+h5 {
+  font-size: 1.6rem;
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  text-shadow: 0 0 0.1rem black;
+  color: red;
+}
+
+p {
+  text-align: justify;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.jumbo {
+  background-image: url(../img/jumbo/pesa-rusa.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+section form button {
+  background-color: red;
+  padding: 1rem;
+  color: white;
+  border-radius: 0.25rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-shadow: 0 0 0.1rem black;
+}
+
+.card-btnn {
+  background-color: red;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 0.25rem;
+  border: none;
+  text-shadow: 0 0 0.1rem black;
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=styles.css.map */

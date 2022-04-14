@@ -1,0 +1,17 @@
+@import '../base/variables';
+// .img-size{
+//     width: auto;
+//     height: 100rem;
+// }
+.card-btnn 
+{
+        background-color: $color-2;
+        padding: 0.5rem;
+        color: $color-3;
+        border-radius: 0.25rem ;
+        border: none;
+        text-shadow: 0 0 0.1rem $color-1;
+        margin: 1rem;
+        font-size: 1rem; 
+        
+}

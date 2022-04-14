@@ -1,0 +1,50 @@
+@import '../base/variables';
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box; 
+} 
+h1 {	
+	// font-family: $font-h12;
+	font-size: 3rem;
+	padding-top: 0.5rem;
+	padding-left: 0.3rem;
+	text-shadow: 0 0 0.5rem $color-1;
+	color:$color-3;	
+   font-weight: bold;
+  
+}
+h2 {
+    	// font-family: $font-h12;
+	font-size: 2.5rem;
+	padding: 2rem;
+	text-shadow: 0 0 0.15rem $color-1;
+	color:$color-1;	
+   font-weight: bold;
+
+}
+h3 {
+		// font-family: $font-h12;
+		font-size: 1.2rem;
+		padding-top: 0.5rem;
+		padding-left: 0.3rem;
+		text-shadow: 0 0 0.5rem $color-1;
+		color:$color-3;	
+	
+}
+h5 {
+	font-size: 1.6rem;
+	padding-top: 0.5rem;
+	padding-left: 0.3rem;
+	text-shadow: 0 0 0.1rem $color-1;
+	color:$color-2;	
+
+
+}
+p{
+//     font-family: $fallback-font;
+text-align:justify;
+	color: $color-1;
+	font-size: 1.2rem;
+	// text-shadow: 0 0 0.5rem $color-1;
+}
