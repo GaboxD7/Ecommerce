@@ -1,3 +1,59 @@
+import { stockProductos } from "./stock.js";
+console.log(stockProductos);
+
+let carro = [];
+let producto = {};
+
+const contenedor = document.querySelector("#contenedor");
+function cards() {
+    stockProductos.forEach((prod) => {
+        const div = document.createElement("div");
+        div.className = "col-3 mb-3";
+    
+      
+        div.innerHTML = `
+                            <div class="card">
+                                <img src= ${prod.img} class="card-img-top img-size" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title"><strong>${prod.nombre}</strong></h5>
+                                    <p class="card-text">${prod.desc}.</p>
+                                </div>
+                                <ul class="list-group list-group-flush d.flex">
+                                    <li class="list-group-item"><strong>Genero: </strong>${prod.genero}</li>
+                                    <li class="list-group-item"><strong>Talla: </strong>${prod.talla}</li>
+                                 <li class="list-group-item"><strong>Precio: </strong>${prod.precio}</li>
+                                </ul>
+                                <div class="text-center ">
+                                    <button class="card-btnn" id="comprar${prod.id}" type="button">AGREGAR AL CARRITO</button>
+                                </d>
+                            </div>`;
+        contenedor.appendChild(div);
+        const botonAnadir = document.getElementById(`comprar${prod.id}`);
+    botonAnadir.addEventListener('click', () => {
+        console.log(prod)
+         agregarProducto(prod.id);
+       
+    })
+  
+        
+    });
+    
+    
+    
+}
+
+const agregarProducto = (prodid) => {
+     producto = stockProductos.find(item => item.id == prodid);
+    carro.push(producto);
+    return producto;
+}
+console.log(agregarProducto);
+console.log(producto);
+
+
+;
+cards();
+
 let listaProducto = [];
 let filtrarCompra = [];
 let subTotal = [];
@@ -156,4 +212,4 @@ const valElegirTipo = () => {
      return elegirTipo;
 }  
 
-validarCompra();
+// validarCompra();
