@@ -5,7 +5,7 @@ const stockProductos = [
     desc: "Polera con mangas largas, protecion al maximo.",
     genero: "Mujer",
     tipo: "Polera",
-    img: "../img/mujer/poleraM-1.jpg",
+    img: "img/mujer/poleraM-1.jpg",
     precio: 15000,
     talla: "M"
 },
@@ -15,7 +15,7 @@ const stockProductos = [
     desc: "Comodidad, frescura y siempre a la moda.",
     genero: "Mujer",
     tipo: "Polera",
-    img: "../img/mujer/poleraM-2.jpg",
+    img: "img/mujer/poleraM-2.jpg",
     precio: 15000,
     talla: "M"
 },
@@ -25,7 +25,7 @@ const stockProductos = [
     desc: "Sientete Segura en cada movimiento.",
     genero: "Mujer",
     tipo: "Polera",
-    img: "../img/mujer/poleraM-3.jpg",
+    img: "img/mujer/poleraM-3.jpg",
     precio: 15000,
     talla: "M"
 },
@@ -35,7 +35,7 @@ const stockProductos = [
     desc: "Comodidad, frescura y siempre a la moda.",
     genero: "Mujer",
     tipo: "Polera",
-    img: "../img/mujer/poleraM-4.jpg",
+    img: "img/mujer/poleraM-4.jpg",
     precio: 15000,
     talla: "M"
 },
@@ -46,7 +46,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Mujer",
     tipo: "Pantalon",
-    img: "../img/mujer/PantalonM-1.jpg",
+    img: "img/mujer/PantalonM-1.jpg",
     precio: 20000,
     talla: "M"
 },
@@ -56,7 +56,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Mujer",
     tipo: "Pantalon",
-    img: "../img/mujer/PantalonM-2.jpg",
+    img: "img/mujer/PantalonM-2.jpg",
     precio: 20000,
     talla: "M"
 },
@@ -66,7 +66,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Mujer",
     tipo: "Pantalon",
-    img: "../img/mujer/PantalonM-3.jpg",
+    img: "img/mujer/PantalonM-3.jpg",
     precio: 20000,
     talla: "M"
 },
@@ -76,7 +76,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Mujer",
     tipo: "Pantalon",
-    img: "../img/mujer/PantalonM-4.jpg",
+    img: "img/mujer/PantalonM-4.jpg",
     precio: 20000,
     talla: "M"
 },
@@ -86,7 +86,7 @@ const stockProductos = [
     desc: "Frescura, comodidad y tendencia.",
     genero: "Hombre",
     tipo: "Polera",
-    img: "../img/hombre/poleraM-1.jpg",
+    img: "img/hombre/poleraM-1.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -96,7 +96,7 @@ const stockProductos = [
     desc: "Frescura, comodidad y tendencia.",
     genero: "Hombre",
     tipo: "Polera",
-    img: "../img/hombre/poleraM-2.jpg",
+    img: "img/hombre/poleraM-2.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -106,7 +106,7 @@ const stockProductos = [
     desc: "Proteccion, comodidad.",
     genero: "Hombre",
     tipo: "Polera",
-    img: "../img/hombre/poleraM-3.jpg",
+    img: "img/hombre/poleraM-3.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -116,7 +116,7 @@ const stockProductos = [
     desc: "Frescura, comodidad y tendencia.",
     genero: "Hombre",
     tipo: "Polera",
-    img: "../img/hombre/poleraM-4.jpg",
+    img: "img/hombre/poleraM-4.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -126,7 +126,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Hombre",
     tipo: "Pantalon",
-    img: "../img/hombre/pantalonM-1.jpg",
+    img: "img/hombre/pantalonM-1.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -136,7 +136,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Hombre",
     tipo: "Pantalon",
-    img: "../img/hombre/pantalonM-2.jpg",
+    img: "img/hombre/pantalonM-2.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -146,7 +146,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Hombre",
     tipo: "Pantalon",
-    img: "../img/hombre/pantalonM-3.jpg",
+    img: "img/hombre/pantalonM-3.jpg",
     precio: 12000,
     talla: "M"
 },
@@ -156,7 +156,7 @@ const stockProductos = [
     desc: "Comodida y estilo.",
     genero: "Hombre",
     tipo: "Pantalon",
-    img: "../img/hombre/pantalonM-4.jpg",
+    img: "img/hombre/pantalonM-4.jpg",
     precio: 12000,
     talla: "M"
 }
