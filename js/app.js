@@ -1,10 +1,192 @@
-import { stockProductos } from "./stock.js";
-console.log(stockProductos);
-
+// import { stockProductos } from "./stock.js";
+// console.log(stockProductos);
+const stockProductos = [
+    {
+        id: 1,
+        nombre: "Polera Manga Larga",
+        desc: "Polera con mangas largas, protecion al maximo.",
+        genero: "Mujer",
+        tipo: "Polera",
+        img: "../img/mujer/poleraM-1.jpg",
+        precio: 15000,
+        talla: "M"
+    },
+    {
+        id: 2,
+        nombre: "Polera sin Manga",
+        desc: "Comodidad, frescura y siempre a la moda.",
+        genero: "Mujer",
+        tipo: "Polera",
+        img: "../img/mujer/poleraM-2.jpg",
+        precio: 15000,
+        talla: "M"
+    },
+    {
+        id: 3,
+        nombre: "Sosten deportivo",
+        desc: "Sientete Segura en cada movimiento.",
+        genero: "Mujer",
+        tipo: "Polera",
+        img: "../img/mujer/poleraM-3.jpg",
+        precio: 15000,
+        talla: "M"
+    },
+    {
+        id: 4,
+        nombre: "Polera sin Manga",
+        desc: "Comodidad, frescura y siempre a la moda.",
+        genero: "Mujer",
+        tipo: "Polera",
+        img: "../img/mujer/poleraM-4.jpg",
+        precio: 15000,
+        talla: "M"
+    },
+    
+    {
+        id: 5,
+        nombre: "Pantalon Lila",
+        desc: "Comodida y estilo.",
+        genero: "Mujer",
+        tipo: "Pantalon",
+        img: "../img/mujer/PantalonM-1.jpg",
+        precio: 20000,
+        talla: "M"
+    },
+    {
+        id: 6,
+        nombre: "Pantalon Blanco",
+        desc: "Comodida y estilo.",
+        genero: "Mujer",
+        tipo: "Pantalon",
+        img: "../img/mujer/PantalonM-2.jpg",
+        precio: 20000,
+        talla: "M"
+    },
+    {
+        id: 7,
+        nombre: "Pantalon Negro",
+        desc: "Comodida y estilo.",
+        genero: "Mujer",
+        tipo: "Pantalon",
+        img: "../img/mujer/PantalonM-3.jpg",
+        precio: 20000,
+        talla: "M"
+    },
+    {
+        id: 8,
+        nombre: "Pantalon Gris",
+        desc: "Comodida y estilo.",
+        genero: "Mujer",
+        tipo: "Pantalon",
+        img: "../img/mujer/PantalonM-4.jpg",
+        precio: 20000,
+        talla: "M"
+    },
+    {
+        id: 9,
+        nombre: "Polera sin Mangas",
+        desc: "Frescura, comodidad y tendencia.",
+        genero: "Hombre",
+        tipo: "Polera",
+        img: "../img/hombre/poleraM-1.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 10,
+        nombre: "Polera sin Mangas",
+        desc: "Frescura, comodidad y tendencia.",
+        genero: "Hombre",
+        tipo: "Polera",
+        img: "../img/hombre/poleraM-2.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 11,
+        nombre: "Polera Manga Larga",
+        desc: "Proteccion, comodidad.",
+        genero: "Hombre",
+        tipo: "Polera",
+        img: "../img/hombre/poleraM-3.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 12,
+        nombre: "Polera con Mangas",
+        desc: "Frescura, comodidad y tendencia.",
+        genero: "Hombre",
+        tipo: "Polera",
+        img: "../img/hombre/poleraM-4.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 13,
+        nombre: "Pantalon Negro",
+        desc: "Comodida y estilo.",
+        genero: "Hombre",
+        tipo: "Pantalon",
+        img: "../img/hombre/pantalonM-1.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 14,
+        nombre: "Pantalon veis",
+        desc: "Comodida y estilo.",
+        genero: "Hombre",
+        tipo: "Pantalon",
+        img: "../img/hombre/pantalonM-2.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 15,
+        nombre: "Pantalon corto",
+        desc: "Comodida y estilo.",
+        genero: "Hombre",
+        tipo: "Pantalon",
+        img: "../img/hombre/pantalonM-3.jpg",
+        precio: 12000,
+        talla: "M"
+    },
+    {
+        id: 16,
+        nombre: "Pantalon slimfit",
+        desc: "Comodida y estilo.",
+        genero: "Hombre",
+        tipo: "Pantalon",
+        img: "../img/hombre/pantalonM-4.jpg",
+        precio: 12000,
+        talla: "M"
+    }
+    ];
 let carro = [];
 let producto = {};
 
+
+
+class Carrito {
+
+    constructor(id, nombre, genero, tipo, precio, talla, cantidad ) {
+        this.id = id;
+        this.nombre = nombre;
+        this.genero = genero;
+        this.tipo = tipo;
+        this.precio = precio;
+        this.talla = talla;
+        this.cantidad = cantidad;
+    }
+    aplicarIva(prod) {
+        valor = prod.precio * this.cantidad
+        subTotal.push(valor);
+    }
+}
+
 const contenedor = document.querySelector("#contenedor");
+
 function cards() {
     stockProductos.forEach((prod) => {
         const div = document.createElement("div");
@@ -21,195 +203,42 @@ function cards() {
                                 <ul class="list-group list-group-flush d.flex">
                                     <li class="list-group-item"><strong>Genero: </strong>${prod.genero}</li>
                                     <li class="list-group-item"><strong>Talla: </strong>${prod.talla}</li>
-                                 <li class="list-group-item"><strong>Precio: </strong>${prod.precio}</li>
+                                 <li class="list-group-item"><strong>Precio: </strong>$ ${prod.precio}</li>
+                                 <li class="list-group-item"><strong>Cantidad:<strong>
+                                 <select id="cantidad.${prod.id}">
+                                    <option>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                 </select> </li>
                                 </ul>
                                 <div class="text-center ">
                                     <button class="card-btnn" id="comprar${prod.id}" type="button">AGREGAR AL CARRITO</button>
                                 </d>
                             </div>`;
         contenedor.appendChild(div);
+ 
+        let cantidadProd = document.getElementById(`cantidad.${prod.id}`); 
+        cantidadProd.addEventListener("mouseout", () => {
+        console.log(cantidadProd.value)
+        }) 
         const botonAnadir = document.getElementById(`comprar${prod.id}`);
-    botonAnadir.addEventListener('click', () => {
-        console.log(prod)
-         agregarProducto(prod.id);
+        botonAnadir.addEventListener('click', () => {
+        // console.log(prod)
+         agregarProducto(prod.id, cantidadProd.value);
        
     })
-  
-        
-    });
-    
-    
-    
-}
-
-const agregarProducto = (prodid) => {
-     producto = stockProductos.find(item => item.id == prodid);
-    carro.push(producto);
-    return producto;
-}
-console.log(agregarProducto);
-console.log(producto);
-
-
-;
-cards();
-
-let listaProducto = [];
-let filtrarCompra = [];
-let subTotal = [];
-let carrito = [];
-let elegirGenero = "";
-let elegirTipo = "";
-
-let total = 0;
-let codigo = 1234;
-
-
-class Producto {
-    constructor(genero, tipo, precio, stock) {
-        this.genero = genero;
-        this.tipo = tipo;
-        this.precio = precio
-        this.stock = stock;
-    }
-    favorito() {
-
-    }
-    comprar(i) {
-        
-            // Dato Cantidad
-        let cantidad = parseInt(prompt(`¿Cuantos  ${this.tipo} de ${this.genero} usted desea comprar?`));
-            // Validacion Cantidad
-        while ( cantidad == null  || isNaN(cantidad) == true) {
-            cantidad = parseInt(prompt(`¿Cuantos  ${this.tipo} usted desea comprar?`));
-        }
-        if(( this.stock - cantidad) >= 0 ) {
-
-            this.stock -= cantidad
-
-            subTotal.push(cantidad*this.precio)
-
-            const {genero, tipo , precio} = listaProducto[i];
-
-            carrito.push({genero, tipo, precio, ... {"Cantidad": cantidad}});
-      
-            let pregunta = validarNull("Desea Realizar otra compra? responda SI o NO");
-
-            while(pregunta !== 'SI' && pregunta !== 'NO') {
-                    pregunta = validarNull("Desea Realizar otra compra? responda SI o NO");
-            }
-            if(pregunta == 'SI'){
-                validarCompra();
-            } else {
-                total = subTotal.reduce((a, b) => a + b, 0);
-                this.promocion()
-                alert(`Gracias por tu compra, si quieres ver el total ve a la consola y usa "Total"`);
-            }
-         } else {
-             alert(`OHH disculpa tu producto ${this.tipo} esta AGOTADO, solo tenemos ${this.stock} disponible`); 
-            validarCompra();    
-         }
-     
-    } 
-    promocion() {
-        validarPromo();
-    }
-    }
-// C A B A L L E R O
-// P O L E R A
-
-listaProducto.push(new Producto('CABALLERO', 'POLERA', 20000, 3));
-listaProducto.push(new Producto('CABALLERO', 'PANTALON', 20000, 3));
-listaProducto.push(new Producto('CABALLERO', 'ZAPATILLA', 20000, 3));
-
-
-// D A M A 
-
-listaProducto.push(new Producto('DAMA', 'POLERA', 20000, 3));
-listaProducto.push(new Producto('DAMA', 'PANTALON', 20000, 3));
-listaProducto.push(new Producto('DAMA', 'ZAPATILLA', 20000, 3));
-
-
-const validarPromo = () => {
-
-    let pregunta = validarNull("Tiene un codigo PROMOCIONAL? SI/NO");
  
-        while ( pregunta !== 'SI' && pregunta !== 'NO') {
+    });
+}
 
-            pregunta = validarNull("Tiene un codigo ACA PROMOCIONAL? SI/NO");
-          
-        }
-     
-        if (pregunta == 'SI'  ) {
-            let  codigoUser = parseInt(prompt("Ingresa tu codigo promocional"));
-      
-            while (isNaN(codigoUser) == true) {
-                codigoUser = parseInt(prompt("Ingresa ACA tu codigo promocional"));
-        
-            } 
+const agregarProducto = (prodid, cant) => {
 
-            if(codigoUser !== codigo) {
-                alert(`Lo sentimos tu codigo no aplica para el descuento`);
-
-            } else {
-                total = total*0.90
-                console.log(total)
-                  alert( ` ¡Felicitaciones! Promocion aceptada, precio actual: ${total}`)
-            }
-            
-        } else {
-        
-        }
+     producto = stockProductos.find(item => item.id == prodid);
+    carro.push(new Carrito(producto.id, producto.nombre, producto.genero, producto.tipo, producto.precio, producto.talla, cant))
+    alert(`haz agregado al carrito ${cant} ${producto.nombre} de ${producto.genero}. Si quieres ver mas detalle ve a la consola`);
 
 }
 
-// Funcion que nos valida que un dato no sea null ni este vacio
 
-let validarNull = (texto) => {
-
-    let dato = prompt(texto);
-
-    while(dato == null || dato.trim() == '') {
-
-        dato = prompt(texto)
-
-    } 
-    return dato.toUpperCase();
-} 
-
-const validarCompra = () => {
-    elegirGenero = validarNull('Que genero desea Comprar?\n' +
-    'Escriba DAMA o CABALLERO');
-    while (elegirGenero !== 'DAMA' && elegirGenero !== 'CABALLERO') {
-        elegirGenero = validarNull('Que genero desea Comprar?\n' +
-    'Escriba DAMA o CABALLERO');
-    }
-    
-    //  console.log(filtrarGenero)
-
-     if(elegirGenero == "DAMA") {
-        valElegirTipo()
-       
-        filtrarCompra[1].comprar(1);
-        
-     } else {
-         valElegirTipo()
-         filtrarCompra[0].comprar(0);
-
-     }
-
-    
-        }
-
-const valElegirTipo = () => {
-     elegirTipo = validarNull(`Que TIPO Desea Comprar del genero ${elegirGenero}?\n` +
-    'Escriba su eleccion: POLERA, PANTALON O ZAPATILLA')
-    while(elegirTipo !== 'POLERA' && elegirTipo !== 'PANTALON' && elegirTipo !== 'ZAPATILLA'){
-        elegirTipo = validarNull('Que genero desea Comprar?\n' +
-    'Escriba su eleccion: POLERA, PANTALON O ZAPATILLA');
-     }
-     filtrarCompra = listaProducto.filter(element => element.tipo == elegirTipo);
-     return elegirTipo;
-}  
-
-// validarCompra();
+cards();
