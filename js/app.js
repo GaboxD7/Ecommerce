@@ -1,5 +1,5 @@
 // import { stockProductos } from "./stock.js";
-// INICIO DE PRODUCTOS
+// // INICIO DE PRODUCTOS
 const stockProductos = [
     {
         id: 1,
@@ -189,6 +189,7 @@ class Carrito {
 }
 
 const contenedor = document.querySelector("#contenedor");
+const tableBody = document.querySelector("#tr")
 
 function cards() {
     stockProductos.forEach((prod) => {
@@ -228,20 +229,64 @@ function cards() {
         const botonAnadir = document.getElementById(`comprar${prod.id}`);
         botonAnadir.addEventListener('click', () => {
         // console.log(prod)
-         agregarProducto(prod.id, cantidadProd.value);
+        let cantNumero = parseInt(cantidadProd.value)
+         agregarProducto(prod, cantNumero);
        
     })
  
     });
 }
 
-const agregarProducto = (prodid, cant) => {
+const agregarProducto = (prod, cant) => {
 
-     producto = stockProductos.find(item => item.id == prodid);
-    carro.push(new Carrito(producto.id, producto.nombre, producto.genero, producto.tipo, producto.precio, producto.talla, cant))
-    alert(`haz agregado al carrito ${cant} ${producto.nombre} de ${producto.genero}. Si quieres ver mas detalle ve a la consola`);
+        if(carro.some(item => item.id == prod.id)) {
+            let miProducto = carro.find(elem => elem.id == prod.id);
+            miProducto.cantidad += cant ;
+        } else {
+            let nuevoProducto = (new Carrito(prod.id, prod.nombre, prod.genero, prod.tipo, prod.precio, prod.talla, cant)) ;
+            carro.push(nuevoProducto)
+        }
 
+        console.log(carro)
+
+    //  producto = stockProductos.find(item => item.id == prodid);
+    // carro.push(new Carrito(producto.id, producto.nombre, producto.genero, producto.tipo, producto.precio, producto.talla, cant))
+   
+    localStorage.setItem("cart", JSON.stringify(carro));
+    // alert(`haz agregado al carrito ${cant} ${producto.nombre} de ${producto.genero}. Si quieres ver mas detalle ve a la consola`);
+  // incremento cantidades en el badge
+  let bageContar = document.querySelector("#badgeCount")
+  bageContar.className = "balge"
+  bageContar.innerHTML = carro.length;
+   mostrarCompra();
 }
+const mostrarCompra = () => {
 
+    // Me traigo la data del local storage y la parseo
+      carro = JSON.parse(localStorage.getItem("cart"));
+  console.log(carro)
+   // Muestro en el html del carro
+    tableBody.innerHTML = "";
+  
+    carro.forEach((prod) => {
+      const tr = document.createElement("tr"); // 
+    //   table.className =;
+      tr.innerHTML = ` 
+    <tr>
+      <th scope="row">${prod.cantidad}</th>
+      <td>${prod.nombre}</td>
+      <td>${prod.precio}</td>
+      <td>${prod.precio*prod.cantidad}</td>
+    </tr>
+ 
+
+
+
+
+              
+          `;
+      tableBody.appendChild(tr);
+    });
+  };
 
 cards();
