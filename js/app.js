@@ -1,175 +1,11 @@
-// import { stockProductos } from "./stock.js";
-// // INICIO DE PRODUCTOS
-const stockProductos = [
-    {
-        id: 1,
-        nombre: "Polera Manga Larga",
-        desc: "Polera con mangas largas, protecion al maximo.",
-        genero: "Mujer",
-        tipo: "Polera",
-        img: "img/mujer/poleraM-1.jpg",
-        precio: 15000,
-        talla: "M"
-    },
-    {
-        id: 2,
-        nombre: "Polera sin Manga",
-        desc: "Comodidad, frescura y siempre a la moda.",
-        genero: "Mujer",
-        tipo: "Polera",
-        img: "img/mujer/poleraM-2.jpg",
-        precio: 15000,
-        talla: "M"
-    },
-    {
-        id: 3,
-        nombre: "Sosten deportivo",
-        desc: "Sientete Segura en cada movimiento.",
-        genero: "Mujer",
-        tipo: "Polera",
-        img: "img/mujer/poleraM-3.jpg",
-        precio: 15000,
-        talla: "M"
-    },
-    {
-        id: 4,
-        nombre: "Polerra sin Manga",
-        desc: "Comodidad, frescura y siempre a la moda.",
-        genero: "Mujer",
-        tipo: "Polera",
-        img: "img/mujer/poleraM-4.jpg",
-        precio: 15000,
-        talla: "M"
-    },
-    
-    {
-        id: 5,
-        nombre: "Pantalon Lila",
-        desc: "Comodida y estilo.",
-        genero: "Mujer",
-        tipo: "Pantalon",
-        img: "img/mujer/PantalonM-1.jpg",
-        precio: 20000,
-        talla: "M"
-    },
-    {
-        id: 6,
-        nombre: "Pantalon Blanco",
-        desc: "Comodida y estilo.",
-        genero: "Mujer",
-        tipo: "Pantalon",
-        img: "img/mujer/PantalonM-2.jpg",
-        precio: 20000,
-        talla: "M"
-    },
-    {
-        id: 7,
-        nombre: "Pantalon Negro",
-        desc: "Comodida y estilo.",
-        genero: "Mujer",
-        tipo: "Pantalon",
-        img: "img/mujer/PantalonM-3.jpg",
-        precio: 20000,
-        talla: "M"
-    },
-    {
-        id: 8,
-        nombre: "Pantalon Gris",
-        desc: "Comodida y estilo.",
-        genero: "Mujer",
-        tipo: "Pantalon",
-        img: "img/mujer/PantalonM-4.jpg",
-        precio: 20000,
-        talla: "M"
-    },
-    {
-        id: 9,
-        nombre: "Polera sin Mangas",
-        desc: "Frescura, comodidad y tendencia.",
-        genero: "Hombre",
-        tipo: "Polera",
-        img: "img/hombre/poleraM-1.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 10,
-        nombre: "Polera sin Mangas",
-        desc: "Frescura, comodidad y tendencia.",
-        genero: "Hombre",
-        tipo: "Polera",
-        img: "img/hombre/poleraM-2.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 11,
-        nombre: "Polera Manga Larga",
-        desc: "Proteccion, comodidad.",
-        genero: "Hombre",
-        tipo: "Polera",
-        img: "img/hombre/poleraM-3.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 12,
-        nombre: "Polera con Mangas",
-        desc: "Frescura, comodidad y tendencia.",
-        genero: "Hombre",
-        tipo: "Polera",
-        img: "img/hombre/poleraM-4.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 13,
-        nombre: "Pantalon Negro",
-        desc: "Comodida y estilo.",
-        genero: "Hombre",
-        tipo: "Pantalon",
-        img: "img/hombre/pantalonM-1.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 14,
-        nombre: "Pantalon veis",
-        desc: "Comodida y estilo.",
-        genero: "Hombre",
-        tipo: "Pantalon",
-        img: "img/hombre/pantalonM-2.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 15,
-        nombre: "Pantalon corto",
-        desc: "Comodida y estilo.",
-        genero: "Hombre",
-        tipo: "Pantalon",
-        img: "img/hombre/pantalonM-3.jpg",
-        precio: 12000,
-        talla: "M"
-    },
-    {
-        id: 16,
-        nombre: "Pantalon slimfit",
-        desc: "Comodida y estilo.",
-        genero: "Hombre",
-        tipo: "Pantalon",
-        img: "img/hombre/pantalonM-4.jpg",
-        precio: 12000,
-        talla: "M"
-    }
-    ];
+import { stockProductos } from "./stock.js";
 
 // FIN DE PRODUCTOS
 
 let carro = [];
 let producto = {};
 
-
+console.log(stockProductos)
 
 class Carrito {
 
@@ -198,8 +34,25 @@ function cards() {
     
       
         div.innerHTML = `
-                            <div class="card">
-                                <img src= ${prod.img} class="card-img-top img-size" alt="...">
+                             <div class="card " >
+                             
+                                <a href=#! id="enlaceModal${prod.id}"><img src= ${prod.img} class="card-img-top img-size  "   alt="..."></a>
+
+                                <div id="miModal${prod.id}" class="modal">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span id="close${prod.id}" class="close">&times;</span>
+                                      
+                                        <h5 class="card-title"><strong>${prod.nombre}</strong></h5>
+                                        
+                                        <img src="${prod.img}">
+                                        
+                                    </div>
+
+                                    </div>
+
+
                                 <div class="card-body">
                                     <h5 class="card-title"><strong>${prod.nombre}</strong></h5>
                                     <p class="card-text">${prod.desc}.</p>
@@ -218,7 +71,7 @@ function cards() {
                                 </ul>
                                 <div class="text-center ">
                                     <button class="card-btnn" id="comprar${prod.id}" type="button">AGREGAR AL CARRITO</button>
-                                </d>
+                                </div>
                             </div>`;
         contenedor.appendChild(div);
  
@@ -233,9 +86,46 @@ function cards() {
          agregarProducto(prod, cantNumero);
        
     })
+    
+ // Obtenemos el modal
+let modal = document.querySelector(`#miModal${prod.id}`);
+// Obtenemos el enlace para abrir modal
+let enlaceModal = document.querySelector(`#enlaceModal${prod.id}`);
+// Obtenemos el Contenido del modal
+let span = document.querySelector(`#close${prod.id}`);
+// console.log(modal);
+// console.log(enlaceModal);
+// console.log(span);
+// Para abrir el modal
+enlaceModal.onclick = function() {
+    modal.style.display = "block";
+  }
+  
+// Cuando el usuario haga click en (x) span
+
+span.onclick = function()  {
+    modal.style.display = "none";
+}  
+// Cuando el usuario haga click en cualquier lugar
+window.onclick = function(e) {
+     if(e.target == modal) {
+        modal.style.display = "none";
  
+     }
+}
+// cuando el usuario Pulse la tecla escape
+
+document.addEventListener('keydown', (e) => {
+    if (e.keyCode == 27) {
+        modal.style.display = "none";
+    }
+})
     });
 }
+
+
+// 
+
 
 const agregarProducto = (prod, cant) => {
 
@@ -255,9 +145,9 @@ const agregarProducto = (prod, cant) => {
     localStorage.setItem("cart", JSON.stringify(carro));
     // alert(`haz agregado al carrito ${cant} ${producto.nombre} de ${producto.genero}. Si quieres ver mas detalle ve a la consola`);
   // incremento cantidades en el badge
-  let bageContar = document.querySelector("#badgeCount")
-  bageContar.className = "balge"
-  bageContar.innerHTML = carro.length;
+     let bageContar = document.querySelector("#badgeCount")
+     bageContar.className = "balge"
+     bageContar.innerHTML = carro.length;
    mostrarCompra();
 }
 const mostrarCompra = () => {
