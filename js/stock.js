@@ -157,7 +157,7 @@ const stockProductos = [
     genero: "Hombre",
     tipo: "Pantalon",
     img: "img/hombre/pantalonM-4.jpg",
-    precio: 12000,
+    precio: 10000,
     talla: "M"
 }
 ];

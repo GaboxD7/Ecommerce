@@ -108,10 +108,11 @@ span.onclick = function()  {
 }  
 // Cuando el usuario haga click en cualquier lugar
 window.onclick = function(e) {
-     if(e.target == modal) {
+    //  if(e.target == modal) {
         modal.style.display = "none";
- 
-     }
+        console.log(e.target);
+        console.log(modal)
+    //  }
 }
 // cuando el usuario Pulse la tecla escape
 
