@@ -6,8 +6,15 @@ header:nth-child(1) {
 
 .img-nav {
   width: 3rem;
-  height: 3rem;
-  padding: 0.25rem;
+  height: 2.5rem;
+  padding: 0rem;
+}
+
+.img-trash {
+  width: 1rem;
+  height: 1.25rem;
+  padding: 0rem;
+  color: black;
 }
 
 .nav-link {
@@ -67,6 +74,10 @@ h5 {
   color: red;
 }
 
+#total {
+  color: black;
+}
+
 p {
   text-align: justify;
   color: black;
@@ -74,43 +85,9 @@ p {
 }
 
 /* El Modal (background) */
-.modal {
-  display: none;
-  /* Hidden by default */
-  position: fixed;
-  /* Stay in place */
-  z-index: 1;
-  /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
-  /* Full width */
-  height: 100vh;
-  /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.7);
-  /* Black w/ opacity */
-}
-
-/* Modal Contennido /Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 0% auto;
-  /* 15% from the top and centered */
-  padding: 20px;
-  border: 10px solid #888;
-  width: 50%;
-  /* Could be more or less, depending on screen size */
-}
-.modal-content img {
-  width: 100%;
-  height: 70vh;
-}
-.modal-content img:hover {
-  transform: scale(1.04);
+.modal-body {
+  height: 50vh;
+  width: auto;
 }
 
 /* The Close Button */
@@ -126,6 +103,25 @@ p {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#lista-carrito {
+  display: block;
+  color: black;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+
+.carritos-new {
+  display: block;
+  color: black;
+  position: absolute;
+  z-index: 1;
+}
+
+td {
+  font-weight: lighter;
 }
 
 .jumbo {
@@ -161,6 +157,98 @@ section form button {
   text-shadow: 0 0 0.1rem black;
   margin: 1rem;
   font-size: 1rem;
+}
+
+footer {
+  background-repeat: no-repeat;
+  background-color: black;
+  background-size: cover;
+}
+
+.form-inpus {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1rem 0rem;
+  width: 100%;
+}
+
+.form-terminos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  color: red;
+  padding: 2rem 0 0 0;
+}
+.form-terminos a {
+  color: white;
+  font-style: none;
+}
+.form-terminos p {
+  padding-top: 1rem;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-servicio {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: space-around;
+  color: white;
+  padding-bottom: 2rem;
+}
+.form-servicio a {
+  color: white;
+  text-decoration: none;
+  font-style: none;
+}
+.form-servicio div {
+  padding: 0 3rem;
+  color: red;
+}
+.form-servicio div p {
+  color: white;
+}
+
+.form-inpus input[type=email] {
+  margin: 0rem 1.5rem;
+  color: red;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  width: 40%;
+  max-width: calc(100% - 3rem);
+  outline: none;
+  border: 0;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.form-inpus input[type=email]:focus {
+  transition: 1s;
+  transform: scale(1.05);
+}
+
+.form-inpus input[type=submit] {
+  width: 10%;
+  background-color: red;
+  text-align: center;
+  text-transform: uppercase;
+  border: 0.5rem solid red;
+  color: white;
+}
+
+.form-terminos:nth-child(3) {
+  color: blue;
+}
+
+#checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+#checkbox p {
+  padding-left: 0.5rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
