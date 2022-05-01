@@ -38,11 +38,11 @@ footer {
   .form-servicio {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-content: center;
       color: $color-3;
-      padding-bottom: 2rem;
-      a {
+      
+      a { display: block;
         color: $color-3;
         text-decoration: none;
         font-style: none;
@@ -50,10 +50,8 @@ footer {
     div {
       padding: 0 3rem;
       color: $color-2;
-      p {
-        color: $color-3;
-      
-      }
+      display: block;
+      padding-bottom: 2rem;
     }
   }
 // Input TEXT, EMAIL 
@@ -94,4 +92,9 @@ footer {
  p  {
   padding-left: 0.5rem;
   }
+}
+.img-foot-logo {
+  width: 11.75rem;
+  height: 11.75rem;
+  padding: 0rem;
 }

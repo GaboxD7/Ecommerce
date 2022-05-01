@@ -1,0 +1,36 @@
+@import "../base/variables";
+
+.medio { display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 5rem 0 ;
+    p {
+        padding: 0rem;
+        margin: 0rem;
+    }
+}
+.h-medio {
+    font-size: 3.25rem;
+	padding-bottom: 3rem;
+	text-shadow: 0 0 0rem $color-1;
+	color:$color-1;	
+   font-weight: bold;
+   text-transform:uppercase;
+
+
+}
+.menu-stock {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    button {
+        margin: 0 1.25rem;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        background-color: $color-3;
+        border: solid 0.15rem;
+    }
+}

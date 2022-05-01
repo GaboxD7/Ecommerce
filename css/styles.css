@@ -1,12 +1,29 @@
 header:nth-child(1) {
-  background-color: black;
+  background-color: #111;
   color: white;
   font-weight: bold;
 }
 
-.img-nav {
+.img-envio {
   width: 3rem;
   height: 2.5rem;
+  padding: 0rem;
+}
+
+.img-nav {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0rem;
+}
+
+.img-nav-logo {
+  color: red;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+.img-nav-logo img {
+  width: 4.75rem;
+  height: 4.75rem;
   padding: 0rem;
 }
 
@@ -14,11 +31,19 @@ header:nth-child(1) {
   width: 1rem;
   height: 1.25rem;
   padding: 0rem;
-  color: black;
+  color: #111;
+}
+
+.nav-edit {
+  background-color: white !important;
 }
 
 .nav-link {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: lighter;
+  color: #111;
+  margin: 0 0.125rem;
+  background-color: white;
 }
 
 .balge {
@@ -29,10 +54,12 @@ header:nth-child(1) {
   position: absolute;
   font-weight: bold;
   font-size: 1rem;
+  margin-top: -0.75rem;
+  margin-left: -1rem;
 }
 .balge:hover {
   font-size: 1.25rem;
-  color: black;
+  color: #111;
 }
 
 * {
@@ -45,24 +72,24 @@ h1 {
   font-size: 3rem;
   padding-top: 0.5rem;
   padding-left: 0.3rem;
-  text-shadow: 0 0 0.5rem black;
+  text-shadow: 0 0 0.5rem #111;
   color: white;
   font-weight: bold;
 }
 
 h2 {
-  font-size: 2.5rem;
-  padding: 2rem;
-  text-shadow: 0 0 0.15rem black;
-  color: black;
+  font-size: 2.25rem;
+  text-shadow: 0 0 0rem #111;
+  color: #111;
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 h3 {
   font-size: 1.2rem;
   padding-top: 0.5rem;
   padding-left: 0.3rem;
-  text-shadow: 0 0 0.5rem black;
+  text-shadow: 0 0 0.5rem #111;
   color: white;
 }
 
@@ -70,7 +97,7 @@ h5 {
   font-size: 1.6rem;
   padding-top: 0.5rem;
   padding-left: 0.3rem;
-  text-shadow: 0 0 0.1rem black;
+  text-shadow: 0 0 0.1rem #111;
   color: red;
 }
 
@@ -80,7 +107,7 @@ h5 {
 
 p {
   text-align: justify;
-  color: black;
+  color: #111;
   font-size: 1.2rem;
 }
 
@@ -135,7 +162,21 @@ td {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: #111;
+}
+
+.jumbo-mujer {
+  background-image: url(../img/hombre/pantalonM-1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #111;
 }
 
 section form button {
@@ -145,7 +186,7 @@ section form button {
   border-radius: 0.25rem;
   font-size: 1.3rem;
   font-weight: bold;
-  text-shadow: 0 0 0.1rem black;
+  text-shadow: 0 0 0.1rem #111;
 }
 
 .card-btnn {
@@ -154,14 +195,14 @@ section form button {
   color: white;
   border-radius: 0.25rem;
   border: none;
-  text-shadow: 0 0 0.1rem black;
+  text-shadow: 0 0 0.1rem #111;
   margin: 1rem;
   font-size: 1rem;
 }
 
 footer {
   background-repeat: no-repeat;
-  background-color: black;
+  background-color: #111;
   background-size: cover;
 }
 
@@ -194,12 +235,12 @@ footer {
 .form-servicio {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-content: space-around;
+  justify-content: space-evenly;
+  align-content: center;
   color: white;
-  padding-bottom: 2rem;
 }
 .form-servicio a {
+  display: block;
   color: white;
   text-decoration: none;
   font-style: none;
@@ -207,9 +248,8 @@ footer {
 .form-servicio div {
   padding: 0 3rem;
   color: red;
-}
-.form-servicio div p {
-  color: white;
+  display: block;
+  padding-bottom: 2rem;
 }
 
 .form-inpus input[type=email] {
@@ -249,6 +289,47 @@ footer {
 }
 #checkbox p {
   padding-left: 0.5rem;
+}
+
+.img-foot-logo {
+  width: 11.75rem;
+  height: 11.75rem;
+  padding: 0rem;
+}
+
+.medio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+.medio p {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.h-medio {
+  font-size: 3.25rem;
+  padding-bottom: 3rem;
+  text-shadow: 0 0 0rem #111;
+  color: #111;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu-stock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menu-stock button {
+  margin: 0 1.25rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: solid 0.15rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

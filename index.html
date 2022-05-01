@@ -22,27 +22,27 @@
     <header>
         <div class="container-fluid text-center">
             ¡ ENVIO GRATIS A TODO CHILE ! 
-            <img src="img/chile.png" class="img-nav" alt="">
+            <img src="img/chile.png" class="img-envio" alt="">
          </div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 ">
-            <div class="container-fluid">
-              <a class="navbar-brand"  href="#"><img src="img/sport.png" class="img-nav" alt="">Gabo|Sport</a>
+        <nav class="navbar navbar-expand-lg nav-edit">
+            <div class="container-fluid ">
+              <a class="navbar-brand img-nav-logo ps-5"  href="#"><img src="img/gabo-logo.png" class="img-nav-logo" alt=""></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-5 ps-5 mb-2 mb-lg-0">
+                <ul class="navbar-nav  ps-5 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inico</a>
+                    <a class="nav-link active" aria-current="page"  href="#">Inico</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#mujer" id="mujer">Mujer</a>
+                    <a class="nav-link active Mujer"   href="#!">Mujer</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Hombre</a>
+                    <a class="nav-link active Hombre"  href="#!" class="Hombre">Hombre</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Niño</a>
+                    <a class="nav-link active nino" href="#">Niño</a>
                   </li>
                   <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -103,7 +103,7 @@
                         </a>
                     </li>
                  </ul>
-                <form class="d-flex ms-end me-5 ps-5">
+                <form class="d-flex ms-end  ps-1">
                   <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                   <button class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
@@ -114,31 +114,43 @@
     </header>
     
     <!-- Jumbotrom -->
-      <section class="jumbo container-fluid" >
+      <section class="jumbo container-fluid" id="jumbo">
          <h1 >Somos Tienda Deportiva Online</h1>
           <div><h3>Amantes de la actividad fisica y del movimiento activo</h3>
           </div>
           <form action="#">
-            <button type="submit">Ver Productos</button>
+            <button type="submit" class="vertodo">Ver Productos</button>
           </form>
       </section>
+      <!-- <video class="w-100" src="https://carontestudio.com/img/f4.mp4" autoplay="true" muted="true" loop="true" poster="https://carontestudio.com/img/contacto.jpg">
+          <div class="hola"> -->
       
     <!-- Jumbotrom -->
     <!-- Mujer -->
-    <section class="container-fluid" id="mujer">
+    <section class="containe-fluidr">
       <div class="row"> 
-        <div class="col-12 text-center">
-          <h2>Descubre La Fuerza Dentro De TI</h2>
+        <div class="col-12  medio">
+          <p>Nosotros tenemos lo mejor</p>
+          <h2 class="h-medio">Descubre La Fuerza Dentro De TI</h2>
+          <div class="menu-stock">
+            <button class="Mujer">MUJER</button>
+            <button class="Hombre">HOMBRE</button>
+            <button class="nino">NIÑOS</button>
+            <button class="vertodo">VER TODOS</button>
+          </div>
+
         </div>
       </div>
-
-
+    </section>
+    <section>
       <div class="row mb-3 " id="contenedor">
       </div>
-
-
     </section>
-
+    <section>
+      <div>
+        <h3 class="h-medio text-center" > lo mas vendido</h3>
+      </div>
+    </section>
    
     <div id="tableBody"></div>
     <footer>
@@ -154,38 +166,38 @@
             <input type="checkbox" value="1">
             <p>Estoy de acuerdo con los <a href="#">Terminos y Condiciones</a></p>
            </div>
-           <!-- <div>
-            <a href="#"><img src="img/sport.png" class="img-nav" alt="">Gabo|Sport</a>
-           </div> -->
+            <div >
+            <a href="#"><img src="img/gabo-logo.png" class="img-foot-logo" alt=""></a>
+           </div>
           </div>
         </form> 
       </section>
       <section class="form-servicio">
         <div>
           <h6>Social</h6>
-          <p>Facebook</p>
-          <p>instagram</p>
+          <a href="">Facebook</a>
+          <a href="">instagram</a>
         </div>
         <div>
           <h6>Servicios de Cnsumidor<h6>
-          <div><a href="">Centro de ayuda</a></div>
-          <div><a href="">Tiendas</a></div>
-          <div><a href="">Giftcard</a></div>
-          <div><a href="">Sigue tu compra</a></div>
-          <div><a href="">Guia de tallas</a></div>
-          <div><a href="">contactanos</a></div>
+        <a href="">Centro de ayuda</a>
+          <a href="">Tiendas</a>
+          <a href="">Giftcard</a>
+          <a href="">Sigue tu compra</a>
+          <a href="">Guia de tallas</a>
+          <a href="">contactanos</a>
         </div>
         <div>
           <h6>Legal</h6>
-          <div><a href="">Politicas de privacidad</a></div>
-          <div><a href="">Terminos y condiciones</a></div>
-          <div><a href="">Politicas de Despacho</a></div>
-          <div><a href="">Cambios, Retracto y Garantia</a></div>  
+          <a href="">Politicas de privacidad</a>
+          <a href="">Terminos y condiciones</a>
+          <a href="">Politicas de Despacho</a>
+          <a href="">Cambios, Retracto y Garantia</a>  
         </div>
         <div>
           <h6>Cuenta</h6>
-          <p><a>¿Donde viene mi compra?</a></p>
-          <p><a>Historial de Compras</a></p>
+          <a href="">¿Donde viene mi compra?</a>
+          <a href="">Historial de Compras</a>
         </div>
       </section>
     </footer>
