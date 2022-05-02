@@ -165,21 +165,7 @@ td {
   color: #111;
 }
 
-.jumbo-mujer {
-  background-image: url(../img/hombre/pantalonM-1.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  color: #111;
-}
-
-section form button {
+#btn-prod {
   background-color: red;
   padding: 1rem;
   color: white;

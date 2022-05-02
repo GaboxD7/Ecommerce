@@ -14,6 +14,8 @@ const  bageContar = document.querySelector("#badgeCount");
  const hombre = document.querySelectorAll(".Hombre");
  const nino = document.querySelectorAll(".nino");
  const jumbo = document.querySelector("#jumbo");
+ const btnProd = document.querySelector("#btn-prod");
+ const inicio = document.querySelector("#inicio")
 // let mujer = document.getElementsByClassName("Mujer")
 // const hombre = document.querySelector('#Hombre');
 const verTodo = document.querySelectorAll('.vertodo');
@@ -40,8 +42,11 @@ function cargarEventos() {
 mujer.forEach(item => item.addEventListener("click", cards))
 mujer.forEach(item => item.addEventListener("click", fondo))
 hombre.forEach(item => item.addEventListener("click", cards))
+hombre.forEach(item => item.addEventListener("click", fondo))
 nino.forEach(item => item.addEventListener("click", cards))
+nino.forEach(item => item.addEventListener("click", fondo))
 verTodo.forEach(item => item.addEventListener("click", cards))
+
 // addEventListener('click', cards)
 // hombre.addEventListener('click', cards)
 // verTodo.addEventListener('click', cards)
@@ -104,13 +109,25 @@ mostrarCard(stock)
 
 
 }
-function fondo () {
-    if (mujer[0].classList.contains("Mujer")) {
-        console.log("hola")
-        jumbo.classList.replace("jumbo", "jumbo-mujer")
-        console.log( mujer[0].classList)
-    }
+function fondo (e) {
+    console.log();
+    if (e.target.classList.contains("Mujer")) {
+        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-m2.jpg)";
+          btnProd.style.display  = "none";
 
+
+        console.log( mujer[0].classList)
+    }  else if (e.target.classList.contains("Hombre")) {
+        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-h1.jpg)";
+        jumbo.style.height = "70vh";
+        btnProd.style.display  = "none";
+    
+    } else {
+        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-n1.avif)";
+        jumbo.style.height = "70vh";
+        btnProd.style.display  = "none";
+        // jumbo.classList.replace("jumbo", "jumbo-nino")
+    }
 }
 
 

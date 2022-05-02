@@ -25,38 +25,13 @@
 
         
       
-        }
-
-
-        .jumbo-mujer {
-            background-image:url(../img/jumbo/pesa-rusa.jpg);
-            background-position:center;
-            background-size: cover;
-            height: 100vh;
-            width: auto;
-        
-        
-        
+        }        
             
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items:center;
-                
-                color: $color-1;
-                    
-             
-              
-                 
-             
-        
-                
-              
-                }       
-section {
-    form {
-        button {
+            
+            
+            
+ #btn-prod{
+            //  display: block;
             background-color: $color-2;
             padding: 1rem;
             color: $color-3;
@@ -67,8 +42,5 @@ section {
             text-shadow: 0 0 0.1rem $color-1;
            
         }
-    }
-}
-
 
 
