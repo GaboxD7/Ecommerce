@@ -107,7 +107,7 @@ mostrarCard(stock)
 function fondo (e) {
     console.log();
     if (e.target.classList.contains("Mujer")) {
-        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-m2.jpg)";
+        jumbo.style.backgroundImage = "url(img/jumbo/jumbo-m2.jpg)";
           btnProd.style.display  = "none";
           h1.textContent = "PARA LA MUJER QUE JAMAS SE RINDE"
           h1.style.fontSize= "3rem"
@@ -117,7 +117,7 @@ function fondo (e) {
 
  
     }  else if (e.target.classList.contains("Hombre")) {
-        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-h1.jpg)";
+        jumbo.style.backgroundImage = "url(img/jumbo/jumbo-h1.jpg)";
         jumbo.style.height = "70vh";
         btnProd.style.display  = "none";
         h1.textContent = "TENEMOS TODO PARA QUE NO TE DETENGAS"
@@ -125,7 +125,7 @@ function fondo (e) {
         h1.style.alignSelf= "flex-start"
     
     } else {
-        jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-n1.avif)";
+        jumbo.style.backgroundImage = "url(img/jumbo/jumbo-n1.avif)";
         jumbo.style.height = "70vh";
         btnProd.style.display  = "none";
         h1.textContent = "NUESTROS NIÑOS MERECEN LO MEJOR"
