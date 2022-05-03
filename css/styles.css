@@ -68,15 +68,6 @@ header:nth-child(1) {
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3rem;
-  padding-top: 0.5rem;
-  padding-left: 0.3rem;
-  text-shadow: 0 0 0.5rem #111;
-  color: white;
-  font-weight: bold;
-}
-
 h2 {
   font-size: 2.25rem;
   text-shadow: 0 0 0rem #111;
@@ -175,15 +166,29 @@ td {
   text-shadow: 0 0 0.1rem #111;
 }
 
-.card-btnn {
-  background-color: red;
-  padding: 0.5rem;
+#h1 {
+  font-size: 3rem;
+  padding-top: 0.5rem;
+  padding-left: 0.3rem;
+  text-shadow: 0 0 0.5rem #111;
   color: white;
-  border-radius: 0.25rem;
+  font-weight: bold;
+  display: flex;
+  align-self: center;
+}
+
+.card-btnn {
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  background-color: red;
+  padding: 1rem;
+  color: white;
   border: none;
   text-shadow: 0 0 0.1rem #111;
   margin: 1rem;
   font-size: 1rem;
+  max-width: 12rem;
 }
 
 footer {
@@ -316,6 +321,29 @@ footer {
   border-radius: 0.25rem;
   background-color: white;
   border: solid 0.15rem;
+}
+
+.mensaje {
+  background-color: black;
+  color: white;
+}
+
+.vendido {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ul-vendido {
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+}
+.ul-vendido li {
+  text-decoration: none;
+  background-color: aqua;
+  list-style: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -6,6 +6,7 @@ let carro = [];
 // let producto = {};
 
 const contenedor = document.querySelector("#contenedor");
+const masVendido = document.querySelector("#mas-vendido");
 let carrito = document.querySelector('#carrito');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
 const vaciarCarrito = document.querySelector('#vaciar-carrito');
@@ -16,6 +17,9 @@ const  bageContar = document.querySelector("#badgeCount");
  const jumbo = document.querySelector("#jumbo");
  const btnProd = document.querySelector("#btn-prod");
  const inicio = document.querySelector("#inicio")
+ const h1 = document.querySelector("#h1");
+ const mensaje = document.querySelector("#mensaje");
+ 
 // let mujer = document.getElementsByClassName("Mujer")
 // const hombre = document.querySelector('#Hombre');
 const verTodo = document.querySelectorAll('.vertodo');
@@ -47,12 +51,11 @@ nino.forEach(item => item.addEventListener("click", cards))
 nino.forEach(item => item.addEventListener("click", fondo))
 verTodo.forEach(item => item.addEventListener("click", cards))
 
-// addEventListener('click', cards)
-// hombre.addEventListener('click', cards)
-// verTodo.addEventListener('click', cards)
-// nino.addEventListener('click', cards)
+
+
     // Add un producto "Agregar Carrito"
     contenedor.addEventListener('click', agregarProducto);
+     masVendido.addEventListener('click', agregarProducto);
 
     // Eliminar
     carrito.addEventListener('click', eliminarProducto);
@@ -78,13 +81,8 @@ verTodo.forEach(item => item.addEventListener("click", cards))
 
 function cards(e) {
   
-   
-  
-    console.log(e.target.className)
-    console.log(verTodo[0].className)
     if (e.target.className == verTodo[0].className  ) {
-        // console.log(e.target);
-        // console.log(verTodo)
+
         contenedor.innerHTML = '';
         // limpiarContenedorHTML();
     
@@ -93,10 +91,7 @@ function cards(e) {
  
     } else  {
         const exis = stock.some(prod => e.target.className !== prod.genero)
-        // console.log(e.target.className)
-        // console.log(stock)
-        // console.log(exis)
-        // console.log(prod)
+
         if (exis) {
             // limpiarContenedorHTML();
             contenedor.innerHTML = '';
@@ -114,19 +109,29 @@ function fondo (e) {
     if (e.target.classList.contains("Mujer")) {
         jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-m2.jpg)";
           btnProd.style.display  = "none";
+          h1.textContent = "PARA LA MUJER QUE JAMAS SE RINDE"
+          h1.style.fontSize= "3rem"
+          h1.style.alignSelf= "flex-start"
 
 
-        console.log( mujer[0].classList)
+
+ 
     }  else if (e.target.classList.contains("Hombre")) {
         jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-h1.jpg)";
         jumbo.style.height = "70vh";
         btnProd.style.display  = "none";
+        h1.textContent = "TENEMOS TODO PARA QUE NO TE DETENGAS"
+        h1.style.fontSize= "3rem"
+        h1.style.alignSelf= "flex-start"
     
     } else {
         jumbo.style.backgroundImage = "url(../img/jumbo/jumbo-n1.avif)";
         jumbo.style.height = "70vh";
         btnProd.style.display  = "none";
-        // jumbo.classList.replace("jumbo", "jumbo-nino")
+        h1.textContent = "NUESTROS NIÑOS MERECEN LO MEJOR"
+        h1.style.fontSize= "3rem"
+        h1.style.alignSelf= "flex-start"
+ 
     }
 }
 
@@ -151,22 +156,57 @@ function mostrarCard (stock) {
                                     <li class="list-group-item">Genero:  ${prod.genero}</li>
                                     <li class="list-group-item">Talla: ${prod.talla}</li>
                                     <li class="list-group-item precio">Precio: $<span>${prod.precio} </span></li>              
-                                </ul>
-                                <span>Cantidad:</span>
-                                <select id="cantidad${prod.id}" name"unidades">
-                                    <option value=1>1</option>
-                                    <option value=2>2</option>
-                                    <option value=3>3</option>
-                                    <option value=4>4</option>
-                                 </select>
-                             
+                                    <li class="list-group-item precio"> <span>Cantidad:</span>
+                                    <select id="cantidad${prod.id}" name"unidades">
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                     </select></li>              
+
+                                    </ul>
                                 <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
                             </div>`;
         contenedor.appendChild(div);
     });
 }
 //  Agregar Producto
+mostraSection()
+function mostraSection ()  {
+    console.log(stock)
+    const div2 = document.createElement("div")
+    let sectionVendido = stock.slice(8, 10)
+    sectionVendido.forEach((prod) => {
+       div2.className = "vendido"
+        div2.innerHTML += `
+        <div>
+        <h5 class="card-title text-center pb-3 ">${prod.nombre}</h5>
+        <img src=${prod.img} alt="">
+     
+        <button class="card-btnn add-carro text-center" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
+       
+        <ul clas="ul-vendido" id="h">
+        <li>Genero:  ${prod.genero}</li>
+        <li>Talla: ${prod.talla}</li>
+        <li precio">Precio: $<span>${prod.precio} </span></li>              
+        <li> <span>Cantidad:</span>
+        <select id="cantidad${prod.id}" name"unidades">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+         </select></li>              
+        </ul>
+        </div>
+        
+        
+        `
 
+    })
+
+    masVendido.appendChild(div2);
+console.log(sectionVendido)
+}
 function agregarProducto(e) {
 
     e.preventDefault();
@@ -244,11 +284,12 @@ function leerDatosProducto(producto) {
         
                        carro.push(productoCarro);    
             }
-
+        alert(`¡Haz agregado! ${productoCarro.nombre}`) 
  mostrarCarroHtml()
 
 }
 
+  
 
 // Mostrar Carro html
 
