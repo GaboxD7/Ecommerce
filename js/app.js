@@ -170,7 +170,10 @@ function mostrarCard (stock) {
         contenedor.appendChild(div);
     });
 }
-//  Agregar Producto
+
+
+// Section lo mas vendido
+
 mostraSection()
 function mostraSection ()  {
     console.log(stock)
@@ -207,6 +210,9 @@ function mostraSection ()  {
     masVendido.appendChild(div2);
 console.log(sectionVendido)
 }
+
+//  Agregar Producto
+
 function agregarProducto(e) {
 
     e.preventDefault();
