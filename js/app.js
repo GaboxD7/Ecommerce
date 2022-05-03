@@ -108,6 +108,7 @@ function fondo (e) {
     console.log();
     if (e.target.classList.contains("Mujer")) {
         jumbo.style.backgroundImage = "url(img/jumbo/jumbo-m2.jpg)";
+        jumbo.style.height = "70vh";
           btnProd.style.display  = "none";
           h1.textContent = "PARA LA MUJER QUE JAMAS SE RINDE"
           h1.style.fontSize= "3rem"
