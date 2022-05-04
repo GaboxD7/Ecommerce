@@ -177,6 +177,64 @@ td {
   align-self: center;
 }
 
+.medio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0;
+}
+.medio p {
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.h-medio {
+  font-size: 3.25rem;
+  padding-bottom: 3rem;
+  text-shadow: 0 0 0rem #111;
+  color: #111;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu-stock {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.menu-stock button {
+  margin: 0 1.25rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: solid 0.15rem;
+}
+
+.mensaje {
+  background-color: black;
+  color: white;
+}
+
+.vendido {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ul-vendido {
+  display: flex;
+  flex-direction: row;
+  background-color: aqua;
+}
+.ul-vendido li {
+  text-decoration: none;
+  background-color: aqua;
+  list-style: none;
+}
+
 .card-btnn {
   display: flex;
   justify-self: center;
@@ -288,62 +346,18 @@ footer {
   padding: 0rem;
 }
 
-.medio {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 5rem 0;
-}
-.medio p {
-  padding: 0rem;
-  margin: 0rem;
-}
-
-.h-medio {
-  font-size: 3.25rem;
-  padding-bottom: 3rem;
-  text-shadow: 0 0 0rem #111;
-  color: #111;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.menu-stock {
+.nav-carro {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-.menu-stock button {
-  margin: 0 1.25rem;
-  padding: 1rem;
-  border-radius: 0.25rem;
   background-color: white;
-  border: solid 0.15rem;
+  width: 100%;
+  min-height: 7rem;
 }
-
-.mensaje {
-  background-color: black;
-  color: white;
-}
-
-.vendido {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.ul-vendido {
-  display: flex;
-  flex-direction: row;
-  background-color: aqua;
-}
-.ul-vendido li {
+.nav-carro a {
   text-decoration: none;
-  background-color: aqua;
-  list-style: none;
+  color: #111;
 }
 
 /*# sourceMappingURL=styles.css.map */
