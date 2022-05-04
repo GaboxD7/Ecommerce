@@ -1,5 +1,6 @@
 import { stockProductos } from "./stock.js";
 
+
 let stock = stockProductos;
 let carro = [];
 
@@ -177,7 +178,7 @@ function mostrarCard (stock) {
 
 mostraSection()
 function mostraSection ()  {
-    console.log(stock)
+
     const div2 = document.createElement("div")
     let sectionVendido = stock.slice(8, 10)
     sectionVendido.forEach((prod) => {
@@ -209,7 +210,7 @@ function mostraSection ()  {
     })
 
     masVendido.appendChild(div2);
-console.log(sectionVendido)
+
 }
 
 //  Agregar Producto
@@ -292,7 +293,8 @@ function leerDatosProducto(producto) {
                        carro.push(productoCarro);    
             }
         alert(`¡Haz agregado! ${productoCarro.nombre}`) 
- mostrarCarroHtml()
+        addCarroStorage()
+        mostrarCarroHtml()
 
 }
 
@@ -300,39 +302,39 @@ function leerDatosProducto(producto) {
 
 // Mostrar Carro html
 
- const mostrarCarroHtml = () => {
+//  const mostrarCarroHtml = () => {
 
-   limpiarHTML()
+//    limpiarHTML()
   
-  // Muestro en el html del carro
+//   // Muestro en el html del carro
 
-     contenedorCarrito.innerHTML = "";
+//      contenedorCarrito.innerHTML = "";
   
-    carro.forEach((prod) => {
-    const {imagen, nombre, precio, cantidad, subtotal, id} = prod;
-          const tr = document.createElement("tr"); 
+//     carro.forEach((prod) => {
+//     const {imagen, nombre, precio, cantidad, subtotal, id} = prod;
+//           const tr = document.createElement("tr"); 
 
-       tr.innerHTML = ` 
-     <tr class="p-4">
-        <td><img src="${imagen}" height=65px class="w-100"</td>
-        <th scope="row" class="text-center">${cantidad}</th>
-        <td>${nombre}</td>
-        <td>${precio}</td>
-        <td>${subtotal}</td>
-        <td>
-            <a href="#" class="borrar-producto text-center" data-id="${id}"> <img src="img/basura.png" class="img-trash  borrar-producto" > </a>
-        </td>
-     </tr>`;
-  // add el html del carro en el tbody
-       contenedorCarrito.appendChild(tr);
-     });
+//        tr.innerHTML = ` 
+//      <tr class="p-4">
+//         <td><img src="${imagen}" height=65px class="w-100"</td>
+//         <th scope="row" class="text-center">${cantidad}</th>
+//         <td>${nombre}</td>
+//         <td>${precio}</td>
+//         <td>${subtotal}</td>
+//         <td>
+//             <a href="#" class="borrar-producto text-center" data-id="${id}"> <img src="img/basura.png" class="img-trash  borrar-producto" > </a>
+//         </td>
+//      </tr>`;
+//   // add el html del carro en el tbody
+//        contenedorCarrito.appendChild(tr);
+//      });
 
-    // Agregar el carrito de compras al storage
+//     // Agregar el carrito de compras al storage
 
  
-     addCarroStorage()
-     mostrarNumeroCarrito()
-   }
+    
+//     //  mostrarNumeroCarrito()
+//    }
 
    mostrarNumeroCarrito()
    //
@@ -383,3 +385,7 @@ window.addEventListener('click', (e) => {
     e.preventDefault()
 })
 // cards();
+
+export  {
+    leerDatosProducto
+}
