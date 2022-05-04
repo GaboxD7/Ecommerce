@@ -14,7 +14,7 @@ const  bageContar = document.querySelector("#badgeCount");
  const mujer = document.querySelectorAll(".Mujer");
  const hombre = document.querySelectorAll(".Hombre");
  const nino = document.querySelectorAll(".nino");
- const jumbo = document.querySelector("#jumbo");
+ const jumbo = document.querySelector(".jumbo");
  const btnProd = document.querySelector("#btn-prod");
  const inicio = document.querySelector("#inicio")
  const h1 = document.querySelector("#h1");
@@ -192,7 +192,7 @@ function mostraSection ()  {
         <ul clas="ul-vendido" id="h">
         <li>Genero:  ${prod.genero}</li>
         <li>Talla: ${prod.talla}</li>
-        <li precio">Precio: $<span>${prod.precio} </span></li>              
+        <li class="precio">Precio: $<span>${prod.precio} </span></li>              
         <li> <span>Cantidad:</span>
         <select id="cantidad${prod.id}" name"unidades">
             <option value=1>1</option>

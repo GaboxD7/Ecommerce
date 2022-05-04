@@ -145,7 +145,7 @@ td {
   font-weight: lighter;
 }
 
-.jumbo {
+#jumbo {
   background-image: url(../img/jumbo/pesa-rusa.jpg);
   background-position: center;
   background-size: cover;
