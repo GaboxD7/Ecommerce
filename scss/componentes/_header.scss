@@ -53,8 +53,9 @@ header:nth-child(1) {
    
 }
 .balge {
-    background-color: $color-2;
-color: $color-3;
+    background-color: $color-1;
+    border: solid $color-4;
+    color: $color-3;
 padding:  0 0.5rem;
 border-radius: 50%;
 position: absolute;
@@ -62,9 +63,10 @@ font-weight: bold;
 font-size: 1rem;
 margin-top: -0.75rem;
 margin-left: -1rem;
-&:hover {
-font-size: 1.25rem;
-color: $color-1;
+transition: transform 1s;
 
+&:hover {
+    transform: scale(1.2);
 }
+
 }

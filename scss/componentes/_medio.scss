@@ -31,7 +31,11 @@
         padding: 1rem;
         border-radius: 0.25rem;
         background-color: $color-3;
-        border: solid 0.15rem;
+        border: solid 0.15rem; 
+        &:hover {
+            background-color: $color-1;
+            color: $color-3;
+        }
     }
 }
 .mensaje {

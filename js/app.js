@@ -8,9 +8,9 @@ let carro = [];
 
 const contenedor = document.querySelector("#contenedor");
 const masVendido = document.querySelector("#mas-vendido");
-let carrito = document.querySelector('#carrito');
+
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const vaciarCarrito = document.querySelector('#vaciar-carrito');
+// const vaciarCarrito = document.querySelector('#vaciar-carrito');
 const  bageContar = document.querySelector("#badgeCount");
  const mujer = document.querySelectorAll(".Mujer");
  const hombre = document.querySelectorAll(".Hombre");
@@ -20,6 +20,7 @@ const  bageContar = document.querySelector("#badgeCount");
  const inicio = document.querySelector("#inicio")
  const h1 = document.querySelector("#h1");
  const mensaje = document.querySelector("#mensaje");
+ const enlace = document.querySelector("#enlace");
  
 // let mujer = document.getElementsByClassName("Mujer")
 // const hombre = document.querySelector('#Hombre');
@@ -52,31 +53,20 @@ nino.forEach(item => item.addEventListener("click", cards))
 nino.forEach(item => item.addEventListener("click", fondo))
 verTodo.forEach(item => item.addEventListener("click", cards))
 
-
-
     // Add un producto "Agregar Carrito"
     contenedor.addEventListener('click', agregarProducto);
      masVendido.addEventListener('click', agregarProducto);
 
     // Eliminar
-    carrito.addEventListener('click', eliminarProducto);
+    // carrito.addEventListener('click', eliminarProducto);
    
     // Muestra los productos de Local Storage
     document.addEventListener('DOMContentLoaded', () => {
          carro = JSON.parse(localStorage.getItem('carrito')) || [];
-    
-            limpiarHTML();
+   
         })
     
-        // Vaciar el carrito
-    vaciarCarrito.addEventListener('click', () => {
-    
-         carro = []; // reseteamos el arreglo
-         localStorage.removeItem('carrito');
-        
-         bageContar.innerHTML = '';
-         limpiarHTML(); // Eliminamos todo el  HTML
-        });
+
 }
 
 
@@ -99,7 +89,7 @@ function cards(e) {
             stock = stockProductos.filter(elem => elem.genero ==  e.target.className || elem.genero == e.target.classList.item(2))
         }
      
-    //  console.log(stock)
+
     } 
 mostrarCard(stock)
 
@@ -204,10 +194,7 @@ function mostraSection ()  {
         </ul>
         </div>
         
-        
-        `
-
-    })
+        ` })
 
     masVendido.appendChild(div2);
 
@@ -229,27 +216,6 @@ function agregarProducto(e) {
     
 }
 
-
-function eliminarProducto (e) {
-
-    e.preventDefault();
-
-    console.log(e.target.classList.contains('borrar-producto'))
-    if(e.target.classList.contains('borrar-producto')) {
-  
-        const productoId = e.target.parentElement.getAttribute('data-id');
-            // Elimina del arreglo de articulosCarrito por el data-id
-            carro = carro.filter(producto => producto.id !== productoId);
-            mostrarCarroHtml()
-            
-    }
-
-    if (carro.length == 0 ){
-        bageContar.innerHTML = '';
-    }
-
-    
-}
 
 function leerDatosProducto(producto) {
 
@@ -292,70 +258,51 @@ function leerDatosProducto(producto) {
         
                        carro.push(productoCarro);    
             }
-        alert(`¡Haz agregado! ${productoCarro.nombre}`) 
+
+   
         addCarroStorage()
-        mostrarCarroHtml()
+        mostrarNumeroCarrito()
+        Toastify({
+            text: `Haz agregado un producto`,
+            duration: 3000,
+            // destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            // close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                padding: "2rem",
+              background: "black",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
 
 }
 
   
 
-// Mostrar Carro html
-
-//  const mostrarCarroHtml = () => {
-
-//    limpiarHTML()
-  
-//   // Muestro en el html del carro
-
-//      contenedorCarrito.innerHTML = "";
-  
-//     carro.forEach((prod) => {
-//     const {imagen, nombre, precio, cantidad, subtotal, id} = prod;
-//           const tr = document.createElement("tr"); 
-
-//        tr.innerHTML = ` 
-//      <tr class="p-4">
-//         <td><img src="${imagen}" height=65px class="w-100"</td>
-//         <th scope="row" class="text-center">${cantidad}</th>
-//         <td>${nombre}</td>
-//         <td>${precio}</td>
-//         <td>${subtotal}</td>
-//         <td>
-//             <a href="#" class="borrar-producto text-center" data-id="${id}"> <img src="img/basura.png" class="img-trash  borrar-producto" > </a>
-//         </td>
-//      </tr>`;
-//   // add el html del carro en el tbody
-//        contenedorCarrito.appendChild(tr);
-//      });
-
-//     // Agregar el carrito de compras al storage
-
- 
-    
-//     //  mostrarNumeroCarrito()
-//    }
 
    mostrarNumeroCarrito()
    //
    function mostrarNumeroCarrito () {
- 
-   if (localStorage.getItem("carrito")) {
-    let karro = JSON.parse(localStorage.getItem('carrito'));
-    bageContar.className = "balge"
-    bageContar.innerHTML = karro.length;
-     
-   } else {
-       
 
-   bageContar.innerHTML = "";
+
+    let karro = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    if ( karro.length == []) {
     
+        bageContar.innerHTML = "";
+    } else {
+     
+        bageContar.className = "balge"
+        bageContar.innerHTML = karro.length;
    }
   
 
 
    }
-   // funcion para agreagr carro al estorage
+
 
 function addCarroStorage () {
 
@@ -363,29 +310,8 @@ function addCarroStorage () {
 
 }
 
-function limpiarHTML() {
-
-    // limpiar nuestro HTML
-
-    while (contenedorCarrito.firstChild) {
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-    }
-    total.innerHTML = `Total : $${totalGeneral()}`;
-}
 
 
-function totalGeneral() {
-
-    let productoTotal = carro.reduce((total, producto) => total + producto.subtotal, 0);
-
-    return productoTotal;
-}
-window.addEventListener('click', (e) => {
-
-    e.preventDefault()
-})
-// cards();
-
-export  {
-    leerDatosProducto
-}
+//  export  {
+//      limpiarHTML
+//  }

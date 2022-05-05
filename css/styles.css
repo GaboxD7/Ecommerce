@@ -47,7 +47,8 @@ header:nth-child(1) {
 }
 
 .balge {
-  background-color: red;
+  background-color: #111;
+  border: solid #dcdcdc;
   color: white;
   padding: 0 0.5rem;
   border-radius: 50%;
@@ -56,10 +57,10 @@ header:nth-child(1) {
   font-size: 1rem;
   margin-top: -0.75rem;
   margin-left: -1rem;
+  transition: transform 1s;
 }
 .balge:hover {
-  font-size: 1.25rem;
-  color: #111;
+  transform: scale(1.2);
 }
 
 * {
@@ -211,6 +212,10 @@ td {
   background-color: white;
   border: solid 0.15rem;
 }
+.menu-stock button:hover {
+  background-color: #111;
+  color: white;
+}
 
 .mensaje {
   background-color: black;
@@ -358,6 +363,11 @@ footer {
 .nav-carro a {
   text-decoration: none;
   color: #111;
+}
+
+.img-carro {
+  height: 5rem;
+  width: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
