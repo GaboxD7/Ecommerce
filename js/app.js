@@ -52,6 +52,7 @@ hombre.forEach(item => item.addEventListener("click", fondo))
 nino.forEach(item => item.addEventListener("click", cards))
 nino.forEach(item => item.addEventListener("click", fondo))
 verTodo.forEach(item => item.addEventListener("click", cards))
+inicio.addEventListener("click", volver)
 
     // Add un producto "Agregar Carrito"
     contenedor.addEventListener('click', agregarProducto);
@@ -68,7 +69,16 @@ verTodo.forEach(item => item.addEventListener("click", cards))
     
 
 }
-
+function volver () {
+    contenedor.innerHTML = '';
+    jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
+    jumbo.style.height = "100vh";
+    stock = stockProductos
+    btnProd.style.display  = "block";
+    h1.textContent = "Somos Tienda Deportiva Online"
+    h1.style.fontSize= "3rem"
+    h1.style.alignSelf= "center"
+}
 
 function cards(e) {
   
@@ -76,9 +86,14 @@ function cards(e) {
 
         contenedor.innerHTML = '';
         // limpiarContenedorHTML();
-    
+        jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
+        jumbo.style.height = "100vh";
         stock = stockProductos
-
+        btnProd.style.display  = "block";
+        h1.textContent = "Somos Tienda Deportiva Online"
+        h1.style.fontSize= "3rem"
+        h1.style.alignSelf= "center"
+ 
  
     } else  {
         const exis = stock.some(prod => e.target.className !== prod.genero)
@@ -105,9 +120,6 @@ function fondo (e) {
           h1.style.fontSize= "3rem"
           h1.style.alignSelf= "flex-start"
 
-
-
- 
     }  else if (e.target.classList.contains("Hombre")) {
         jumbo.style.backgroundImage = "url(img/jumbo/jumbo-h1.jpg)";
         jumbo.style.height = "70vh";

@@ -5,6 +5,9 @@ let contenedorCarrito = document.querySelector('#lista-carrito tbody');
 let carrito = document.querySelector('#carro-in');
 const vaciarCarrito = document.querySelector('#vaciar-carrito');
 let contenedorCar = document.querySelector("#conteCarro");
+let pagar = document.querySelector("#pagar");
+console.log(pagar)
+
 mostrarCarroHtml()
 
 function mostrarCarroHtml()  {
@@ -54,9 +57,29 @@ function mostrarCarroHtml()  {
      limpiarHTML()
          
            });
+           // pagar 
+           pagar.addEventListener('click', pagado);
 
     }
 
+    function pagado() {
+      console.log("hola")
+      Toastify({
+        text: `GRACIAS POR TU COMPRA`,
+        duration: 5000,
+        // destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        // close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "center", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+            padding: "5rem",
+          background: "black",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+    }
 
 
 
