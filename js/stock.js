@@ -7,7 +7,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/mujer/poleraM-1.jpg",
     precio: 15000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 2,
@@ -17,7 +18,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/mujer/poleraM-2.jpg",
     precio: 15000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 3,
@@ -27,7 +29,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/mujer/poleraM-3.jpg",
     precio: 15000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 4,
@@ -37,7 +40,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/mujer/poleraM-4.jpg",
     precio: 15000,
-    talla: "M"
+    talla: "M",
+    deporte:"Running"
 },
 
 {
@@ -48,7 +52,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/mujer/PantalonM-1.jpg",
     precio: 20000,
-    talla: "M"
+    talla: "M",
+    deporte:"Running"
 },
 {
     id: 6,
@@ -58,7 +63,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/mujer/PantalonM-2.jpg",
     precio: 20000,
-    talla: "M"
+    talla: "M",
+    deporte:"Crossfit"
 },
 {
     id: 7,
@@ -68,7 +74,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/mujer/PantalonM-3.jpg",
     precio: 20000,
-    talla: "M"
+    talla: "M",
+    deporte:"Crossfit"
 },
 {
     id: 8,
@@ -78,7 +85,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/mujer/PantalonM-4.jpg",
     precio: 20000,
-    talla: "M"
+    talla: "M",
+    deporte:"Crossfit"
 },
 {
     id: 9,
@@ -88,7 +96,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/hombre/poleraM-1.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Crossfit"
 },
 {
     id: 10,
@@ -98,7 +107,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/hombre/poleraM-2.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Crossfit"
 },
 {
     id: 11,
@@ -108,7 +118,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/hombre/poleraM-3.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Running"
 },
 {
     id: 12,
@@ -118,7 +129,8 @@ let stockProductos = [
     tipo: "Polera",
     img: "img/hombre/poleraM-4.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Running"
 },
 {
     id: 13,
@@ -128,7 +140,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/hombre/pantalonM-1.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Running"
 },
 {
     id: 14,
@@ -138,7 +151,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/hombre/pantalonM-2.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 15,
@@ -148,7 +162,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/hombre/pantalonM-3.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 16,
@@ -158,7 +173,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/hombre/pantalonM-4.jpg",
     precio: 12000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 17,
@@ -168,7 +184,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-1.jpg",
     precio: 10000,
-    talla: "M"
+    talla: "M",
+    deporte:"Training"
 },
 {
     id: 18,
@@ -178,7 +195,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Training"
 },
 {
     id: 19,
@@ -188,7 +206,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-3.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 20,
@@ -198,7 +217,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-4.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 21,
@@ -208,7 +228,8 @@ let stockProductos = [
     tipo: "Sweter",
     img: "img/nino/sweter-o1.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 22,
@@ -218,7 +239,8 @@ let stockProductos = [
     tipo: "Sweter",
     img: "img/nino/sweter-o2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Crossfit"
 },
 
 {
@@ -229,7 +251,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/nino/pantalon-o1.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Crossfit"
 },
 {
     id: 24,
@@ -239,7 +262,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/nino/pantalon-o2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Crossfit"
 },
 {
     id: 25,
@@ -249,7 +273,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-a1.jpg",
     precio: 10000,
-    talla: "M"
+    talla: "M", 
+    deporte:"Crossfit"
 },
 {
     id: 26,
@@ -259,7 +284,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-a2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Crossfit"
 },
 {
     id: 27,
@@ -269,7 +295,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-a3.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 28,
@@ -279,7 +306,8 @@ let stockProductos = [
     tipo: "Short y polera",
     img: "img/nino/conjunto-a4.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 29,
@@ -289,7 +317,8 @@ let stockProductos = [
     tipo: "Sweter",
     img: "img/nino/sweter-a1.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Running"
 },
 {
     id: 30,
@@ -299,7 +328,8 @@ let stockProductos = [
     tipo: "Sweter",
     img: "img/nino/sweter-a2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Training"
 },
 
 {
@@ -310,7 +340,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/nino/pantalon-a1.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Training"
 },
 {
     id: 32,
@@ -320,7 +351,8 @@ let stockProductos = [
     tipo: "Pantalon",
     img: "img/nino/pantalon-o2.jpg",
     precio: 10000,
-    talla: "S"
+    talla: "S",
+    deporte:"Training"
 },
 
 ];

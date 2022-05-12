@@ -3,10 +3,13 @@
 let articulosCarro = JSON.parse( localStorage.getItem('carrito')) || [];
 let contenedorCarrito = document.querySelector('#lista-carrito tbody');
 let carrito = document.querySelector('#carro-in');
+let carritoVacio = document.querySelector('#carro-vacio');
 const vaciarCarrito = document.querySelector('#vaciar-carrito');
 let contenedorCar = document.querySelector("#conteCarro");
 let pagar = document.querySelector("#pagar");
-console.log(pagar)
+let seguirComprando = document.querySelector("#seguir-comprando")
+let seguirComprando2 = document.querySelector("#seguir-comprando2")
+
 
 mostrarCarroHtml()
 
@@ -83,7 +86,12 @@ function mostrarCarroHtml()  {
 
 
 
-
+seguirComprando.addEventListener("click", () => {
+  window.location.href = "http://127.0.0.1:5502/index.html#section-medio";
+})
+seguirComprando2.addEventListener("click", () => {
+  window.location.href = "http://127.0.0.1:5502/index.html#section-medio";
+})
 // function cambiarCantidad(e) {
 //     let ctdd = e.target.value;
 //     console.log(e.target.value)
@@ -134,4 +142,16 @@ function totalGeneral() {
     let productoTotal = articulosCarro.reduce((total, producto) => total + producto.subtotal, 0);
 
     return productoTotal;
+}
+
+if (articulosCarro.length == 0 ) 
+{
+  console.log("vacio  ")
+ carritoVacio.classList.remove("d-none")
+  carrito.classList.add("d-none")
+} else {
+  console.log("lleno")
+  carrito.classList.remove("d-none")
+  carritoVacio.classList.add("d-none")
+  // carritoVacio.classList.add("d-block")
 }

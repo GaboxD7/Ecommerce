@@ -28,7 +28,7 @@
                     <a class="navbar-brand img-nav-logo ps-5"  href="#"><img src="img/gabo-logo.png"  alt=""></a>
      
                     <div class="pe-5">
-                        <a href="index.html"><small>Seguir comprando</small><img src="img/flecha.png" class="img-nav" alt=""></a>
+                        <a href="index.html#section-medio"><small>Seguir comprando</small><img src="img/flecha.png" class="img-nav" alt=""></a>
                     </div>
                   </div>
 
@@ -40,9 +40,16 @@
             <img src="img/chile.png" class="img-nav" alt="">
          </div>
     </header>
-
-    <section class="row"> 
-      <div id="carro-in" class="col-8">
+<section  id="carro-vacio" class="row d-none">
+  <div class="col-12 carrito-vacio">  
+    <h2>SU CARRITO ESTÁ VACIO</h2>
+    <p>Para seguir comprando, navegar por las categorías en el sitio, o busque su producto.</p>
+    <button type="button" class="btn "  id="seguir-comprando">Seguir comprando</button>
+  </div>
+</section>
+    <section class="row col-12 d-none" id="carro-in"> 
+  
+      <div class="col-8" >
         <table id="lista-carito" class="table">
   
           <thead>
@@ -58,7 +65,7 @@
         </table>
        <div class="menu-stock">
         <button type="button" class="btn"  id="vaciar-carrito" >Vaciar carrito</button>
-        <button type="button" class="btn">Seguir comprando</button>
+        <button type="button" class="btn" id="seguir-comprando2">Seguir comprando</button>
 
        </div>
      </div>

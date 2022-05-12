@@ -16,3 +16,26 @@ a {
     height: 5rem;
     width: auto;
 }
+.carrito-vacio {
+    display: flex;
+    flex-direction: column;
+     justify-content:center;
+    align-items:center;
+ 
+    height: 30rem;
+    color: white;
+    & button {
+        margin-top: 4rem;
+    
+   
+        padding: 1rem 4rem;
+        border-radius: 2rem;
+        background-color: $color-1;
+        color: $color-3;
+        border: solid 0.15rem; 
+        &:hover {
+            background-color: $color-3;
+            color: $color-1;
+        }
+    }
+}
