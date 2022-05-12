@@ -7,14 +7,20 @@
         justify-self: center;
         align-self: center;
         background-color: $color-2;
-        padding: 1rem;
+        padding: 0.5rem;
         color: $color-3;
         
         // border-radius: 0.25rem ;
         border: none;
         text-shadow: 0 0 0.1rem $color-1;
-        margin: 1rem;
+        margin: 0.25rem;
         font-size: 1rem; 
         max-width: 12rem ;
-        
+        background-color: $color-1;
+        &:hover {
+                background-color: $color-3;
+                color: $color-1;
+                border: 10px $color-1 !important;
+             
+        }
 }

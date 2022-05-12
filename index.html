@@ -47,12 +47,12 @@
                   </li>
                   <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Catalago
+                      Deporte
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Vestuario</a></li>
-                      <li><a class="dropdown-item" href="#">Calzado</a></li>
-                      <li><a class="dropdown-item" href="#">Deporte</a></li>
+                      <li><a class="dropdown-item" href="#" id="training">Training</a></li>
+                      <li><a class="dropdown-item" href="#"  id="running">Running</a></li>
+                      <li><a class="dropdown-item" href="#" id="crossfit">Crossfit</a></li>
                     </ul>
                   </li>
                 </ul >
@@ -64,53 +64,14 @@
                        <a href="./carro.html" >
                          <img src="img/001-bolsa-de-la-compra.png" class="img-nav"><span id="badgeCount"></span>
                         </a>  
-                      <!-- </button >            -->
-                      <!-- Modal -->
-                        <!-- <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" >
-                            <div  class="modal-dialog modal-dialog-scrollable">
-                              <div class="modal-content" class="overflow-hidden">
-                                <div class="modal-header">
-                                  <a class="navbar-brand img-nav-logo" href="index.html"><img src="img/gabo-logo.png"   alt=""></a>
-                                  <h5 class="modal-title" id="staticBackdropLabel">Carrito</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <div id="carrito">
-                                    <table id="lista-carrito" class="table">
-                        
-                                      <thead>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Cant</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Sub Total</th>
-                                        <th scope="col" >Eliminar</th>
-                                      </thead>
-                                      <tbody></tbody>
-                                      <tfoot>  <div id="total">Total</div></tfoot>
-                                    </table>
-                                 </div>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn"  id="vaciar-carrito" >Vaciar carrito</button>
-                                  <button type="button" class="btn  btn-primary " data-bs-dismiss="modal">Seguir comprando</button>
-                                  <button type="button" class="btn btn-primary" >Ir a pagar</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div> -->
+
                     </li>
                     <li class="nav-item">
                         <a id="enlace" class="nav-link" href="./carro.html"> 
                             <img src="./img/002-contacto.png" class="img-nav" alt="">
                         </a>
                     </li>
-                 </ul>
-                <form class="d-flex ms-end  ps-1">
-                  <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
-                </form>
-               
+                 </ul> 
               </div>
             </div>
           </nav>
@@ -129,35 +90,59 @@
           <div class="hola"> -->
       
     <!-- Jumbotrom -->
-    <!-- Mujer -->
-    <section class="containe-fluidr">
+
+    <section class="containe-fluidr" id="section-medio">
       <div class="row"> 
         <div class="col-12  medio">
-          <p>Nosotros tenemos lo mejor</p>
-          <h2 class="h-medio">Descubre La Fuerza Dentro De TI</h2>
+          <!-- <p>Nosotros tenemos lo mejor</p> -->
+          <h2 class="h-medio" id="titulo">Descubre La Fuerza Dentro De TI</h2>
+          
+
           <div class="menu-stock">
             <button class="Mujer">MUJER</button>
             <button class="Hombre">HOMBRE</button>
             <button class="nino">NIÑOS</button>
             <button class="vertodo">VER TODOS</button>
           </div>
+          <div class="centrado mt-5">
 
+
+            <!-- <p id="parrafo-buscar">Search</p> -->
+              <form action="" class="form-modal">
+             
+                  <input class="in" type="text" id="formularioBuscar" placeholder="buscar">
+                <!-- <input type="text" name="" id=""> -->
+                <input class="sub" type="submit" id="submit-search" value="SEARCH">
+                <!-- <ul id="resultados">
+                  <li></li>
+                </ul> -->
+              </form>
+            
+          </div>
         </div>
       </div>
     </section>
-    <section>
-      <div class="row mb-3 " id="contenedor">
+    <section class="container">
+      <div class="row mb-3" id="contenedor">
       </div>
     </section>
-    <section>
-      <h3 class="h-medio text-center" > lo mas vendido</h3>
+    <section id="section-final">
+      <!-- <h3 class="h-medio text-center" > lo mas vendido</h3>
       <div id="mas-vendido">
 
+      </div> -->
+      <div class="section-final">
+        <div>
+          <img src="img/gabo-logo.png" alt="">
+          <a class="boton-coleccion" href="">Coleccion año:2022<</a>
+        </div>
+      
+        <img class="coleccion" id="coleccion" src="img/jumbo/coleccion.jpg" alt=""><button >ver coleccion</button>
+   
+      
       </div>
     </section>
-   
-    <div id="tableBody"></div>
-    <div id="mensaje"></div>
+  
     <footer>
       <section>
         <form action="">
@@ -209,10 +194,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    
+    <script
+       src="https://code.jquery.com/jquery-3.6.0.min.js"
+       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
+
     <script src="./js/app.js" type="module"></script>
    
     

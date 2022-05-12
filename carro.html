@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Meta tag  -->
 <meta name="description" content="Banda de rock caramelos de cianuros, banda  de rock venezolana, discografia de la banda rock caramelos de cianuro, historia de caramelos de cianuro, noticas de caramelos de cianuros, Caramelos de cianuros También es conocida como CDC o Caramelos">
@@ -27,21 +28,28 @@
                     <a class="navbar-brand img-nav-logo ps-5"  href="#"><img src="img/gabo-logo.png"  alt=""></a>
      
                     <div class="pe-5">
-                        <a href="index.html"><small>Seguir comprando</small><img src="img/flecha.png" class="img-nav" alt=""></a>
+                        <a href="index.html#section-medio"><small>Seguir comprando</small><img src="img/flecha.png" class="img-nav" alt=""></a>
                     </div>
                   </div>
 
                 </div>
-          
+        
           </nav>
           <div class="container-fluid text-center car">
             ¡ ENVIO GRATIS A TODO CHILE ! 
             <img src="img/chile.png" class="img-nav" alt="">
          </div>
     </header>
-
-    <section class="row"> 
-      <div id="carro-in" class="col-8">
+<section  id="carro-vacio" class="row d-none">
+  <div class="col-12 carrito-vacio">  
+    <h2>SU CARRITO ESTÁ VACIO</h2>
+    <p>Para seguir comprando, navegar por las categorías en el sitio, o busque su producto.</p>
+    <button type="button" class="btn "  id="seguir-comprando">Seguir comprando</button>
+  </div>
+</section>
+    <section class="row col-12 d-none" id="carro-in"> 
+  
+      <div class="col-8" >
         <table id="lista-carito" class="table">
   
           <thead>
@@ -57,7 +65,7 @@
         </table>
        <div class="menu-stock">
         <button type="button" class="btn"  id="vaciar-carrito" >Vaciar carrito</button>
-        <button type="button" class="btn">Seguir comprando</button>
+        <button type="button" class="btn" id="seguir-comprando2">Seguir comprando</button>
 
        </div>
      </div>
@@ -67,7 +75,7 @@
         <div id="total">Total</div>
         <P  class="text-center" >EN CONSTRUCION RESUMEN DE COMPRA</P>
         <div  class="menu-stock">
-          <button type="button" class="btn btn-pimary" >Ir a pagar</button>
+          <button type="button" class="btn btn-pimary" id="pagar">Ir a pagar</button>
         </div>
        
      </div>
@@ -76,6 +84,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <script src="js/carro.js" type="module"></script>
     <!-- <script src="js/app.js" type="module"></script> -->
 
