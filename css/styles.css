@@ -11,9 +11,9 @@ header:nth-child(1) {
 }
 
 .img-nav {
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0rem;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem;
 }
 
 .img-nav-logo {
@@ -28,10 +28,8 @@ header:nth-child(1) {
 }
 
 .img-trash {
-  width: 1rem;
-  height: 1.25rem;
-  padding: 0rem;
-  color: #111;
+  width: 2rem;
+  height: 2rem;
 }
 
 .nav-edit {
@@ -50,70 +48,17 @@ header:nth-child(1) {
   background-color: #111;
   border: solid #dcdcdc;
   color: white;
-  padding: 0 0.5rem;
+  padding: 0rem 0.75rem;
   border-radius: 50%;
   position: absolute;
   font-weight: bold;
-  font-size: 1rem;
-  margin-top: -0.75rem;
-  margin-left: -1rem;
+  font-size: 1.25rem;
+  margin-top: -0.5rem;
+  margin-left: -1.75rem;
   transition: transform 1s;
 }
 .balge:hover {
   transform: scale(1.2);
-}
-
-#botonModal {
-  background-color: white;
-  border: solid #111 0.2rem;
-  color: white;
-  padding: 0.25rem 2rem;
-  text-align: center;
-  width: 20%;
-  border-radius: 2rem 0 0 2rem;
-  outline: none;
-  transition: 0.5s ease-out;
-  text-transform: uppercase;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.modalContainer {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 0px;
-  left: 0;
-  top: 2.5rem;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.modalContainer .modal-content {
-  background-color: white;
-  margin: none;
-  padding: 5rem 0rem;
-  width: 100%;
-}
-
-.modalContainer .close {
-  display: flex;
-  align-self: flex-end;
-  padding-right: 1rem;
-  color: black;
-  font-size: 2rem;
-  font-weight: bold;
-  padding-top: 0rem;
-  margin-top: 0rem;
-}
-
-.modalContainer .close:hover,
-.modalContainer .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 .centrado {

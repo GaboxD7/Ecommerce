@@ -11,9 +11,9 @@ header:nth-child(1) {
     padding: 0rem;
 }
 .img-nav {
-    width: 2.25rem;
-    height: 2.25rem;
-    padding: 0rem;
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1rem ;
 }
 .img-nav-logo {
 
@@ -29,10 +29,10 @@ header:nth-child(1) {
 }
 
 .img-trash {
-    width: 1rem;
-    height: 1.25rem;
-    padding: 0rem;
-    color: $color-1;
+    width: 2rem;
+    height:2rem;
+
+
 }
 
 .nav-edit {
@@ -44,25 +44,21 @@ header:nth-child(1) {
      font-weight: lighter;
      color: $color-1;
      margin: 0 0.125rem;
-
-
-
-
     background-color: $color-3;
-  
-   
 }
+
+
 .balge {
     background-color: $color-1;
     border: solid $color-4;
     color: $color-3;
-padding:  0 0.5rem;
+padding:  0rem 0.75rem;
 border-radius: 50%;
 position: absolute;
 font-weight: bold;
-font-size: 1rem;
-margin-top: -0.75rem;
-margin-left: -1rem;
+font-size: 1.25rem;
+margin-top: -0.5rem;
+margin-left: -1.75rem;
 transition: transform 1s;
 
 &:hover {
@@ -70,69 +66,69 @@ transition: transform 1s;
 }
 
 }
-#botonModal  {
-    background-color: white;
-    border: solid $color-1 0.2rem;
-    color: $color-3;
-    padding: 0.25rem 2rem;
-    text-align: center;
-    width: 20%;
-    border-radius: 2rem 0 0 2rem;
-    // max-width: calc(100% - 3rem);
-    outline: none;
-        transition: 0.5s ease-out;
+// #botonModal  {
+//     background-color: white;
+//     border: solid $color-1 0.2rem;
+//     color: $color-3;
+//     padding: 0.25rem 2rem;
+//     text-align: center;
+//     width: 20%;
+//     border-radius: 2rem 0 0 2rem;
+//     // max-width: calc(100% - 3rem);
+//     outline: none;
+//         transition: 0.5s ease-out;
    
-    text-transform: uppercase;
-    font-size: 1rem;
-    cursor: pointer;
-    // &:focus{
-    //   transition: 1s;
-    //   transform: scale(1.05);;
-    // }
-  }
+//     text-transform: uppercase;
+//     font-size: 1rem;
+//     cursor: pointer;
+//     // &:focus{
+//     //   transition: 1s;
+//     //   transform: scale(1.05);;
+//     // }
+//   }
 
-  // MODAL
-  .modalContainer {
-    display: none; 
+//   // MODAL
+//   .modalContainer {
+//     display: none; 
   
-    position: fixed; 
-    z-index: 1;
-    padding-top: 0px;
-    left: 0;
-    top: 2.5rem;
-    width: 100%;
-    height: 100%; 
-    overflow: auto; 
+//     position: fixed; 
+//     z-index: 1;
+//     padding-top: 0px;
+//     left: 0;
+//     top: 2.5rem;
+//     width: 100%;
+//     height: 100%; 
+//     overflow: auto; 
 
-    background-color: rgba(0,0,0,0.8); 
-}
+//     background-color: rgba(0,0,0,0.8); 
+// }
 
-.modalContainer .modal-content {
-    background-color: $color-3;
-    margin: none    ;
-    padding: 5rem 0rem;
-    // border: 1px solid lightgray;
-    // border-top: 10px solid black;
-    width: 100%;
-}
+// .modalContainer .modal-content {
+//     background-color: $color-3;
+//     margin: none    ;
+//     padding: 5rem 0rem;
+//     // border: 1px solid lightgray;
+//     // border-top: 10px solid black;
+//     width: 100%;
+// }
 
-.modalContainer .close {
-    display: flex;
-    align-self: flex-end;
-    padding-right: 1rem;
-    color:black;
-    font-size: 2rem;
-    font-weight: bold;
-    padding-top: 0rem;
-    margin-top: 0rem;
-}
+// .modalContainer .close {
+//     display: flex;
+//     align-self: flex-end;
+//     padding-right: 1rem;
+//     color:black;
+//     font-size: 2rem;
+//     font-weight: bold;
+//     padding-top: 0rem;
+//     margin-top: 0rem;
+// }
 
-.modalContainer .close:hover,
-.modalContainer .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+// .modalContainer .close:hover,
+// .modalContainer .close:focus {
+//     color: #000;
+//     text-decoration: none;
+//     cursor: pointer;
+// }
 
 
 
