@@ -11,6 +11,7 @@ let seguirComprando = document.querySelector("#seguir-comprando")
 let seguirComprando2 = document.querySelector("#seguir-comprando2")
 
 
+
 mostrarCarroHtml()
 
 function mostrarCarroHtml()  {
@@ -43,6 +44,9 @@ function mostrarCarroHtml()  {
       });
 
     }
+
+
+console.log(articulosCarro)
 
     cargarEventos()
 

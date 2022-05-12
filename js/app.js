@@ -122,6 +122,7 @@ contenedor.innerHTML = "";
             let nombre = prod.nombre.toLowerCase();
             if (nombre.indexOf(texto) !== -1) {
                 const div = document.createElement("div");
+             
                 div.className = "col-3 mb-3";
 
                 div.innerHTML = `
@@ -302,6 +303,7 @@ console.log(stock)
 contenedor.innerHTML = '';
     stock.forEach((prod) => {
         const div = document.createElement("div");
+        console.log(prod.precio)
         div.className = "col-3 mb-3";
         div.innerHTML = `
                             <div class="card m-3" >
@@ -385,11 +387,12 @@ function agregarProducto(e) {
 
 
 function leerDatosProducto(producto) {
-
+console.log(producto)
     const id = producto.querySelector('button').getAttribute('data-id');
     const imagen = producto.querySelector('img').src;
     const nombre = producto.querySelector('h5').textContent;
-    const precio = producto.querySelector('ul  .precio span').textContent;
+    const precio = producto.querySelector('div span').textContent;
+    console.log(precio)
     let cantidad = parseInt(document.getElementById(`cantidad${id}`).value);
     // const deporte = producto.querySelector('')
 
