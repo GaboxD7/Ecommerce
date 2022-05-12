@@ -31,7 +31,7 @@ console.log(botonColeccion[0])
 
 
 const formulario = document.querySelector('#formularioBuscar');
-const resultado = document.querySelector('#resultados');
+
 
 document.addEventListener('DOMContentLoaded', () => {
     carro = JSON.parse(localStorage.getItem('carrito')) || [];
