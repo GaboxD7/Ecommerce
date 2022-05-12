@@ -1,8 +1,30 @@
-// import { mostrarCarroHtml } from "./carro.js";
-import { stockProductos } from "./stock.js";
+
+let dato = [];
+const obtenerData = async () => {
+
+    try {
+        let response   =    await fetch("./js/datos.json")
+ 
+        let result     =    await response.json()
+        console.log(typeof result)
+        // let resultados = JSON.parse(result)
+        // console.log(typeof resultados)
+            console.log(result.productos)
+        result.productos.forEach((elemento) => {
+            dato.push(elemento)
+        })
+        console.log(dato)
+
+    }
+    catch(error) {
+        console.log(error)
+    }
+
+}
 
 
-
+obtenerData()
+let stockProductos = dato;
 let carro = [];
 let stock = stockProductos;
 
