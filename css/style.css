@@ -11,9 +11,9 @@ header:nth-child(1) {
 }
 
 .img-nav {
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0rem;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 1rem;
 }
 
 .img-nav-logo {
@@ -28,10 +28,8 @@ header:nth-child(1) {
 }
 
 .img-trash {
-  width: 1rem;
-  height: 1.25rem;
-  padding: 0rem;
-  color: #111;
+  width: 2rem;
+  height: 2rem;
 }
 
 .nav-edit {
@@ -50,76 +48,21 @@ header:nth-child(1) {
   background-color: #111;
   border: solid #dcdcdc;
   color: white;
-  padding: 0 0.5rem;
+  padding: 0rem 0.75rem;
   border-radius: 50%;
   position: absolute;
   font-weight: bold;
-  font-size: 1rem;
-  margin-top: -0.75rem;
-  margin-left: -1rem;
+  font-size: 1.25rem;
+  margin-top: -0.5rem;
+  margin-left: -1.75rem;
   transition: transform 1s;
 }
 .balge:hover {
   transform: scale(1.2);
 }
 
-#botonModal {
-  background-color: #000;
-  border: solid #111 0.2rem;
-  color: white;
-  padding: 0.25rem 2rem;
-  text-align: center;
-  width: 12%;
-  outline: none;
-  border-radius: 0rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-.modalContainer {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 0px;
-  left: 0;
-  top: 2.5rem;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modalContainer .modal-content {
-  background-color: white;
-  margin: none;
-  padding: 5rem 0rem;
-  width: 100%;
-}
-
-.modalContainer .close {
-  display: flex;
-  align-self: flex-end;
-  padding-right: 1rem;
-  color: black;
-  font-size: 2rem;
-  font-weight: bold;
-  padding-top: 0rem;
-  margin-top: 0rem;
-}
-
-.modalContainer .close:hover,
-.modalContainer .close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .centrado {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
 }
 
 .form-modal {
@@ -127,7 +70,7 @@ header:nth-child(1) {
   display: inline-block;
   font-size: 2rem;
   box-sizing: border-box;
-  transition: 0.5s;
+  transition: 0.9s;
 }
 
 .in {
@@ -206,7 +149,6 @@ p {
   font-size: 1.2rem;
 }
 
-/* El Modal (background) */
 #lista-carrito {
   display: block;
   color: black;
@@ -332,18 +274,129 @@ td {
   list-style: none;
 }
 
+.title-up {
+  font-size: 2rem;
+  text-transform: uppercase;
+  align-self: none;
+}
+.title-up:hover {
+  cursor: pointer;
+}
+.title-up::first-letter {
+  font-size: 5rem;
+}
+
+.title-down {
+  font-size: 3em;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.title-down::first-letter {
+  font-size: 10rem;
+}
+
+.grid-coleccion {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  background-image: url("../../img/wave-haikei.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 2rem;
+}
+
+#cerrar-coleccion {
+  margin-left: 50%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #111;
+  color: white;
+  border: solid 0.15rem;
+  margin-bottom: 15rem;
+}
+#cerrar-coleccion:hover {
+  background-color: white;
+  color: #111;
+}
+
+#section-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.25fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  background-color: #111;
+  margin-bottom: 20rem;
+  margin-top: 10rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-fondo {
+  background-image: url("../img/jumbo/coleccion.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 42rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.imagen-fondo:hover {
+  opacity: 0.6;
+  transition: all 3s ease;
+}
+.imagen-fondo button {
+  opacity: 1;
+  align-self: center;
+  transition: 1.5s;
+  margin-top: -34.6rem;
+  margin-left: 0rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: 3rem 1rem 2rem;
+  border-radius: 0rem;
+  background-color: #111;
+  color: white;
+  width: 100%;
+  transition: all 2s;
+  border: #111 solid 0.25rem;
+}
+.imagen-fondo button:hover {
+  opacity: 1 !important;
+  cursor: pointer;
+}
+
+.boton-coleccion {
+  display: none;
+}
+
+.open {
+  display: none;
+}
+
 .card-btnn {
   display: flex;
   justify-self: center;
   align-self: center;
   background-color: red;
-  padding: 1rem;
+  padding: 0.5rem;
   color: white;
   border: none;
   text-shadow: 0 0 0.1rem #111;
-  margin: 1rem;
+  margin: 0.25rem;
   font-size: 1rem;
   max-width: 12rem;
+  background-color: #111;
+}
+.card-btnn:hover {
+  background-color: white;
+  color: #111;
+  border: 10px #111 !important;
 }
 
 footer {
@@ -460,6 +513,27 @@ footer {
 .img-carro {
   height: 5rem;
   width: auto;
+}
+
+.carrito-vacio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30rem;
+  color: white;
+}
+.carrito-vacio button {
+  margin-top: 4rem;
+  padding: 1rem 4rem;
+  border-radius: 2rem;
+  background-color: #111;
+  color: white;
+  border: solid 0.15rem;
+}
+.carrito-vacio button:hover {
+  background-color: white;
+  color: #111;
 }
 
 /*# sourceMappingURL=style.css.map */

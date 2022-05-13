@@ -6,14 +6,11 @@ const obtenerData = async () => {
         let response   =    await fetch("./js/datos.json")
  
         let result     =    await response.json()
-        console.log(typeof result)
-        // let resultados = JSON.parse(result)
-        // console.log(typeof resultados)
-            console.log(result.productos)
+  
         result.productos.forEach((elemento) => {
             dato.push(elemento)
         })
-        console.log(dato)
+    
 
     }
     catch(error) {
@@ -46,46 +43,112 @@ const h1 = document.querySelector("#h1");
 const verTodo = document.querySelectorAll('.vertodo');
 const sub = document.querySelector('#submit-search');
 const titulo = document.querySelector('#titulo');
-const coleccion = document.querySelector('#coleccion');
+const coleccion = document.querySelector('.imagen-fondo');
 const botonColeccion = document.querySelectorAll('.boton-coleccion');
-console.log(coleccion);
-console.log(botonColeccion[0])
+const contenedorColeccion = document.querySelector('#contenedor-coleccion div')
+const contenedorOpen = document.querySelector('#contenedor-coleccion')
+const sectionFinal = document.querySelector('#section-final')
+const cerrarColeccion = document.querySelector('#cerrar-coleccion')
+const titleColeccion = document.querySelector('#title-coleccion')
+const imagenColeccion = document.querySelector('#coleccion2022')
+console.log(contenedorColeccion)
+
 
 
 const formulario = document.querySelector('#formularioBuscar');
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    carro = JSON.parse(localStorage.getItem('carrito')) || [];
+carro = JSON.parse(localStorage.getItem('carrito')) || [];
 
 
    })
 
+
+
 coleccion.addEventListener("mousemove", (e) => {
-    console.log(e.target)
-    console.log(coleccion)
-    if ( e.target == coleccion) {
-        console.log("hola des si")
-        botonColeccion[0].style.display = "block"
-        coleccion.style.opacity = "0.2"
-    } else {
-        botonColeccion[0].style.display = "none"
-        coleccion.style.opacity = "1"
-        console.log("hola des NO")
-    }
+
+    botonColeccion[0].classList.remove("boton-coleccion")
+
     
 })
 
 coleccion.addEventListener("mouseout", (e) => {
 
+    botonColeccion[0].classList.add("boton-coleccion")
   
-        botonColeccion[0].style.display = "none"
-        coleccion.style.opacity = "1"
-        console.log("hola des NO")
+    // mostrarColeccion()
+        // botonColeccion[0].style.display = "none"
+        // coleccion.style.opacity = "1"
+        // console.log("hola des NO")
     
     
 })
+botonColeccion[0].addEventListener("click", mostrarColeccion )
+titleColeccion.addEventListener("click", mostrarColeccion )
+ function  mostrarColeccion () {
+    sectionFinal.style.marginBottom= "0"
+    contenedorColeccion.style.marginBottom ="5rem";
+    window.location.href = "http://127.0.0.1:5502/index.html#coleccion2022";
+    titleColeccion.classList.add('title-down')
+    titleColeccion.classList.remove('title-up')
+    imagenColeccion.style.alignSelf = "end"
+ 
+     filtrarStockColeccion()
+ 
+ contenedorOpen.classList.remove('open')
+ } 
+cerrarColeccion.addEventListener("click", () => {
+    contenedorOpen.classList.add('open');
+    sectionFinal.style.marginBottom= "20rem";
+    titleColeccion.classList.remove('title-down')
+    titleColeccion.classList.add('title-up')
+    imagenColeccion.style.alignSelf = "auto"
 
+    window.location.href = "http://127.0.0.1:5502/index.html##section-medio"
+
+})
+
+
+let stockColeccion  = []
+function filtrarStockColeccion () {
+    stockColeccion = stockProductos.filter(prod => prod.anio == 2022)
+    console.log(stockColeccion)
+    mostrarCardColeccion()
+}
+function mostrarCardColeccion ()  {
+    console.log(stock)
+ contenedorColeccion.innerHTML = '';
+    stockColeccion.forEach((prod) => {
+        const div = document.createElement("div");
+     
+        // div.className = "col-2 mb-3";
+        div.innerHTML += `
+                            <div class="crd m text-center" >
+                                <div>
+                                <p class="card-text h6">${prod.deporte} </p>
+                                    <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">${prod.nombre}</h5>
+                                  Precio: $<span>${prod.precio} </span>
+                                </div>
+                                <ul class="list-group list-group-flush d.flex">
+                                    <li class="list-grou-item d-none text-center">Genero:  ${prod.genero} | Talla: ${prod.talla}</li>
+                                          
+                                    <li class="list-group-item precio "> <span>Cantidad:</span>
+                                    <select id="cantidad${prod.id}" name"unidades">
+                                        <option value=1>1</option>
+                                        <option value=2>2</option>
+                                        <option value=3>3</option>
+                                        <option value=4>4</option>
+                                     </select></li>              
+                                    </ul>
+                                <button class="card-btnn add-carro text-center" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
+                            </div>`;
+        contenedorColeccion.appendChild(div);
+    });
+}
 class Carrito {
 
     constructor(id, nombre, precio, img, cantidad ) {
@@ -120,6 +183,7 @@ inicio.addEventListener("click", volver)
     // Add un producto "Agregar Carrito"
 
 contenedor.addEventListener('click', agregarProducto);
+contenedorColeccion.addEventListener('click', agregarProducto);
 
 
 // formulaio Buscar 
@@ -142,36 +206,35 @@ contenedor.innerHTML = "";
     const texto = formulario.value.toLowerCase();
         for(let prod of stock) {
             let nombre = prod.nombre.toLowerCase();
-            if (nombre.indexOf(texto) !== -1) {
+            if (nombre.indexOf(texto.split()) !== -1) {
                 const div = document.createElement("div");
              
                 div.className = "col-3 mb-3";
 
                 div.innerHTML = `
-                <div class="card " >
-                    <div>
-                        <a href=#! id="enlaceModal${prod.id}"><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">${prod.nombre}</h5>
-                        <p class="card-text h6">${prod.deporte}</p>
-                    </div>
-                    <ul class="list-group list-group-flush d.flex">
-                        <li class="list-group-item">Genero:  ${prod.genero}</li>
-                        <li class="list-group-item">Talla: ${prod.talla}</li>
-                        <li class="list-group-item precio">Precio: $<span>${prod.precio} </span></li>              
-                        <li class="list-group-item precio"> <span>Cantidad:</span>
-                        <select id="cantidad${prod.id}" name"unidades">
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                         </select></li>              
-                        </ul>
-                    <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
-                </div>`;
-
-                contenedor.appendChild(div);
+                <div class="card m-3" >
+                <div>
+                <p class="card-text h6">${prod.deporte} </p>
+                    <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">${prod.nombre}</h5>
+                  Precio: $<span>${prod.precio} </span>
+                </div>
+                <ul class="list-group list-group-flush d.flex">
+                    <li class="list-group-item text-center">Genero:  ${prod.genero} | Talla: ${prod.talla}</li>
+                          
+                    <li class="list-group-item precio "> <span>Cantidad:</span>
+                    <select id="cantidad${prod.id}" name"unidades">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                     </select></li>              
+                    </ul>
+                <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
+            </div>`;
+contenedor.appendChild(div);
             }
         } 
 
@@ -239,15 +302,10 @@ mostrarCard()
 
 }
 
-
 // Boton RUNNING 
 
-
 $(document).ready(function() {
-// $("Crossfit").click(function(){
 
-//     window.document.href = "http://127.0.0.1:5502/index.html#section-medio"
-// })
 $("#crossfit").click(function(e){
     e.preventDefault()
    stock.forEach(prod =>  {
@@ -321,7 +379,7 @@ function fondo (e) {
 
 
 function mostrarCard () {
-console.log(stock)
+
 contenedor.innerHTML = '';
     stock.forEach((prod) => {
         const div = document.createElement("div");
@@ -355,46 +413,9 @@ contenedor.innerHTML = '';
 }
 
 
-// Section lo mas vendido
-
-// mostraSection()
-// function mostraSection ()  {
-
-//     const div2 = document.createElement("div")
-//     let sectionVendido = stock.slice(8, 10)
-//     sectionVendido.forEach((prod) => {
-//        div2.className = "vendido"
-//         div2.innerHTML += `
-//         <div>
-//         <h5 class="card-title text-center pb-3 ">${prod.nombre}</h5>
-//         <img src=${prod.img} alt="">
-     
-//         <button class="card-btnn add-carro text-center" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
-       
-//         <ul clas="ul-vendido" id="h">
-//         <li>Genero:  ${prod.genero}</li>
-//         <li>Talla: ${prod.talla}</li>
-//         <li class="precio">Precio: $<span>${prod.precio} </span></li>              
-//         <li> <span>Cantidad:</span>
-//         <select id="cantidad${prod.id}" name"unidades">
-//             <option value=1>1</option>
-//             <option value=2>2</option>
-//             <option value=3>3</option>
-//             <option value=4>4</option>
-//          </select></li>              
-//         </ul>
-//         </div>
-        
-//         ` })
-
-//     masVendido.appendChild(div2);
-
-// }
-
-//  Agregar Producto
 
 function agregarProducto(e) {
-
+console.log(e.target)
     e.preventDefault();
 
     if (e.target.classList.contains('add-carro')) {

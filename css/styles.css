@@ -149,7 +149,6 @@ p {
   font-size: 1.2rem;
 }
 
-/* El Modal (background) */
 #lista-carrito {
   display: block;
   color: black;
@@ -275,29 +274,109 @@ td {
   list-style: none;
 }
 
-.section-final {
-  display: flex;
-  margin: 15rem 0;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #111;
+.title-up {
+  font-size: 2rem;
+  text-transform: uppercase;
+  align-self: none;
+}
+.title-up:hover {
+  cursor: pointer;
+}
+.title-up::first-letter {
+  font-size: 5rem;
 }
 
-.coleccion {
-  position: relative;
+.title-down {
+  font-size: 3em;
+  text-transform: uppercase;
+  align-self: flex-end;
+}
+.title-down::first-letter {
+  font-size: 10rem;
+}
+
+.grid-coleccion {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 5rem;
+  background-image: url("../../img/wave-haikei.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 2rem;
+}
+
+#cerrar-coleccion {
+  margin-left: 50%;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: #111;
+  color: white;
+  border: solid 0.15rem;
+  margin-bottom: 15rem;
+}
+#cerrar-coleccion:hover {
+  background-color: white;
+  color: #111;
+}
+
+#section-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.25fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  background-color: #111;
+  margin-bottom: 20rem;
+  margin-top: 10rem;
+}
+
+.logo {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.imagen-fondo {
+  background-image: url("../img/jumbo/coleccion.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 42rem;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.imagen-fondo:hover {
+  opacity: 0.6;
+  transition: all 3s ease;
+}
+.imagen-fondo button {
   opacity: 1;
+  align-self: center;
   transition: 1.5s;
+  margin-top: -34.6rem;
+  margin-left: 0rem;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  padding: 3rem 1rem 2rem;
+  border-radius: 0rem;
+  background-color: #111;
+  color: white;
+  width: 100%;
+  transition: all 2s;
+  border: #111 solid 0.25rem;
+}
+.imagen-fondo button:hover {
+  opacity: 1 !important;
+  cursor: pointer;
 }
 
 .boton-coleccion {
   display: none;
-  position: relative;
-  overflow: hidden;
-  transition: 1.5s;
+}
+
+.open {
+  display: none;
 }
 
 .card-btnn {
