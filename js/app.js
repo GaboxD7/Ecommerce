@@ -87,9 +87,10 @@ coleccion.addEventListener("mouseout", (e) => {
 botonColeccion[0].addEventListener("click", mostrarColeccion )
 titleColeccion.addEventListener("click", mostrarColeccion )
  function  mostrarColeccion () {
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
     sectionFinal.style.marginBottom= "0"
     contenedorColeccion.style.marginBottom ="5rem";
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
+   
     titleColeccion.classList.add('title-down')
     titleColeccion.classList.remove('title-up')
     imagenColeccion.style.alignSelf = "end"
@@ -99,13 +100,14 @@ titleColeccion.addEventListener("click", mostrarColeccion )
  contenedorOpen.classList.remove('open')
  } 
 cerrarColeccion.addEventListener("click", () => {
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
     contenedorOpen.classList.add('open');
     sectionFinal.style.marginBottom= "20rem";
     titleColeccion.classList.remove('title-down')
     titleColeccion.classList.add('title-up')
     imagenColeccion.style.alignSelf = "auto"
 
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html##section-medio"
+ 
 
 })
 
