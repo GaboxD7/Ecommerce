@@ -87,7 +87,8 @@ coleccion.addEventListener("mouseout", (e) => {
 botonColeccion[0].addEventListener("click", mostrarColeccion )
 titleColeccion.addEventListener("click", mostrarColeccion )
  function  mostrarColeccion () {
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
+     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
+    // window.location.href = "http://127.0.0.1:5500/index.html#coleccion2022";
     sectionFinal.style.marginBottom= "0"
     contenedorColeccion.style.marginBottom ="5rem";
    
@@ -100,7 +101,9 @@ titleColeccion.addEventListener("click", mostrarColeccion )
  contenedorOpen.classList.remove('open')
  } 
 cerrarColeccion.addEventListener("click", () => {
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
+     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
+    // window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
+    
     contenedorOpen.classList.add('open');
     sectionFinal.style.marginBottom= "20rem";
     titleColeccion.classList.remove('title-down')
@@ -191,15 +194,19 @@ contenedorColeccion.addEventListener('click', agregarProducto);
 // formulaio Buscar 
 
 }
-
+// btnProd.addEventListener("click", (e) => {
+//     preventDefault(e)
+// })
 function direccion  ()  {
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
-
+        //    e.preventDefault(e)
+     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+    // window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
 } 
-function direccion2  (e)  {
-    // e.preventDefault()
-    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
+function direccion2  ()  {
 
+     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
+    // window.location.href = "http://127.0.0.1:5500/index.html#h1";
+    
 }
 
 const filtrar = () => {
@@ -269,11 +276,11 @@ function volver () {
     h1.style.alignSelf= "center"
     titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
 }
-
+console.log(verTodo)
 function cards(e) {
-  
+    console.log(verTodo)
     if (e.target.className == verTodo[0].className  ) {
-
+console.log(verTodo)
         contenedor.innerHTML = '';
         // limpiarContenedorHTML();
         jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
