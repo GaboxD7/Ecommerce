@@ -480,7 +480,7 @@ console.log(producto)
         mostrarNumeroCarrito()
         Toastify({
             text: `Haz agregado un producto`,
-            duration: 3000,
+            duration: 4000,
              destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
             newWindow: true,
             // close: true,
