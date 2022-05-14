@@ -89,7 +89,7 @@ titleColeccion.addEventListener("click", mostrarColeccion )
  function  mostrarColeccion () {
     sectionFinal.style.marginBottom= "0"
     contenedorColeccion.style.marginBottom ="5rem";
-    window.location.href = "http://127.0.0.1:5502/index.html#coleccion2022";
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
     titleColeccion.classList.add('title-down')
     titleColeccion.classList.remove('title-up')
     imagenColeccion.style.alignSelf = "end"
@@ -105,7 +105,7 @@ cerrarColeccion.addEventListener("click", () => {
     titleColeccion.classList.add('title-up')
     imagenColeccion.style.alignSelf = "auto"
 
-    window.location.href = "http://127.0.0.1:5502/index.html##section-medio"
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html##section-medio"
 
 })
 
@@ -191,12 +191,12 @@ contenedorColeccion.addEventListener('click', agregarProducto);
 }
 
 function direccion  ()  {
-    window.location.href = "http://127.0.0.1:5502/index.html#section-medio";
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
 
 } 
 function direccion2  (e)  {
     // e.preventDefault()
-    window.location.href = "http://127.0.0.1:5502/index.html#h1";
+    window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
 
 }
 
@@ -253,7 +253,7 @@ contenedor.appendChild(div);
 
      sub.onclick = function(e) {
              e.preventDefault();
-             window.location.href = "http://127.0.0.1:5502/index.html#submit-search";
+             window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
      }
 console.log(carro)
 function volver () {

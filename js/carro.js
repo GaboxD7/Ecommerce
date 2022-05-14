@@ -91,10 +91,10 @@ console.log(articulosCarro)
 
 
 seguirComprando.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5502/index.html#section-medio";
+  window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
 })
 seguirComprando2.addEventListener("click", () => {
-  window.location.href = "http://127.0.0.1:5502/index.html#section-medio";
+  window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
 })
 // function cambiarCantidad(e) {
 //     let ctdd = e.target.value;
