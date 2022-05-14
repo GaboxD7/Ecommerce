@@ -481,7 +481,7 @@ console.log(producto)
         Toastify({
             text: `Haz agregado un producto`,
             duration: 3000,
-            // destination: "https://github.com/apvarun/toastify-js",
+             destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
             newWindow: true,
             // close: true,
             gravity: "top", // `top` or `bottom`
