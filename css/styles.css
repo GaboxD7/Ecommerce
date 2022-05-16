@@ -379,6 +379,14 @@ td {
   display: none;
 }
 
+.no-encontrado {
+  color: red;
+  font-size: 1.5rem;
+  background-color: #111;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
 .card-btnn {
   display: flex;
   justify-self: center;
@@ -534,6 +542,31 @@ footer {
 .carrito-vacio button:hover {
   background-color: white;
   color: #111;
+}
+
+.centrar {
+  height: 8rem;
+}
+
+.padre-img {
+  position: relative;
+  height: 8rem;
+  width: auto;
+}
+
+.hijo-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.total-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
 }
 
 /*# sourceMappingURL=styles.css.map */

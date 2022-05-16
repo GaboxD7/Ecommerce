@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-straight/css/uicons-regular-straight.css'>
+    
     <link rel="stylesheet" href="css/styles.css">
     <!-- Meta tag  -->
 <meta name="description" content="Banda de rock caramelos de cianuros, banda  de rock venezolana, discografia de la banda rock caramelos de cianuro, historia de caramelos de cianuro, noticas de caramelos de cianuros, Caramelos de cianuros También es conocida como CDC o Caramelos">
@@ -41,45 +43,128 @@
          </div>
     </header>
 <section  id="carro-vacio" class="row d-none">
-  <div class="col-12 carrito-vacio">  
+  <div class="col-12 carrito-vacio bg-light">  
     <h2>SU CARRITO ESTÁ VACIO</h2>
     <p>Para seguir comprando, navegar por las categorías en el sitio, o busque su producto.</p>
     <button type="button" class="btn "  id="seguir-comprando">Seguir comprando</button>
   </div>
 </section>
-    <section class="row col-12 d-none" id="carro-in"> 
+    <section class="row col-12 d-none " id="carro-in"> 
   
-      <div class="col-8" >
-        <table id="lista-carito" class="table">
+      <div class="col-8 p-5 mt-5 " >
+        <table id="lista-carito" class="table p-5 bg-light">
   
           <thead>
-            <th scope="col">Producto</th>
-            <th scope="col">Cant</th>
-            <th scope="col"></th>
+            <th scope="col"  class="text-center p-3" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+            <th scope="col" class="text-center p-3" >CANTIDAD</th>
+            <th scope="col" class="text-center p-3" >PRODUCTOS</th>
             <!-- <th scope="col"></th> -->
-            <th scope="col">Sub Total</th>
-            <th scope="col" ></th>
+            <th scope="col"class="text-center p-3" >SUB-TOTAL</th>
+            <th scope="col" class="text-center" >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
           </thead>
           <tbody id="conteCarro"></tbody>
           <tfoot></tfoot>
         </table>
-       <div class="menu-stock">
+       <div class="menu-stock mt-5">
         <button type="button" class="btn"  id="vaciar-carrito" >Vaciar carrito</button>
         <button type="button" class="btn" id="seguir-comprando2">Seguir comprando</button>
 
        </div>
      </div>
-     <div class="col-4">
-        <h1 class="text-center">RESUMEN DE COMPRA</h1>
+     <div class="col-4 mt-5 pt-5  bg-light" >
+
+      <table class="table">
+
+    
+        <thead>
+          <th scope="col" class="text-center p-3" >RESUMEN DE COMPRA</th>
+       </thead>
+       <tbody>
+         <tr>
+           <td class="padre-img">
+          
+             <div class="hijo-img"><i class="fi fi-rs-ticket pe-3"></i>Aplicar codigo de descuento <a href="">¡Click Aqui!</a></div>
+           </td>
+           </tr>
+           <tr>
+             <td class="padre-img">
+               <div class="hijo-img"><i class="fi fi-rs-truck-moving pe-3"></i>Calcular tiempos & costos de envios
+              <a href="">Aqui</a> </div>
+        
+             </td>
+           </tr>
+
+        <tr >
+          <td class="total-price"><h1>TOTAL:</h1><h2 id="total"></h2></td>
+        </tr>
+       </tbody>
+       <tfoot></tfoot>
+    </div>
+  </table>
+    <div  class="menu-stock">
+      <button type="button" class="btn btn-pimary" id="pagar">Ir a pagar</button>
+    </div>
        
-        <div id="total">Total</div>
-        <P  class="text-center" >EN CONSTRUCION RESUMEN DE COMPRA</P>
-        <div  class="menu-stock">
-          <button type="button" class="btn btn-pimary" id="pagar">Ir a pagar</button>
-        </div>
+      
+        <!-- <P  class="text-center" >EN CONSTRUCION RESUMEN DE COMPRA</P>
+        <div class="text-center">
+          <a href="index.html#section-medio"><small>Seguir comprando</small><img src="img/flecha.png" class="img-nav" alt=""></a>
+      </div> -->
+      
        
-     </div>
+   
     </section>
+
+
+    <!-- <footer>
+      <section>
+        <form action="">
+          <div  class="form-terminos">
+            <h4>REGÍSTRATE PARA CONOCER LO ÚLTIMO DE GABO|SPORT</h4>
+            <div class="form-inpus">
+              <input type="email" id="email"placeholder="Correo Electronico" size="30" required>
+              <input id="borrar" type="submit" value="Registrarme">
+            </div>
+           <div id="checkbox">
+            <input type="checkbox" value="1">
+            <p>Estoy de acuerdo con los <a href="#">Terminos y Condiciones</a></p>
+           </div>
+            <div >
+            <a href="#"><img src="img/gabo-logo.png" class="img-foot-logo" alt=""></a>
+           </div>
+          </div>
+        </form> 
+      </section>
+      <section class="form-servicio">
+        <div>
+          <h6>Social</h6>
+          <a href="">Facebook</a>
+          <a href="">instagram</a>
+        </div>
+        <div>
+          <h6>Servicios de Cnsumidor<h6>
+        <a href="">Centro de ayuda</a>
+          <a href="">Tiendas</a>
+          <a href="">Giftcard</a>
+          <a href="">Sigue tu compra</a>
+          <a href="">Guia de tallas</a>
+          <a href="">contactanos</a>
+        </div>
+        <div>
+          <h6>Legal</h6>
+          <a href="">Politicas de privacidad</a>
+          <a href="">Terminos y condiciones</a>
+          <a href="">Politicas de Despacho</a>
+          <a href="">Cambios, Retracto y Garantia</a>  
+        </div>
+        <div>
+          <h6>Cuenta</h6>
+          <a href="">¿Donde viene mi compra?</a>
+          <a href="">Historial de Compras</a>
+        </div>
+      </section>
+    </footer> -->
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>

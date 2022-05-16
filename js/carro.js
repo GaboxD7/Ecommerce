@@ -16,7 +16,7 @@ mostrarCarroHtml()
 
 function mostrarCarroHtml()  {
  
-     limpiarHTML()
+  limpiarHTML()
    
    // Muestro en el html del carro
  
@@ -27,14 +27,15 @@ function mostrarCarroHtml()  {
            const tr = document.createElement("tr"); 
  
         tr.innerHTML += ` 
-      <tr class="p-4">
-         <td><img src="${imagen}" class="img-carro"</td>
-        <th scope="row">${cantidad}</th>
-         <td>${nombre}</td>
-
-         <td>${subtotal}</td>
-         <td>
-             <a href="#" class="borrar-producto text-center" data-id="${id}"> <img src="img/basura.png" class="img-trash  borrar-producto" > </a>
+      <tr>
+         <td class="padre-img"><img class="hijo-img img-carro" src="${imagen}"</td>
+         <td class="padre-img"><div class="hijo-img"> ${cantidad}</div></td>
+         <td class="padre-img"><div class="hijo-img"> ${nombre}</div></td>
+       
+         <td class="padre-img"><div class="hijo-img">$ ${subtotal}</div></td>
+ 
+         <td class="padre-img">
+             <a href="#" class="borrar-producto hijo-img " data-id="${id}"> <img src="img/basura.png" class="img-trash  borrar-producto" > </a>
          </td>
       </tr>`;
  
@@ -46,7 +47,7 @@ function mostrarCarroHtml()  {
     }
 
 
-console.log(articulosCarro)
+
 
     cargarEventos()
 
@@ -91,10 +92,14 @@ console.log(articulosCarro)
 
 
 seguirComprando.addEventListener("click", () => {
-  window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+  // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+  window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
+
+ 
 })
 seguirComprando2.addEventListener("click", () => {
-  window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+  // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+  window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
 })
 // function cambiarCantidad(e) {
 //     let ctdd = e.target.value;
@@ -131,6 +136,7 @@ seguirComprando2.addEventListener("click", () => {
       
   }
 
+// console.log(total)
   function limpiarHTML() {
 
     // limpiar nuestro HTML
@@ -138,15 +144,19 @@ seguirComprando2.addEventListener("click", () => {
     // while (articulosCarro.firstChild) {
     //     articulosCarro.removeChild(articulosCarro);
     // }
-     total.innerHTML = `Total : $${totalGeneral()}`;
+      total.innerHTML = ` $ ${totalGeneral()}`;
 }
 
 function totalGeneral() {
 
     let productoTotal = articulosCarro.reduce((total, producto) => total + producto.subtotal, 0);
 
-    return productoTotal;
+    return productoTotal ;
 }
+// const total = document.querySelector("#total")
+
+
+
 
 if (articulosCarro.length == 0 ) 
 {

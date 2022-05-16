@@ -87,8 +87,8 @@ coleccion.addEventListener("mouseout", (e) => {
 botonColeccion[0].addEventListener("click", mostrarColeccion )
 titleColeccion.addEventListener("click", mostrarColeccion )
  function  mostrarColeccion () {
-     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
-    // window.location.href = "http://127.0.0.1:5500/index.html#coleccion2022";
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
+    window.location.href = " http://127.0.0.1:5500/index.html#coleccion2022";
     sectionFinal.style.marginBottom= "0"
     contenedorColeccion.style.marginBottom ="5rem";
    
@@ -101,9 +101,9 @@ titleColeccion.addEventListener("click", mostrarColeccion )
  contenedorOpen.classList.remove('open')
  } 
 cerrarColeccion.addEventListener("click", () => {
-     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
-    // window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
-    
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
+    window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
+  
     contenedorOpen.classList.add('open');
     sectionFinal.style.marginBottom= "20rem";
     titleColeccion.classList.remove('title-down')
@@ -199,13 +199,13 @@ contenedorColeccion.addEventListener('click', agregarProducto);
 // })
 function direccion  ()  {
         //    e.preventDefault(e)
-     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
-    // window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
+    window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
 } 
-function direccion2  ()  {
+function direccion2  (e)  {
 
-     window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
-    // window.location.href = "http://127.0.0.1:5500/index.html#h1";
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
+    window.location.href = "http://127.0.0.1:5500/index.html#h1";
     
 }
 
@@ -246,10 +246,10 @@ contenedor.innerHTML = "";
 contenedor.appendChild(div);
             }
         } 
-
+      
         if(contenedor.innerHTML === "" ) {
             contenedor.innerHTML = `
-                <h1 class="text-center">Producto no encontrado...</h1>
+                <h4 class="text-center"> <i class="fi fi-rr-surprise"></i> ¡Vaya! No hemos encontrado resultados de: <span class="no-encontrado bg-light">${texto}</span></h4>
             `
         }
 
@@ -262,9 +262,11 @@ contenedor.appendChild(div);
 
      sub.onclick = function(e) {
              e.preventDefault();
-             window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
+           //   window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
+             window.location.href = " http://127.0.0.1:5500/index.html#submit-search";
+            
      }
-console.log(carro)
+
 function volver () {
     contenedor.innerHTML = '';
     jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
@@ -276,11 +278,11 @@ function volver () {
     h1.style.alignSelf= "center"
     titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
 }
-console.log(verTodo)
+
 function cards(e) {
-    console.log(verTodo)
+  
     if (e.target.className == verTodo[0].className  ) {
-console.log(verTodo)
+
         contenedor.innerHTML = '';
         // limpiarContenedorHTML();
         jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
@@ -488,7 +490,8 @@ console.log(producto)
         Toastify({
             text: `Haz agregado un producto`,
             duration: 4000,
-             destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
+            //  destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
+             destination: "http://127.0.0.1:5500/carro.html",
             newWindow: true,
             // close: true,
             gravity: "top", // `top` or `bottom`

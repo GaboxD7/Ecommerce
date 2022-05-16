@@ -39,3 +39,36 @@ a {
         }
     }
 }
+.centrar {
+
+  height: 8rem;
+//   text-align: center;
+//   margin-left: auto;
+// margin-right: auto;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-self: center;
+}
+.padre-img {
+    position: relative;
+    
+  height: 8rem;
+  width: auto;
+}
+.hijo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.total-price {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+align-content: space-between;
+}
