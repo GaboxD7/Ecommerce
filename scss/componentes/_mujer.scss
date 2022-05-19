@@ -3,24 +3,24 @@
 //     width: auto;
 //     height: 100rem;
 // }
-.card-btnn { display: flex;
-        justify-self: center;
-        align-self: center;
-        background-color: $color-2;
-        padding: 0.5rem;
+.card-btnn { 
+        padding: 1rem;
         color: $color-3;
         
         // border-radius: 0.25rem ;
         border: none;
         text-shadow: 0 0 0.1rem $color-1;
-        margin: 0.25rem;
+        // margin: 0.25rem;
         font-size: 1rem; 
-        max-width: 12rem ;
-        background-color: $color-1;
+        width: 100%;
+        // transform: translate(30%,);
+        text-align: center;
+        background-color: $color-5;
+        
         &:hover {
-                background-color: $color-3;
-                color: $color-1;
-                border: 10px $color-1 !important;
+                background-color: $color-1;
+                color: $color-3;
+          
              
         }
 }

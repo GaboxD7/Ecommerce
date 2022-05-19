@@ -1,11 +1,22 @@
 
-let dato = [];
+let dato = []; // array que llenaremos desde fetch
+let stockProductos = dato; 
+let carro = []; // array que llearemos instcanciando la clase carrito
+let stock = stockProductos; // stock array el cual utilizaremos para armar nuestro html
+let stockColeccion  = []    // 
+
+
+
+// Uso de fetch para obtener los producots
+
+
 const obtenerData = async () => {
 
     try {
         let response   =    await fetch("./js/datos.json")
  
         let result     =    await response.json()
+    
   
         result.productos.forEach((elemento) => {
             dato.push(elemento)
@@ -18,21 +29,12 @@ const obtenerData = async () => {
     }
 
 }
-
-
 obtenerData()
-let stockProductos = dato;
-let carro = [];
-let stock = stockProductos;
 
-
-
-// let producto = {};
+// Obteniendo nodos de DOM
 
 const contenedor = document.querySelector("#contenedor");
-
-// const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const  bageContar = document.querySelector("#badgeCount");
+const bageContar = document.querySelector("#badgeCount");
 const mujer = document.querySelectorAll(".Mujer");
 const hombre = document.querySelectorAll(".Hombre");
 const nino = document.querySelectorAll(".nino");
@@ -51,110 +53,18 @@ const sectionFinal = document.querySelector('#section-final')
 const cerrarColeccion = document.querySelector('#cerrar-coleccion')
 const titleColeccion = document.querySelector('#title-coleccion')
 const imagenColeccion = document.querySelector('#coleccion2022')
-console.log(contenedorColeccion)
-
-
-
 const formulario = document.querySelector('#formularioBuscar');
 
-
+// Obteniendo informacion de LocalStorage
 document.addEventListener('DOMContentLoaded', () => {
-carro = JSON.parse(localStorage.getItem('carrito')) || [];
 
+carro = JSON.parse(localStorage.getItem('carrito')) || [];
 
    })
 
 
-
-coleccion.addEventListener("mousemove", (e) => {
-
-    botonColeccion[0].classList.remove("boton-coleccion")
-
-    
-})
-
-coleccion.addEventListener("mouseout", (e) => {
-
-    botonColeccion[0].classList.add("boton-coleccion")
-  
-    // mostrarColeccion()
-        // botonColeccion[0].style.display = "none"
-        // coleccion.style.opacity = "1"
-        // console.log("hola des NO")
-    
-    
-})
-botonColeccion[0].addEventListener("click", mostrarColeccion )
-titleColeccion.addEventListener("click", mostrarColeccion )
- function  mostrarColeccion () {
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
-    window.location.href = " http://127.0.0.1:5500/index.html#coleccion2022";
-    sectionFinal.style.marginBottom= "0"
-    contenedorColeccion.style.marginBottom ="5rem";
-   
-    titleColeccion.classList.add('title-down')
-    titleColeccion.classList.remove('title-up')
-    imagenColeccion.style.alignSelf = "end"
- 
-     filtrarStockColeccion()
- 
- contenedorOpen.classList.remove('open')
- } 
-cerrarColeccion.addEventListener("click", () => {
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
-    window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
-  
-    contenedorOpen.classList.add('open');
-    sectionFinal.style.marginBottom= "20rem";
-    titleColeccion.classList.remove('title-down')
-    titleColeccion.classList.add('title-up')
-    imagenColeccion.style.alignSelf = "auto"
-
- 
-
-})
-
-
-let stockColeccion  = []
-function filtrarStockColeccion () {
-    stockColeccion = stockProductos.filter(prod => prod.anio == 2022)
-    console.log(stockColeccion)
-    mostrarCardColeccion()
-}
-function mostrarCardColeccion ()  {
-    console.log(stock)
- contenedorColeccion.innerHTML = '';
-    stockColeccion.forEach((prod) => {
-        const div = document.createElement("div");
-     
-        // div.className = "col-2 mb-3";
-        div.innerHTML += `
-                            <div class="crd m text-center" >
-                                <div>
-                                <p class="card-text h6">${prod.deporte} </p>
-                                    <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">${prod.nombre}</h5>
-                                  Precio: $<span>${prod.precio} </span>
-                                </div>
-                                <ul class="list-group list-group-flush d.flex">
-                                    <li class="list-grou-item d-none text-center">Genero:  ${prod.genero} | Talla: ${prod.talla}</li>
-                                          
-                                    <li class="list-group-item precio "> <span>Cantidad:</span>
-                                    <select id="cantidad${prod.id}" name"unidades">
-                                        <option value=1>1</option>
-                                        <option value=2>2</option>
-                                        <option value=3>3</option>
-                                        <option value=4>4</option>
-                                     </select></li>              
-                                    </ul>
-                                <button class="card-btnn add-carro text-center" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
-                            </div>`;
-        contenedorColeccion.appendChild(div);
-    });
-}
-class Carrito {
+// Clase para  crear el el array con la inf del carrito
+   class Carrito {
 
     constructor(id, nombre, precio, img, cantidad ) {
         this.id = id;
@@ -166,39 +76,92 @@ class Carrito {
     }
 
 }
- console.log(window.location.href)
+
+
 
 cargarEventos()
-// Cargar Eventos 
+
+    // Cargar Eventos 
 function cargarEventos() {
 
-mujer.forEach(item => item.addEventListener("click", cards))
-mujer.forEach(item => item.addEventListener("click", fondo))
-mujer.forEach(item => item.addEventListener("click", direccion2))
-hombre.forEach(item => item.addEventListener("click", cards))
-hombre.forEach(item => item.addEventListener("click", fondo))
-hombre.forEach(item => item.addEventListener("click", direccion2))
-nino.forEach(item => item.addEventListener("click", cards))
-nino.forEach(item => item.addEventListener("click", fondo))
-nino.forEach(item => item.addEventListener("click", direccion2))
+    //  Mostrar todo 
 verTodo.forEach(item => item.addEventListener("click", cards))
 verTodo.forEach(item => item.addEventListener("click", direccion))
-inicio.addEventListener("click", volver)
+   
+    // Mostrar card solo por Genero en HTML
+mujer.forEach(item => item.addEventListener("click", cards))
+hombre.forEach(item => item.addEventListener("click", cards))
+nino.forEach(item => item.addEventListener("click", cards))
 
-    // Add un producto "Agregar Carrito"
+    // Cambiar componentes por Genero:
+mujer.forEach(item => item.addEventListener("click", cambiarFondo))
+hombre.forEach(item => item.addEventListener("click", cambiarFondo))
+nino.forEach(item => item.addEventListener("click", cambiarFondo))
 
+     // Rutas de destino
+mujer.forEach(item => item.addEventListener("click", direccion2))
+hombre.forEach(item => item.addEventListener("click", direccion2))
+nino.forEach(item => item.addEventListener("click", direccion2))
+
+     // Ir a inico
+inicio.addEventListener("click", volverInicio)
+
+    // Add un producto  desde Contenedor "Agregar Carrito"
 contenedor.addEventListener('click', agregarProducto);
+
+     // Add un producto  desde Contenedor de Coleccion "Agregar Carrito"
 contenedorColeccion.addEventListener('click', agregarProducto);
 
 
-// formulaio Buscar 
+    // Buscar filtrando desde input  
+formulario.addEventListener('input', filtrar)
+
+    // Ruta en el boton search type= submit 
+
+sub.onclick = function(e) {
+    e.preventDefault();
+  //   window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
+    window.location.href = " http://127.0.0.1:5500/index.html#submit-search";
+   
+}
+    //  add boton verColeccion
+coleccion.addEventListener("mousemove", (e) => {
+
+    botonColeccion[0].classList.remove("boton-coleccion")
+
+})
+    // Quitar boton VerColeccion
+coleccion.addEventListener("mouseout", (e) => {
+
+    botonColeccion[0].classList.add("boton-coleccion")
+  
+ 
+})
+    // Mostrar Coleccion 2022 desde boton
+botonColeccion[0].addEventListener("click", mostrarColeccion )
+
+    // Mostrar Coleccion desde titulo
+
+titleColeccion.addEventListener("click", mostrarColeccion )
+
+    // Cerrar Contenedor Coleccion
+cerrarColeccion.addEventListener("click", () => {
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
+    window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
+  
+    contenedorOpen.classList.add('open');
+    sectionFinal.style.marginBottom= "20rem";
+    titleColeccion.classList.remove('title-down')
+    titleColeccion.classList.add('title-up')
+    imagenColeccion.style.alignSelf = "auto"
+
+})
 
 }
-// btnProd.addEventListener("click", (e) => {
-//     preventDefault(e)
-// })
+
+
 function direccion  ()  {
-        //    e.preventDefault(e)
+     
     // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
     window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
 } 
@@ -208,9 +171,10 @@ function direccion2  (e)  {
     window.location.href = "http://127.0.0.1:5500/index.html#h1";
     
 }
+ 
+    // Filtrando el texto ingresado por medio del input
+function filtrar  ()  {
 
-const filtrar = () => {
-    //  console.log(formulario.value)
 contenedor.innerHTML = "";
     const texto = formulario.value.toLowerCase();
         for(let prod of stock) {
@@ -221,25 +185,30 @@ contenedor.innerHTML = "";
                 div.className = "col-3 mb-3";
 
                 div.innerHTML = `
-                <div class="card m-3" >
+                <div class="m-3 card-cuerpo" >
                 <div>
-                <p class="card-text h6">${prod.deporte} </p>
+                <span class="card-texto">${prod.deporte} </span>
                     <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">${prod.nombre}</h5>
-                  Precio: $<span>${prod.precio} </span>
+                <div class="precio">
+                    <h6>${prod.nombre}</h6>
+                    <span>Precio: $<span>${prod.precio} </span></span>
+                    
+                  
                 </div>
                 <ul class="list-group list-group-flush d.flex">
-                    <li class="list-group-item text-center">Genero:  ${prod.genero} | Talla: ${prod.talla}</li>
+                    <li class="card-lista">Genero:  ${prod.genero} || Talla: ${prod.talla}</li>
                           
-                    <li class="list-group-item precio "> <span>Cantidad:</span>
+                    <li class="card-lista "> 
+             
+                    <div class="select">
                     <select id="cantidad${prod.id}" name"unidades">
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                     </select></li>              
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                 </select></div>
+                  </li>              
                     </ul>
                 <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
             </div>`;
@@ -258,16 +227,10 @@ contenedor.appendChild(div);
 
 
 
- formulario.addEventListener('input', filtrar)
+ 
+   // Funcion para volver al Inicio
 
-     sub.onclick = function(e) {
-             e.preventDefault();
-           //   window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
-             window.location.href = " http://127.0.0.1:5500/index.html#submit-search";
-            
-     }
-
-function volver () {
+function volverInicio () {
     contenedor.innerHTML = '';
     jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
     jumbo.style.height = "100vh";
@@ -278,13 +241,13 @@ function volver () {
     h1.style.alignSelf= "center"
     titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
 }
-
+        // Funtion para cambiar el html
 function cards(e) {
   
     if (e.target.className == verTodo[0].className  ) {
 
         contenedor.innerHTML = '';
-        // limpiarContenedorHTML();
+       
         jumbo.style.backgroundImage = "url(img/jumbo/pesa-rusa.jpg)";
         jumbo.style.height = "100vh";
         btnProd.style.display  = "block";
@@ -292,14 +255,14 @@ function cards(e) {
         h1.style.fontSize= "3rem"
         h1.style.alignSelf= "center"
         titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
-        // e.target.className == verTodo[0].className?  stock = stockProductos : stock = stock
+     
         stock = stockProductos
 
     } else  {
         const exis = stock.some(prod => e.target.className !== prod.genero)
 
         if (exis) {
-            // limpiarContenedorHTML();
+       
             contenedor.innerHTML = '';
           stock = stockProductos.filter(elem => elem.genero ==  e.target.className || elem.genero == e.target.classList.item(2))
           titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
@@ -308,12 +271,12 @@ function cards(e) {
 
     } 
  
-mostrarCard()
+mostrarCard() // llamamos a la funcion para mostrar las Cards 
 
 
 }
 
-// Boton RUNNING 
+        // Boton RUNNING-CROSFFIT-RUNNING: Usando jquery
 
 $(document).ready(function() {
 
@@ -344,7 +307,6 @@ $("#running").click(function(e){
       })
 
 
-
 $("#training").click(function(e){
     e.preventDefault()
      stock.forEach(prod =>  {
@@ -358,8 +320,9 @@ $("#training").click(function(e){
           })
         })
 
-function fondo (e) {
-    console.log();
+
+function cambiarFondo (e) {
+ 
     if (e.target.classList.contains("Mujer")) {
         jumbo.style.backgroundImage = "url(img/jumbo/jumbo-m2.jpg)";
         jumbo.style.height = "60vh";
@@ -387,35 +350,39 @@ function fondo (e) {
     }
 }
 
-
+    // Mostrando cards 
 
 function mostrarCard () {
 
 contenedor.innerHTML = '';
     stock.forEach((prod) => {
         const div = document.createElement("div");
-        console.log(prod.precio)
         div.className = "col-3 mb-3";
         div.innerHTML = `
-                            <div class="card m-3" >
+                            <div class="m-3 card-cuerpo mt-5" >
                                 <div>
-                                <p class="card-text h6">${prod.deporte} </p>
+                                <span class="card-texto">${prod.deporte} </span>
                                     <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">${prod.nombre}</h5>
-                                  Precio: $<span>${prod.precio} </span>
+                                <div class="precio">
+                                    <h6 class="bg-light">${prod.nombre}</h6>
+                                    <span>Precio: $<span>${prod.precio} </span></span>
+                                    
+                                  
                                 </div>
                                 <ul class="list-group list-group-flush d.flex">
-                                    <li class="list-group-item text-center">Genero:  ${prod.genero} | Talla: ${prod.talla}</li>
+                                    <li class="card-lista">Genero:  ${prod.genero} || Talla: ${prod.talla}</li>
                                           
-                                    <li class="list-group-item precio "> <span>Cantidad:</span>
+                                    <li class="card-lista "> 
+                             
+                                    <div class="select">
                                     <select id="cantidad${prod.id}" name"unidades">
-                                        <option value=1>1</option>
-                                        <option value=2>2</option>
-                                        <option value=3>3</option>
-                                        <option value=4>4</option>
-                                     </select></li>              
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                 </select></div>
+                                  </li>              
                                     </ul>
                                 <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
                             </div>`;
@@ -424,32 +391,36 @@ contenedor.innerHTML = '';
 }
 
 
+  // Funcion para add productos al Carrito
 
 function agregarProducto(e) {
-console.log(e.target)
+
     e.preventDefault();
 
     if (e.target.classList.contains('add-carro')) {
        const productoSeleccionado = e.target.parentElement;
     
-       leerDatosProducto(productoSeleccionado)
+       leerDatosProducto(productoSeleccionado) // Llamada a la funcion donde obtendremos los datos del producto seleccionado
 
    }
 
     
 }
-
+// Funcion que nos permite obtener la informacion del prodcuto
 
 function leerDatosProducto(producto) {
-console.log(producto)
+
     const id = producto.querySelector('button').getAttribute('data-id');
     const imagen = producto.querySelector('img').src;
-    const nombre = producto.querySelector('h5').textContent;
-    const precio = producto.querySelector('div span').textContent;
-    console.log(precio)
+    const nombre = producto.querySelector('h6').textContent;
+    const precio = producto.querySelector('.precio span span').textContent;
     let cantidad = parseInt(document.getElementById(`cantidad${id}`).value);
     // const deporte = producto.querySelector('')
-
+console.log(id)
+console.log(imagen)
+console.log(nombre)
+console.log(precio)
+console.log(cantidad)
    // Creo el nuevo producto
 
     const productoCarro = new Carrito(id, nombre, precio, imagen, cantidad );
@@ -485,9 +456,9 @@ console.log(producto)
             }
 
    
-        addCarroStorage()
-        mostrarNumeroCarrito()
-        Toastify({
+        addCarroStorage()           // agregamos al LS
+        mostrarNumeroCarrito()      // Mostramo el lenght del array carrito
+        Toastify({                  // Mensaje Alert por toastify
             text: `Haz agregado un producto`,
             duration: 4000,
             //  destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
@@ -507,7 +478,7 @@ console.log(producto)
 }
 
   
-
+   // Mostramo el lenght del array carrito
 
    mostrarNumeroCarrito()
    //
@@ -536,4 +507,100 @@ function addCarroStorage () {
 
 }
 
+
+// SECTION COLECCION 
+
+
+
+
+
+
+// Funcion que realiza cambio en la seccion coleccion 2022 
+function  mostrarColeccion () {
+    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
+    window.location.href = " http://127.0.0.1:5500/index.html#coleccion2022";
+    sectionFinal.style.marginBottom= "0"
+    contenedorColeccion.style.marginBottom ="5rem";
+    titleColeccion.classList.add('title-down')
+    titleColeccion.classList.remove('title-up')
+    imagenColeccion.style.alignSelf = "end"
+ 
+     filtrarStockColeccion() // se llama a la funcion que editara nuestro stock con los productos coleccion 2022
+ 
+    contenedorOpen.classList.remove('open') // Quitamos la clases open para mostrar el contendor
+ }
+
+ // Filtramo nuestros Prodcutos por coleccion año 2022 
+ function filtrarStockColeccion () {
+    stockColeccion = stockProductos.filter(prod => prod.anio == 2022)
+
+    mostrarCardColeccion()  // llamada para redenrizar
+}
+
+    // Renderizamos el stockColeccion 
+function mostrarCardColeccion ()  {
+  
+ contenedorColeccion.innerHTML = '';
+    stockColeccion.forEach((prod) => {
+        const div = document.createElement("div");
+     
+        // div.className = "col-2 mb-3";
+        div.innerHTML += `
+        <div class="m-3 card-cuerpo" >
+        <div>
+        <span class="card-texto">${prod.deporte} </span>
+            <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
+        </div>
+        <div class="precio">
+            <h6>${prod.nombre}</h6>
+            <span>Precio: $<span>${prod.precio} </span></span>
+            
+          
+        </div>
+        <ul class="list-group list-group-flush d.flex">
+            <li class="card-lista">Genero:  ${prod.genero} || Talla: ${prod.talla}</li>
+                  
+            <li class="card-lista "> 
+     
+            <div class="select">
+            <select id="cantidad${prod.id}" name"unidades">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+         </select></div>
+          </li>              
+            </ul>
+        <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
+    </div>`;
+        contenedorColeccion.appendChild(div);
+    });
+}
+const check = document.querySelector("#check");
+const email = document.querySelector("#email");
+const registrar = document.querySelector("#registrar");
+console.log(check.checked)
+console.log(email)
+console.log(registrar)
+registrar.addEventListener("click", (e) => {
+     e.preventDefault();
+if (!check.checked) {
+    alert("Debes aceptar los terminos y condiciones")
+} else {
+   validarEmail()
+}
+// alert(`${email.textContent}`)
+console.log(email.value)
+
+})
+
+const validarEmail = () => {
+    const expreRegular = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    const esValido = expreRegular.test(email.value)
+    if (esValido == true) {
+        alert(`Exclente ${email.value} te haz subscrito correctamente`)
+    } else {
+alert("ingrese un correo vlido")
+    }
+}
 

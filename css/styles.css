@@ -139,42 +139,19 @@ h5 {
   color: red;
 }
 
-#total {
-  color: black;
+h6 {
+  font-size: 1.25rem;
+  padding-top: 0.5rem;
+  text-shadow: 0 0 0.01rem #111;
+  color: #111;
+  text-align: center;
 }
 
 p {
   text-align: justify;
   color: #111;
   font-size: 1.2rem;
-}
-
-#lista-carrito {
-  display: block;
-  color: black;
-  position: absolute;
-  z-index: 1;
-  background-color: white;
-}
-
-.carritos-new {
-  display: block;
-  color: black;
-  position: absolute;
-  z-index: 1;
-}
-
-.card-body p {
-  background-color: #dcdcdc;
-  padding: 0.25rem;
-  width: 5rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-td {
-  font-weight: lighter;
+  margin-bottom: none !important;
 }
 
 #jumbo {
@@ -382,29 +359,82 @@ td {
 .no-encontrado {
   color: red;
   font-size: 1.5rem;
-  background-color: #111;
   padding: 0.5rem;
   width: fit-content;
 }
 
-.card-btnn {
-  display: flex;
-  justify-self: center;
-  align-self: center;
-  background-color: red;
+.select {
+  position: relative;
+  border: none;
+  overflow: hidden;
+  background-color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  display: inline;
+  left: 35%;
+}
+
+.select::before {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5rem 0.5rem 0 0.5rem;
+  border-color: white transparent transparent transparent;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.select select {
+  padding: 0.25rem;
+  margin: 1rem 0;
+  width: 25%;
+  border: none;
+  border-radius: 0rem;
+  box-shadow: none;
+  background-color: transparent;
+  background-color: #111;
+  background-image: none;
+  appearance: none;
+  text-align: center;
+  border: none;
+  color: white;
+}
+
+.card-cuerpo {
+  border: #747B81 solid 0.25rem;
+  border-radius: 1rem 0 0;
+}
+
+.card-texto {
+  display: block;
+  background-color: #747B81;
+  border-radius: 0.5rem 0 0;
   padding: 0.5rem;
+  color: white;
+  text-shadow: 0 0 0.1rem #111;
+}
+
+.card-lista {
+  list-style: none;
+}
+
+.card-btnn {
+  padding: 1rem;
   color: white;
   border: none;
   text-shadow: 0 0 0.1rem #111;
-  margin: 0.25rem;
   font-size: 1rem;
-  max-width: 12rem;
-  background-color: #111;
+  width: 100%;
+  text-align: center;
+  background-color: #747B81;
 }
 .card-btnn:hover {
-  background-color: white;
-  color: #111;
-  border: 10px #111 !important;
+  background-color: #111;
+  color: white;
 }
 
 footer {
@@ -431,6 +461,7 @@ footer {
 }
 .form-terminos a {
   color: white;
+  font-size: 1.25rem;
   font-style: none;
 }
 .form-terminos p {
@@ -442,8 +473,9 @@ footer {
 .form-servicio {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
+  margin-top: 7rem;
   color: white;
 }
 .form-servicio a {
@@ -451,6 +483,7 @@ footer {
   color: white;
   text-decoration: none;
   font-style: none;
+  font-size: 0.8rem;
 }
 .form-servicio div {
   padding: 0 3rem;
@@ -502,6 +535,37 @@ footer {
   width: 11.75rem;
   height: 11.75rem;
   padding: 0rem;
+}
+
+.footer-car {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17rem;
+  height: 5rem;
+}
+
+.footer-car2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 5rem;
+  width: 15%;
+}
+.footer-car2 a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+.footer-car1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 5rem;
+  color: white;
+  font-size: 0.75rem;
+  width: 25%;
 }
 
 .nav-carro {
@@ -566,7 +630,6 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  align-content: space-between;
 }
 
 /*# sourceMappingURL=styles.css.map */

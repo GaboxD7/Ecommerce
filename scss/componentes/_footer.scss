@@ -26,7 +26,7 @@ footer {
   padding: 2rem 0 0 0 ;
   a {
     color: $color-3;
-   
+   font-size: 1.25rem;
     font-style: none;
   }
   p {
@@ -38,14 +38,16 @@ footer {
   .form-servicio {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-content: center;
+    margin-top: 7rem;
       color: $color-3;
       
       a { display: block;
         color: $color-3;
         text-decoration: none;
         font-style: none;
+        font-size: 0.8rem;
       }
     div {
       padding: 0 3rem;
@@ -97,4 +99,38 @@ footer {
   width: 11.75rem;
   height: 11.75rem;
   padding: 0rem;
+}
+.footer-car {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 17rem;
+  height: 5rem;
+}
+.footer-car2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 5rem;
+  width: 15%;
+   a {
+
+    color: $color-3 ;
+    text-decoration: none;
+    font-size: 0.75rem;
+  }
+  span {
+    
+  }
+}
+.footer-car1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-left: 5rem;
+  color: $color-3;
+  font-size: 0.75rem;
+  width: 25%;
+ 
 }

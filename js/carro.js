@@ -1,14 +1,14 @@
 //  import { limpiarHTML} from "./app.js";
 
 let articulosCarro = JSON.parse( localStorage.getItem('carrito')) || [];
-let contenedorCarrito = document.querySelector('#lista-carrito tbody');
-let carrito = document.querySelector('#carro-in');
-let carritoVacio = document.querySelector('#carro-vacio');
+const contenedorCarrito = document.querySelector('#lista-carrito tbody');
+const carrito = document.querySelector('#carro-in');
+const carritoVacio = document.querySelector('#carro-vacio');
 const vaciarCarrito = document.querySelector('#vaciar-carrito');
-let contenedorCar = document.querySelector("#conteCarro");
-let pagar = document.querySelector("#pagar");
-let seguirComprando = document.querySelector("#seguir-comprando")
-let seguirComprando2 = document.querySelector("#seguir-comprando2")
+const contenedorCar = document.querySelector("#conteCarro");
+const pagar = document.querySelector("#pagar");
+const seguirComprando = document.querySelector("#seguir-comprando")
+const seguirComprando2 = document.querySelector("#seguir-comprando2")
 
 
 
@@ -17,9 +17,7 @@ mostrarCarroHtml()
 function mostrarCarroHtml()  {
  
   limpiarHTML()
-   
-   // Muestro en el html del carro
- 
+
       contenedorCar.innerHTML = "";
    
      articulosCarro.forEach((prod) => {
@@ -46,9 +44,6 @@ function mostrarCarroHtml()  {
 
     }
 
-
-
-
     cargarEventos()
 
     function cargarEventos () {
@@ -62,16 +57,16 @@ function mostrarCarroHtml()  {
         articulosCarro = []; // reseteamos el arreglo
         localStorage.removeItem('carrito');
         contenedorCar.innerHTML = '';
-     limpiarHTML()
+       limpiarHTML()
          
            });
-           // pagar 
+      
            pagar.addEventListener('click', pagado);
 
     }
 
     function pagado() {
-      console.log("hola")
+  
       Toastify({
         text: `GRACIAS POR TU COMPRA`,
         duration: 5000,
@@ -101,21 +96,6 @@ seguirComprando2.addEventListener("click", () => {
   // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
   window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
 })
-// function cambiarCantidad(e) {
-//     let ctdd = e.target.value;
-//     console.log(e.target.value)
-//     if(isNaN(ctdd) || ctdd <= 0) {
-//           ctdd = 1;
- 
-//     }
-//      upDatePrecio()
-
-    
-// } 
-// function upDatePrecio () {
-//     let price = 
-    
-// }
     
     // Eliminar Producto de carrito
   
@@ -125,9 +105,9 @@ seguirComprando2.addEventListener("click", () => {
     
           const productoId = e.target.parentElement.getAttribute('data-id');
  
-              // Elimina del arreglo de articulosCarrito por el data-id
+       
               articulosCarro = articulosCarro.filter(producto => producto.id !== productoId);
-            //   JSON.stringify(localStorage.setItem("carrito", articulosCarro ))  
+       
             localStorage.setItem("carrito", JSON.stringify(articulosCarro))
               mostrarCarroHtml()
         
@@ -136,14 +116,9 @@ seguirComprando2.addEventListener("click", () => {
       
   }
 
-// console.log(total)
+
   function limpiarHTML() {
 
-    // limpiar nuestro HTML
-    // console.log(articulosCarro.firstChild)
-    // while (articulosCarro.firstChild) {
-    //     articulosCarro.removeChild(articulosCarro);
-    // }
       total.innerHTML = ` $ ${totalGeneral()}`;
 }
 
@@ -153,10 +128,6 @@ function totalGeneral() {
 
     return productoTotal ;
 }
-// const total = document.querySelector("#total")
-
-
-
 
 if (articulosCarro.length == 0 ) 
 {
@@ -164,8 +135,8 @@ if (articulosCarro.length == 0 )
  carritoVacio.classList.remove("d-none")
   carrito.classList.add("d-none")
 } else {
-  console.log("lleno")
+
   carrito.classList.remove("d-none")
   carritoVacio.classList.add("d-none")
-  // carritoVacio.classList.add("d-block")
+
 }
