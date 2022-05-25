@@ -54,7 +54,9 @@ const cerrarColeccion = document.querySelector('#cerrar-coleccion')
 const titleColeccion = document.querySelector('#title-coleccion')
 const imagenColeccion = document.querySelector('#coleccion2022')
 const formulario = document.querySelector('#formularioBuscar');
-
+const check = document.querySelector("#check");
+const email = document.querySelector("#email");
+const registrar = document.querySelector("#registrar");
 // Obteniendo informacion de LocalStorage
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -177,6 +179,7 @@ function filtrar  ()  {
 
 contenedor.innerHTML = "";
     const texto = formulario.value.toLowerCase();
+    console.log(texto.split())
         for(let prod of stock) {
             let nombre = prod.nombre.toLowerCase();
             if (nombre.indexOf(texto.split()) !== -1) {
@@ -416,11 +419,7 @@ function leerDatosProducto(producto) {
     const precio = producto.querySelector('.precio span span').textContent;
     let cantidad = parseInt(document.getElementById(`cantidad${id}`).value);
     // const deporte = producto.querySelector('')
-console.log(id)
-console.log(imagen)
-console.log(nombre)
-console.log(precio)
-console.log(cantidad)
+
    // Creo el nuevo producto
 
     const productoCarro = new Carrito(id, nombre, precio, imagen, cantidad );
@@ -511,10 +510,6 @@ function addCarroStorage () {
 // SECTION COLECCION 
 
 
-
-
-
-
 // Funcion que realiza cambio en la seccion coleccion 2022 
 function  mostrarColeccion () {
     // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
@@ -576,31 +571,72 @@ function mostrarCardColeccion ()  {
         contenedorColeccion.appendChild(div);
     });
 }
-const check = document.querySelector("#check");
-const email = document.querySelector("#email");
-const registrar = document.querySelector("#registrar");
-console.log(check.checked)
-console.log(email)
-console.log(registrar)
-registrar.addEventListener("click", (e) => {
-     e.preventDefault();
-if (!check.checked) {
-    alert("Debes aceptar los terminos y condiciones")
-} else {
-   validarEmail()
-}
-// alert(`${email.textContent}`)
-console.log(email.value)
 
-})
 
-const validarEmail = () => {
-    const expreRegular = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
-    const esValido = expreRegular.test(email.value)
-    if (esValido == true) {
-        alert(`Exclente ${email.value} te haz subscrito correctamente`)
-    } else {
-alert("ingrese un correo vlido")
+// Validacion Email
+
+email.addEventListener("invalid", comprobarEmail);
+email.addEventListener("input", comprobarEmail);
+
+function comprobarEmail() {
+
+
+    let mensaje = "";
+
+    // comprobar los posibles errores
+    if (this.value == "") {
+      mensaje = "El campo del email no puede estar vacío";
+    } else if (this.value.indexOf("@") < 0) {
+      mensaje = `El email debe contener una "@"please`;
+    } else if (this.value.indexOf(".com", this.value.indexOf("@")) < 0) {
+        mensaje = "El email debe contener .com detras de la @";
+ 
+   
+    } 
+      
+        registrar.addEventListener("click", ( e ) => {
+             e.preventDefault()
+        
+            if (check.checked) {
+              Swal.fire({
+                  title: `¡BIENVENIDO!, Tu Codigo De 10%  De Descuentos es: GaboSport `,
+                  icon: 'success',
+                  iconColor:'black',
+                  grow: 'row',
+                //   with: "30px",
+                  padding:'3rem',
+                  confirmButtonText: 'ENTENDIDO',
+                  confirmButtonColor: '#111',
+                  showCancelButton: false,
+                  showCloseButton: true,
+          
+                })
+  
+                } else {
+                  Swal.fire({
+                  title: `Hola, debes aceptar los Terminos y Condiciones.`,
+                  icon: 'warning',
+                  iconColor:'red',
+                  confirmButtonText: 'ENTENDIDO',
+                  confirmButtonColor: '#111',
+                  showCancelButton: false,
+                  showCloseButton: true,
+           
+                  position: 'top'
+                })
+            }
+        
+          })
+
+    
+    
+    {
+
+    
     }
-}
+  
+
+  }
+
+
 

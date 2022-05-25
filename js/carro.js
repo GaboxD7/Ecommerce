@@ -9,7 +9,8 @@ const contenedorCar = document.querySelector("#conteCarro");
 const pagar = document.querySelector("#pagar");
 const seguirComprando = document.querySelector("#seguir-comprando")
 const seguirComprando2 = document.querySelector("#seguir-comprando2")
-
+let validarDcto = JSON.parse( localStorage.getItem('aceptado')) || false;
+// let validarDcto = false;
 
 
 mostrarCarroHtml()
@@ -54,11 +55,7 @@ function mostrarCarroHtml()  {
 
         vaciarCarrito.addEventListener('click', () => {
     
-        articulosCarro = []; // reseteamos el arreglo
-        localStorage.removeItem('carrito');
-        contenedorCar.innerHTML = '';
-       limpiarHTML()
-         
+          VaciarCarro();
            });
       
            pagar.addEventListener('click', pagado);
@@ -69,22 +66,32 @@ function mostrarCarroHtml()  {
   
       Toastify({
         text: `GRACIAS POR TU COMPRA`,
-        duration: 5000,
+        duration: 4000,
         // destination: "https://github.com/apvarun/toastify-js",
         newWindow: true,
         // close: true,
-        gravity: "bottom", // `top` or `bottom`
+        // gravity: "top", // `top` or `bottom`
         position: "center", // `left`, `center` or `right`
         stopOnFocus: true, // Prevents dismissing of toast on hover
         style: {
-            padding: "5rem",
+            padding: "10rem",
           background: "black",
         },
         onClick: function(){} // Callback after click
       }).showToast();
+      VaciarCarro();
+
     }
 
-
+const VaciarCarro = () => {
+  articulosCarro = []; // reseteamos el arreglo
+  localStorage.removeItem('carrito');
+  localStorage.removeItem('aceptado');
+  contenedorCar.innerHTML = '';
+  limpiarHTML()
+  carritoVacio.classList.remove("d-none")
+  carrito.classList.add("d-none")
+}
 
 seguirComprando.addEventListener("click", () => {
   // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
@@ -105,11 +112,9 @@ seguirComprando2.addEventListener("click", () => {
     
           const productoId = e.target.parentElement.getAttribute('data-id');
  
-       
-              articulosCarro = articulosCarro.filter(producto => producto.id !== productoId);
-       
+            articulosCarro = articulosCarro.filter(producto => producto.id !== productoId);
             localStorage.setItem("carrito", JSON.stringify(articulosCarro))
-              mostrarCarroHtml()
+            mostrarCarroHtml()
         
       }
   
@@ -119,7 +124,8 @@ seguirComprando2.addEventListener("click", () => {
 
   function limpiarHTML() {
 
-      total.innerHTML = ` $ ${totalGeneral()}`;
+      total.innerHTML = `$ ${totalGeneral()}`;
+      total2.innerHTML = `$ ${validarDcto ? totalGeneral() *0.90 :  totalGeneral()}`;
 }
 
 function totalGeneral() {
@@ -140,3 +146,85 @@ if (articulosCarro.length == 0 )
   carritoVacio.classList.add("d-none")
 
 }
+
+
+const descuento = document.querySelector('#descuento');
+const inputDescuento = document.querySelector('#input-descuento');
+const containerDescuento = document.querySelector('#container-descuento');
+const inputCodigo = document.querySelector('#input-codigo');
+const submitCodigo = document.querySelector('#ok-codigo');
+const tdPrecio = document.querySelector('#td-precio');
+
+submitCodigo.addEventListener('click', aplicarOk);
+function aplicarOk () {
+  inputDescuento.classList.add('d-none')
+  containerDescuento.classList.add('d-block')
+  containerDescuento.classList.remove('d-none')
+
+}
+
+descuento.addEventListener('click', (e) => {
+
+  inputDescuento.classList.remove('d-none')
+  containerDescuento.classList.remove('d-block')
+  containerDescuento.classList.add('d-none')
+
+
+});
+
+ 
+
+inputCodigo.addEventListener('input', validarCodigo)
+
+
+function validarCodigo ()  {
+  const texto = inputCodigo.value.toLowerCase().split(' ');
+  // console.log(texto.join(''))
+  validarDcto = (texto.join('') == "gabosport" )
+  if (texto !== '') {
+  
+    if(validarDcto) {
+      console.log(validarDcto)
+      console.log("validado")
+      localStorage.setItem('aceptado', JSON.stringify(validarDcto));
+      limpiarHTML();
+
+      Swal.fire({
+        title: `TU CODIGO FUE ACEPTADO CON 10% EN TU COMPRA`,
+        icon: 'success',
+        iconColor:'black',
+        grow: 'row',
+      //   with: "30px",
+        padding:'3rem',
+        confirmButtonText: 'ENTENDIDO',
+        confirmButtonColor: '#111',
+        showCancelButton: false,
+        showCloseButton: true,
+
+      })
+      tdPrecio.classList.add('total-precio-cambio')
+    } else {
+      console.log('y ahora')
+    }
+
+  } else 
+  console.log(texto)
+
+  // console.log(inputCodigo)
+}
+
+console.log(articulosCarro)
+
+// function totalGeneral2() {
+ 
+//    let productoTotal = articulosCarro.reduce((total, producto) => total + producto.subtotal, 0);
+
+//    return productoTotal ;
+// }
+console.log(validarDcto)
+const getTdPrecio = () => {
+  if(validarDcto) {
+    tdPrecio.classList.add('total-precio-cambio');
+  }
+ }
+ getTdPrecio()

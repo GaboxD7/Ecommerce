@@ -86,7 +86,6 @@ header:nth-child(1) {
 }
 
 .sub {
-  position: relative;
   border-radius: 0 2rem 2rem 0;
   width: 10rem;
   height: 3rem;
@@ -95,11 +94,13 @@ header:nth-child(1) {
   background-color: #111;
   color: white;
   font-size: 1rem !important;
+  font-weight: bold;
   left: -5px;
 }
-.sub hover {
-  background-color: aqua;
-  color: aquamarine;
+.sub:hover {
+  background-color: white;
+  color: #111;
+  border: 3px solid #111;
 }
 
 #parrafo-buscar {
@@ -128,6 +129,12 @@ h3 {
   padding-top: 0.5rem;
   padding-left: 0.3rem;
   text-shadow: 0 0 0.5rem #111;
+  color: white;
+}
+
+h4 {
+  font-size: 2.25rem;
+  text-shadow: 0 0 0.1rem #111;
   color: white;
 }
 
@@ -437,6 +444,49 @@ p {
   color: white;
 }
 
+.info {
+  background-color: aqua;
+  font-size: 55rem;
+  padding: 5rem;
+}
+
+.input-codigo {
+  background-color: #111;
+  width: 12rem;
+  height: 2.25rem;
+  font-size: 0rem;
+  border: none;
+  color: white;
+  outline: none;
+  font-size: 1rem !important;
+  padding-left: 1.5rem;
+  border-radius: 2rem 0 0 2rem;
+}
+.input-codigo::placeholder {
+  color: white;
+  padding-left: 0rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+.ok-codigo {
+  position: absolute;
+  height: 2.25rem;
+  border-radius: 0 2rem 2rem 0;
+  width: 3rem;
+  padding: 0.25rem;
+  border: none;
+  outline: none;
+  font-weight: bold;
+  background-color: #111;
+  color: white;
+}
+.ok-codigo:hover {
+  background-color: white;
+  color: #111;
+  border: 1px solid #111;
+}
+
 footer {
   background-repeat: no-repeat;
   background-color: #111;
@@ -542,7 +592,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 17rem;
+  margin-top: 10rem;
   height: 5rem;
 }
 
@@ -630,6 +680,78 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.img-size {
+  width: 100%;
+  height: 15rem;
+}
+
+/*------------------------*/
+/* Tooltip container */
+.tooltipp {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  /* border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltipp .tooltiptextt {
+  visibility: hidden;
+  width: 15rem;
+  background-color: black;
+  color: #fff;
+  text-align: justify;
+  padding: 1rem;
+  border-radius: 6px;
+  font-weight: 400;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 1rem;
+  /* Fade in tooltip */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltipp::after {
+  content: "?";
+  background-color: black;
+  border-radius: 50%;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid black;
+  color: #fff;
+  font-weight: bolder;
+  margin-left: 0.25rem;
+}
+
+.tooltipp .tooltiptextt::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipp:hover .tooltiptextt {
+  visibility: visible;
+  opacity: 1;
+}
+
+.total-precio-cambio {
+  background-color: #747B81 !important;
+  color: white;
+  text-shadow: 0 0 0.1rem #111;
 }
 
 /*# sourceMappingURL=styles.css.map */

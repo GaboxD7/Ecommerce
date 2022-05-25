@@ -24,3 +24,48 @@
              
         }
 }
+.info {
+        background-color: aqua;
+        font-size: 55rem;
+        padding: 5rem;
+}
+.input-codigo {
+     
+        background-color: $color-1;
+        width: 12rem;
+        height: 2.25rem;
+        font-size: 0rem;
+        border: none;
+        color: $color-3;
+        outline: none;
+        font-size: 1rem !important;
+        padding-left: 1.5rem;
+        border-radius: 2rem 0 0 2rem;
+      
+        &::placeholder {
+                color: $color-3;
+                padding-left: 0rem;
+                font-size: 0.75rem;
+                text-align: center;
+        }
+}
+
+.ok-codigo { 
+        position:absolute;
+        height: 2.25rem;
+        border-radius: 0 2rem 2rem 0;
+        width: 3rem;
+        padding: 0.25rem;
+        border: none;
+        outline: none;
+        font-weight: bold;
+
+        background-color: $color-1;
+        color: $color-3;
+      
+        &:hover {
+                background-color: $color-3;
+                color: $color-1;
+                 border: 1px solid $color-1;
+            }
+}

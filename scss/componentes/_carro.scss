@@ -42,16 +42,7 @@ a {
 .centrar {
 
   height: 8rem;
-//   text-align: center;
-//   margin-left: auto;
-// margin-right: auto;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-self: center;
+
 }
 .padre-img {
     position: relative;
@@ -72,3 +63,77 @@ justify-content: space-between;
 align-items: flex-start;
 
 }
+.img-size {
+    width: 100%;
+    height: 15rem;
+}
+
+/*------------------------*/
+/* Tooltip container */
+.tooltipp {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+
+   /* border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+  }
+  
+  /* Tooltip text */
+  .tooltipp .tooltiptextt {
+    visibility: hidden;
+    width: 15rem;
+    background-color:black;
+    color: #fff;
+    text-align:justify;
+    padding: 1rem ;
+    border-radius: 6px;
+    font-weight: 400;
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+  font-size: 1rem;
+    /* Fade in tooltip */
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+  
+  /* Tooltip arrow */
+  .tooltipp::after
+{
+  content: '?';
+
+  background-color:  black;
+  border-radius: 50%  ;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid black;
+  color: #fff;
+  font-weight: bolder;
+    margin-left: 00.25rem;
+} 
+
+.tooltipp .tooltiptextt::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltipp:hover .tooltiptextt {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .total-precio-cambio {
+    
+     background-color: $color-5 !important;
+       color: $color-3;
+       text-shadow: 0 0 0.1rem $color-1;
+  }
