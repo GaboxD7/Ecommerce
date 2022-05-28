@@ -1,3 +1,38 @@
+   /*       RUTAS DE ALGUNOS BOTONES CONFIGURADAS CON: "WINDOW.LOCATION*.
+            Si estas de manera local debes descomentar las rutas 
+                LOCAL  y  comentar las rutas GIT-PAGE/                  */  
+
+     //---------------------Ruta en el boton search type= submit -------------------------------
+
+    const search = "http://127.0.0.1:5500/index.html#submit-search";                                  // LOCAL
+//  const search = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";                   // GIT-PAGE
+
+
+     //---------------------Ruta en el boton "VOLVER" -Contenedor Coleccion---------------------
+
+    const btnCerrarColeccion = "http://127.0.0.1:5500/index.html#section-medio"                      // LOCAL
+//  const btnCerrarColeccion = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"       // GIT PAGE
+
+     //---------------------Ruta botnes "VER TODO" --------------------------------------
+
+     const rutaVerTodo = "http://127.0.0.1:5500/index.html#section-medio"                           // LOCAL           
+//   const rutaVerTodo = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"            // GIT-PAGE   
+               
+      // ------------------- Ruta botnes "GENEROS"--------------------------------------
+
+    const rutaGenero = "http://127.0.0.1:5500/index.html#h1"                                         // LOCAL           
+    // const rutaGenero = "https://gaboxd7.github.io/Ecommerce/index.html#h1"                       // GIT-PAGE   
+
+     //--------------------- Ruta Coleccion 2022 --------------------------------------
+
+    const coleccion2022 = "http://127.0.0.1:5500/index.html#coleccion2022"                           // LOCAL
+    // const coleccion2022 = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022"         // GIT-PAGE
+
+     //--------------------- Ruta Carrito  --------------------------------------
+
+    const rutaCarrito = "http://127.0.0.1:5500/carro.html"                                          // LOCAL
+    // const rutaCarrito = "https://gaboxd7.github.io/Ecommerce/carro.html"                        // GIT-PAGE
+     
 
 let dato = []; // array que llenaremos desde fetch
 let stockProductos = dato; 
@@ -54,9 +89,7 @@ const cerrarColeccion = document.querySelector('#cerrar-coleccion')
 const titleColeccion = document.querySelector('#title-coleccion')
 const imagenColeccion = document.querySelector('#coleccion2022')
 const formulario = document.querySelector('#formularioBuscar');
-const check = document.querySelector("#check");
-const email = document.querySelector("#email");
-const registrar = document.querySelector("#registrar");
+
 // Obteniendo informacion de LocalStorage
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -88,7 +121,7 @@ function cargarEventos() {
 
     //  Mostrar todo 
 verTodo.forEach(item => item.addEventListener("click", cards))
-verTodo.forEach(item => item.addEventListener("click", direccion))
+verTodo.forEach(item => item.addEventListener("click", rutaIrVerTodo))
    
     // Mostrar card solo por Genero en HTML
 mujer.forEach(item => item.addEventListener("click", cards))
@@ -101,9 +134,9 @@ hombre.forEach(item => item.addEventListener("click", cambiarFondo))
 nino.forEach(item => item.addEventListener("click", cambiarFondo))
 
      // Rutas de destino
-mujer.forEach(item => item.addEventListener("click", direccion2))
-hombre.forEach(item => item.addEventListener("click", direccion2))
-nino.forEach(item => item.addEventListener("click", direccion2))
+mujer.forEach(item => item.addEventListener("click", rutaIrGenero))
+hombre.forEach(item => item.addEventListener("click", rutaIrGenero))
+nino.forEach(item => item.addEventListener("click", rutaIrGenero))
 
      // Ir a inico
 inicio.addEventListener("click", volverInicio)
@@ -122,8 +155,8 @@ formulario.addEventListener('input', filtrar)
 
 sub.onclick = function(e) {
     e.preventDefault();
-  //   window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";
-    window.location.href = " http://127.0.0.1:5500/index.html#submit-search";
+
+    window.location.href = search;
    
 }
     //  add boton verColeccion
@@ -146,10 +179,12 @@ botonColeccion[0].addEventListener("click", mostrarColeccion )
 
 titleColeccion.addEventListener("click", mostrarColeccion )
 
-    // Cerrar Contenedor Coleccion
+ 
+
 cerrarColeccion.addEventListener("click", () => {
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"
-    window.location.href = "http://127.0.0.1:5500/index.html#section-medio"
+
+      // Ruta en el boton "VOLVER" -Contenedor Coleccion-
+       window.location.href = btnCerrarColeccion;
   
     contenedorOpen.classList.add('open');
     sectionFinal.style.marginBottom= "20rem";
@@ -160,26 +195,26 @@ cerrarColeccion.addEventListener("click", () => {
 })
 
 }
+    // ruta botnes "VER TODO" 
 
+function rutaIrVerTodo  ()  {
 
-function direccion  ()  {
-     
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";
-    window.location.href = "http://127.0.0.1:5500/index.html#section-medio";
+       window.location.href = rutaVerTodo;
 } 
-function direccion2  (e)  {
+   // ruta botnes "GENEROS"
+function rutaIrGenero  (e)  {
 
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#h1";
-    window.location.href = "http://127.0.0.1:5500/index.html#h1";
+    window.location.href = rutaGenero ;
     
 }
+
  
     // Filtrando el texto ingresado por medio del input
 function filtrar  ()  {
 
 contenedor.innerHTML = "";
     const texto = formulario.value.toLowerCase();
-    console.log(texto.split())
+
         for(let prod of stock) {
             let nombre = prod.nombre.toLowerCase();
             if (nombre.indexOf(texto.split()) !== -1) {
@@ -221,7 +256,7 @@ contenedor.appendChild(div);
       
         if(contenedor.innerHTML === "" ) {
             contenedor.innerHTML = `
-                <h4 class="text-center"> <i class="fi fi-rr-surprise"></i> ¡Vaya! No hemos encontrado resultados de: <span class="no-encontrado bg-light">${texto}</span></h4>
+                <h4 class="text-center no-encontrado-h4"> <i class="fi fi-rr-surprise"></i> ¡Vaya! No hemos encontrado resultados de: <span class="no-encontrado bg-light">${texto}</span></h4>
             `
         }
 
@@ -292,11 +327,12 @@ $("#crossfit").click(function(e){
    })
    titulo.textContent = "Crosffit"
         mostrarCard()
-        direccion()
+        rutaIrVerTodo()
     })
 
 
 $("#running").click(function(e){
+   
     e.preventDefault()
     stock.forEach(prod =>  {
         if(prod.deporte == "Running")  {
@@ -305,7 +341,7 @@ $("#running").click(function(e){
         })
         titulo.textContent = "Running"
              mostrarCard()
-             direccion()
+             rutaIrVerTodo()
         
       })
 
@@ -319,7 +355,7 @@ $("#training").click(function(e){
             })
             titulo.textContent = "Trainning"
                  mostrarCard()
-                 direccion()
+                 rutaIrVerTodo()
           })
         })
 
@@ -460,8 +496,7 @@ function leerDatosProducto(producto) {
         Toastify({                  // Mensaje Alert por toastify
             text: `Haz agregado un producto`,
             duration: 4000,
-            //  destination: "https://gaboxd7.github.io/Ecommerce/carro.html",
-             destination: "http://127.0.0.1:5500/carro.html",
+            destination: rutaCarrito,
             newWindow: true,
             // close: true,
             gravity: "top", // `top` or `bottom`
@@ -512,8 +547,10 @@ function addCarroStorage () {
 
 // Funcion que realiza cambio en la seccion coleccion 2022 
 function  mostrarColeccion () {
-    // window.location.href = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022";
-    window.location.href = " http://127.0.0.1:5500/index.html#coleccion2022";
+            // Ruta Coleccion 2022
+
+    window.location.href = coleccion2022;
+
     sectionFinal.style.marginBottom= "0"
     contenedorColeccion.style.marginBottom ="5rem";
     titleColeccion.classList.add('title-down')
@@ -544,7 +581,7 @@ function mostrarCardColeccion ()  {
         <div class="m-3 card-cuerpo" >
         <div>
         <span class="card-texto">${prod.deporte} </span>
-            <a href=#!><img src=${prod.img} class="card-img-top img-size  "   alt="..."></a>
+            <a href=#!><img src=${prod.img} class="card-img-top img-size-coleccion  "   alt="..."></a>
         </div>
         <div class="precio">
             <h6>${prod.nombre}</h6>
@@ -573,70 +610,84 @@ function mostrarCardColeccion ()  {
 }
 
 
-// Validacion Email
-
-email.addEventListener("invalid", comprobarEmail);
-email.addEventListener("input", comprobarEmail);
-
-function comprobarEmail() {
-
-
-    let mensaje = "";
-
-    // comprobar los posibles errores
-    if (this.value == "") {
-      mensaje = "El campo del email no puede estar vacío";
-    } else if (this.value.indexOf("@") < 0) {
-      mensaje = `El email debe contener una "@"please`;
-    } else if (this.value.indexOf(".com", this.value.indexOf("@")) < 0) {
-        mensaje = "El email debe contener .com detras de la @";
  
-   
-    } 
+    const check = document.querySelector("#check");
+    const email = document.querySelector("#email");
+    const registrar = document.querySelector("#registrar");
+    const parrafo = document.querySelector('#warnings')
+    const parrafoCheck = document.querySelector('#warnings-check')
+
+ 
+        parrafo.classList.add("mensaje-email")
+        registrar.addEventListener("click", e => {
+
+
+        parrafo.classList.remove('d-none');
+        parrafo.classList.add('d-block');
+
+     e.preventDefault()
+        let entrar = false;
+        let warnings = "";
+        let warningCheck =""
+        parrafo.innerHTML = ""
+ 
+        if  ((email.value == "")) {
+            warnings +=`1-.No debe estar <span>vacio</span>. <br>`
+             entrar = true;
+        } 
+        // console.log((email.value.indexOf("@") < 0))
+        if ((email.value.indexOf("@") < 0)) {
+
+            warnings += `2-.Debe incluir un  <span>"@"</span>. <br>`;
+             entrar = true;
+        } 
+         if ( email.value.indexOf(".com", email.value.indexOf("@")) < 0) {
+            warnings += `3-.Debe incluir <span>".com"</span> despues del <span>"@"</span>. <br>`;
+             entrar = true;
+       
+        }  else {
+            parrafo.classList.remove('d-block');
+            parrafo.classList.add('d-none');
+            console.log(check.checked)
+            console.log(check.checked)
       
-        registrar.addEventListener("click", ( e ) => {
-             e.preventDefault()
+                 if(check.checked) {
+                   
+                             Swal.fire({
+                title: `¡BIENVENIDO!, Tu Codigo De 10%  De Descuentos es: GaboSport `,
+                icon: 'success',
+          iconColor:'black',
+                grow: 'row',
+              //   with: "30px",
+                padding:'3rem',
+                confirmButtonText: 'ENTENDIDO',
+                 confirmButtonColor: '#111',
+                showCancelButton: false,
+                 showCloseButton: true,
         
-            if (check.checked) {
-              Swal.fire({
-                  title: `¡BIENVENIDO!, Tu Codigo De 10%  De Descuentos es: GaboSport `,
-                  icon: 'success',
-                  iconColor:'black',
-                  grow: 'row',
-                //   with: "30px",
-                  padding:'3rem',
-                  confirmButtonText: 'ENTENDIDO',
-                  confirmButtonColor: '#111',
-                  showCancelButton: false,
-                  showCloseButton: true,
+               })
+             
+              } else {
+                parrafo.classList.remove('d-block');
+                parrafo.classList.add('d-none');
+
+            Swal.fire({
+                             title: `Hola, debes aceptar los Terminos y Condiciones.`,
+                             icon: 'warning',
+                             iconColor:'red',
+                             confirmButtonText: 'ENTENDIDO',
+                             confirmButtonColor: '#111',
+                             showCancelButton: false,
+                             showCloseButton: true,
+                      
+                             position: 'top'
+                           })
+                         }
+        }
+
+        if  (entrar) {
           
-                })
-  
-                } else {
-                  Swal.fire({
-                  title: `Hola, debes aceptar los Terminos y Condiciones.`,
-                  icon: 'warning',
-                  iconColor:'red',
-                  confirmButtonText: 'ENTENDIDO',
-                  confirmButtonColor: '#111',
-                  showCancelButton: false,
-                  showCloseButton: true,
-           
-                  position: 'top'
-                })
-            }
-        
-          })
-
-    
-    
-    {
-
-    
-    }
-  
-
-  }
-
-
+        parrafo.innerHTML = warnings
+          }
+    } )
 

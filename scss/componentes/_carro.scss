@@ -9,7 +9,8 @@ width: 100%;
 min-height: 7rem;
 a {
     text-decoration: none;
-    color: $color-1;
+    color: $color-1; 
+  
 }
 }
 .img-carro {
@@ -55,6 +56,21 @@ a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: fit-content; 
+    a {
+      color: $color-1;
+      font-weight: bold; 
+      padding: 0.5rem;
+      border-radius: 1rem;
+ &:hover {
+        background-color: $color-5;
+      }
+
+    }
+}
+.icon {
+  font-size:  1.5rem;
+  font-weight: bolder;
 }
 .total-price {
 display: flex;
@@ -66,6 +82,10 @@ align-items: flex-start;
 .img-size {
     width: 100%;
     height: 15rem;
+}
+.img-size-coleeccion {
+  width: 100%;
+
 }
 
 /*------------------------*/
@@ -85,7 +105,7 @@ align-items: flex-start;
     background-color:black;
     color: #fff;
     text-align:justify;
-    padding: 1rem ;
+    padding: 0.5rem ;
     border-radius: 6px;
     font-weight: 400;
     /* Position the tooltip text */
@@ -117,12 +137,12 @@ align-items: flex-start;
 .tooltipp .tooltiptextt::after {
     content: "";
     position: absolute;
-    top: 50%;
-    right: 100%; /* To the left of the tooltip */
-    margin-top: -5px;
+    top: 110%;
+    right: 50%; /* To the left of the tooltip */
+    margin-top: -11px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: $color-1 transparent transparent transparent;
   }
   
   /* Show the tooltip text when you mouse over the tooltip container */
@@ -136,4 +156,57 @@ align-items: flex-start;
      background-color: $color-5 !important;
        color: $color-3;
        text-shadow: 0 0 0.1rem $color-1;
+       
   }
+  //------------------ 
+  /* Tooltip container */
+.tooltipp2 {
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+
+ /* border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltipp2 .tooltiptextt2 {
+  visibility: hidden;
+  width: 8.5rem;
+  background-color: $color-1;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.25rem  ;
+  border-radius: 6px;
+  font-weight: 600;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: -120%;
+  left: 20%;
+  margin-left: -60px;
+  font-size: 0.75rem;
+  /* Fade in tooltip */
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  text-align: center;
+}
+
+/* Tooltip arrow */
+
+
+.tooltipp2 .tooltiptextt2::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  right: 45%; /* To the left of the tooltip */
+  margin-top: -10px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent  $color-1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipp2:hover .tooltiptextt2 {
+  visibility: visible;
+  opacity: 1;
+}
