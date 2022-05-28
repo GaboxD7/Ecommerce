@@ -4,34 +4,34 @@
 
      //---------------------Ruta en el boton search type= submit -------------------------------
 
-    const search = "http://127.0.0.1:5500/index.html#submit-search";                                  // LOCAL
-//  const search = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";                   // GIT-PAGE
+    // const search = "http://127.0.0.1:5500/index.html#submit-search";                                  // LOCAL
+ const search = "https://gaboxd7.github.io/Ecommerce/index.html#submit-search";                   // GIT-PAGE
 
 
      //---------------------Ruta en el boton "VOLVER" -Contenedor Coleccion---------------------
 
-    const btnCerrarColeccion = "http://127.0.0.1:5500/index.html#section-medio"                      // LOCAL
-//  const btnCerrarColeccion = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"       // GIT PAGE
+//    const btnCerrarColeccion = "http://127.0.0.1:5500/index.html#section-medio"                      // LOCAL
+    const btnCerrarColeccion = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"       // GIT PAGE
 
      //---------------------Ruta botnes "VER TODO" --------------------------------------
 
-     const rutaVerTodo = "http://127.0.0.1:5500/index.html#section-medio"                           // LOCAL           
-//   const rutaVerTodo = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"            // GIT-PAGE   
+//     const rutaVerTodo = "http://127.0.0.1:5500/index.html#section-medio"                           // LOCAL           
+   const rutaVerTodo = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio"            // GIT-PAGE   
                
       // ------------------- Ruta botnes "GENEROS"--------------------------------------
 
-    const rutaGenero = "http://127.0.0.1:5500/index.html#h1"                                         // LOCAL           
-    // const rutaGenero = "https://gaboxd7.github.io/Ecommerce/index.html#h1"                       // GIT-PAGE   
+//    const rutaGenero = "http://127.0.0.1:5500/index.html#h1"                                         // LOCAL           
+     const rutaGenero = "https://gaboxd7.github.io/Ecommerce/index.html#h1"                       // GIT-PAGE   
 
      //--------------------- Ruta Coleccion 2022 --------------------------------------
 
-    const coleccion2022 = "http://127.0.0.1:5500/index.html#coleccion2022"                           // LOCAL
-    // const coleccion2022 = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022"         // GIT-PAGE
+//    const coleccion2022 = "http://127.0.0.1:5500/index.html#coleccion2022"                           // LOCAL
+     const coleccion2022 = "https://gaboxd7.github.io/Ecommerce/index.html#coleccion2022"         // GIT-PAGE
 
      //--------------------- Ruta Carrito  --------------------------------------
 
-    const rutaCarrito = "http://127.0.0.1:5500/carro.html"                                          // LOCAL
-    // const rutaCarrito = "https://gaboxd7.github.io/Ecommerce/carro.html"                        // GIT-PAGE
+//    const rutaCarrito = "http://127.0.0.1:5500/carro.html"                                          // LOCAL
+     const rutaCarrito = "https://gaboxd7.github.io/Ecommerce/carro.html"                        // GIT-PAGE
      
 
 let dato = []; // array que llenaremos desde fetch
@@ -89,6 +89,10 @@ const cerrarColeccion = document.querySelector('#cerrar-coleccion')
 const titleColeccion = document.querySelector('#title-coleccion')
 const imagenColeccion = document.querySelector('#coleccion2022')
 const formulario = document.querySelector('#formularioBuscar');
+const check = document.querySelector("#check");
+const email = document.querySelector("#email");
+const registrar = document.querySelector("#registrar");
+const parrafo = document.querySelector('#warnings');
 
 // Obteniendo informacion de LocalStorage
 document.addEventListener('DOMContentLoaded', () => {
@@ -250,7 +254,7 @@ contenedor.innerHTML = "";
                     </ul>
                 <button class="card-btnn add-carro" id="${prod.id}" data-id="${prod.id}" type="button">AGREGAR AL CARRITO</button>
             </div>`;
-contenedor.appendChild(div);
+            contenedor.appendChild(div);
             }
         } 
       
@@ -280,6 +284,7 @@ function volverInicio () {
     titulo.textContent = "DESCUBRE LA FUERZA DENTRO DE TI"
 }
         // Funtion para cambiar el html
+
 function cards(e) {
   
     if (e.target.className == verTodo[0].className  ) {
@@ -314,7 +319,7 @@ mostrarCard() // llamamos a la funcion para mostrar las Cards
 
 }
 
-        // Boton RUNNING-CROSFFIT-RUNNING: Usando jquery
+     // Boton RUNNING-CROSFFIT-RUNNING: Usando jquery
 
 $(document).ready(function() {
 
@@ -331,7 +336,7 @@ $("#crossfit").click(function(e){
     })
 
 
-$("#running").click(function(e){
+$("#running").click(function(e) {
    
     e.preventDefault()
     stock.forEach(prod =>  {
@@ -610,14 +615,8 @@ function mostrarCardColeccion ()  {
 }
 
 
- 
-    const check = document.querySelector("#check");
-    const email = document.querySelector("#email");
-    const registrar = document.querySelector("#registrar");
-    const parrafo = document.querySelector('#warnings')
-    const parrafoCheck = document.querySelector('#warnings-check')
+// Validacion de Email 
 
- 
         parrafo.classList.add("mensaje-email")
         registrar.addEventListener("click", e => {
 
@@ -635,7 +634,7 @@ function mostrarCardColeccion ()  {
             warnings +=`1-.No debe estar <span>vacio</span>. <br>`
              entrar = true;
         } 
-        // console.log((email.value.indexOf("@") < 0))
+
         if ((email.value.indexOf("@") < 0)) {
 
             warnings += `2-.Debe incluir un  <span>"@"</span>. <br>`;
@@ -648,8 +647,7 @@ function mostrarCardColeccion ()  {
         }  else {
             parrafo.classList.remove('d-block');
             parrafo.classList.add('d-none');
-            console.log(check.checked)
-            console.log(check.checked)
+
       
                  if(check.checked) {
                    

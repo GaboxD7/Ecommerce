@@ -363,10 +363,12 @@ p {
 }
 
 .no-encontrado {
-  color: red;
+  color: #111;
   font-size: 1.5rem;
   padding: 0.5rem;
   width: fit-content;
+  background-color: #747B81 !important;
+  border-radius: 0.5rem;
 }
 
 .no-encontrado-h4 {
@@ -838,6 +840,17 @@ footer {
 .tooltipp2:hover .tooltiptextt2 {
   visibility: visible;
   opacity: 1;
+}
+
+.no-descuento {
+  margin-top: 5px;
+  overflow-wrap: break-word;
+  background-color: #747B81;
+  font-size: 1rem;
+  z-index: -2;
+  color: white;
+  border-radius: 0.25rem;
+  margin-left: 1.75rem;
 }
 
 /*# sourceMappingURL=styles.css.map */

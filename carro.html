@@ -79,14 +79,14 @@
        </thead>
        <tbody>
          <tr>
-           <td class="padre-img">
+           <td class="padre-img flex-wrap">
           
              <div class="hijo-img d-block" id="container-descuento"><i class="fi fi-rs-ticket pe-1 icon"></i>Aplicar codigo de descuento <a href="#!" id="descuento">¡Click Aqui!</a></div>
-            
-             <div class="d-none hijo-img" id="input-descuento">
-               <input type="text" title="Ingresa tu codigo" class="input-codigo" id="input-codigo" placeholder="ESCRIBE TU CODIGO">
-               <input type="submit" value="OK" class="ok-codigo" id="ok-codigo">
-               <label for=""></label>
+                  
+             <div class="d-none hijo-img text-center" id="input-descuento">
+               <input type="text" title="Ingresa tu codigo" class="input-codigo" maxlength="10" id="input-codigo" placeholder="ESCRIBE TU CODIGO">
+               <input type="submit" value="OK" class="ok-codigo"  id="ok-codigo">
+               <p class="text-center no-descuento d-none" id="no-descuento"></p>
               </div>
            </td>
            </tr>

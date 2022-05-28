@@ -5,8 +5,8 @@
 
      //---------------------Ruta en el boton SEGUIR COMPRANDO--------------------------------------
 
-     const btnSeguirComprando = "http://127.0.0.1:5500/index.html#section-medio";                                        // LOCAL
- //  const btnSeguirComprando = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";                         // GIT-PAGE
+ //    const btnSeguirComprando = "http://127.0.0.1:5500/index.html#section-medio";                                        // LOCAL
+   const btnSeguirComprando = "https://gaboxd7.github.io/Ecommerce/index.html#section-medio";                         // GIT-PAGE
 
  
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
@@ -178,7 +178,9 @@ VerificarVacio();
 
 
 submitCodigo.addEventListener('click', aplicarOk);
-function aplicarOk () {
+
+function aplicarOk () { 
+ 
   inputDescuento.classList.add('d-none')
   containerDescuento.classList.add('d-block')
   containerDescuento.classList.remove('d-none')
@@ -196,6 +198,8 @@ descuento.addEventListener('click', (e) => {
 
 
 // Validacion del codigo descuento "RESUMEN DE COMPRA"
+const noDescuento = document.querySelector('#no-descuento')
+console.log(noDescuento)
 
 function validarCodigo ()  {
 
@@ -203,11 +207,15 @@ function validarCodigo ()  {
 
   validarDcto = (texto.join('') == "gabosport" )
   if (texto !== '') {
-  
+  noDescuento.classList.remove('d-none');
+  noDescuento.classList.add('d-block')
     if(validarDcto) {
 
       localStorage.setItem('aceptado', JSON.stringify(validarDcto));
       mostrarTotales();
+
+      noDescuento.classList.remove('d-block');
+      noDescuento.classList.add('d-none')
 
       Swal.fire({
         title: `TU CODIGO FUE ACEPTADO CON 10% EN TU COMPRA`,
@@ -222,10 +230,20 @@ function validarCodigo ()  {
         showCloseButton: true,
 
       })
-      tdPrecio.classList.add('total-precio-cambio')
-    } 
 
-  } 
+      tdPrecio.classList.add('total-precio-cambio')
+
+    } else {
+      console.log(noDescuento)
+     noDescuento.innerHTML = `<strong>${inputCodigo.value}</strong> No posee descuento`
+      console.log(inputCodigo.value)
+
+    }
+
+  } else {
+    noDescuento.classList.remove('d-none');
+    noDescuento.classList.add('d-block')
+  }
 
 }
 

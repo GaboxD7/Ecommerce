@@ -210,3 +210,13 @@ align-items: flex-start;
   visibility: visible;
   opacity: 1;
 }
+.no-descuento {
+  margin-top: 5px;
+  overflow-wrap: break-word;
+ background-color: $color-5;
+  font-size: 1rem;
+  z-index: -2;
+  color: white;
+  border-radius: 0.25rem;
+  margin-left: 1.75rem ;
+}
